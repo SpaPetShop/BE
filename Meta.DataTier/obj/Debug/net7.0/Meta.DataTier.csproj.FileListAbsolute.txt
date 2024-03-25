@@ -1,0 +1,14 @@
+D:\FPT\Capstone\Meta\Meta.DataTier\obj\Debug\net7.0\Meta.DataTier.csproj.AssemblyReference.cache
+D:\FPT\Capstone\Meta\Meta.DataTier\obj\Debug\net7.0\Meta.DataTier.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPT\Capstone\Meta\Meta.DataTier\obj\Debug\net7.0\Meta.DataTier.AssemblyInfoInputs.cache
+D:\FPT\Capstone\Meta\Meta.DataTier\obj\Debug\net7.0\Meta.DataTier.AssemblyInfo.cs
+D:\FPT\Capstone\Meta\Meta.DataTier\obj\Debug\net7.0\Meta.DataTier.csproj.CoreCompileInputs.cache
+D:\FPT\Capstone\Meta\Meta.DataTier\bin\Debug\net7.0\Meta.DataTier.deps.json
+D:\FPT\Capstone\Meta\Meta.DataTier\bin\Debug\net7.0\Meta.DataTier.runtimeconfig.json
+D:\FPT\Capstone\Meta\Meta.DataTier\bin\Debug\net7.0\Meta.DataTier.dll
+D:\FPT\Capstone\Meta\Meta.DataTier\bin\Debug\net7.0\Meta.DataTier.pdb
+D:\FPT\Capstone\Meta\Meta.DataTier\obj\Debug\net7.0\Meta.DataTier.dll
+D:\FPT\Capstone\Meta\Meta.DataTier\obj\Debug\net7.0\refint\Meta.DataTier.dll
+D:\FPT\Capstone\Meta\Meta.DataTier\obj\Debug\net7.0\Meta.DataTier.pdb
+D:\FPT\Capstone\Meta\Meta.DataTier\obj\Debug\net7.0\Meta.DataTier.genruntimeconfig.cache
+D:\FPT\Capstone\Meta\Meta.DataTier\obj\Debug\net7.0\ref\Meta.DataTier.dll

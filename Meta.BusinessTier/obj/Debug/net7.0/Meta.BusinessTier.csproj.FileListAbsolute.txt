@@ -1,0 +1,15 @@
+D:\FPT\Capstone\Meta\Meta.BusinessTier\obj\Debug\net7.0\Meta.BusinessTier.csproj.AssemblyReference.cache
+D:\FPT\Capstone\Meta\Meta.BusinessTier\obj\Debug\net7.0\Meta.BusinessTier.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPT\Capstone\Meta\Meta.BusinessTier\obj\Debug\net7.0\Meta.BusinessTier.AssemblyInfoInputs.cache
+D:\FPT\Capstone\Meta\Meta.BusinessTier\obj\Debug\net7.0\Meta.BusinessTier.AssemblyInfo.cs
+D:\FPT\Capstone\Meta\Meta.BusinessTier\obj\Debug\net7.0\Meta.BusinessTier.csproj.CoreCompileInputs.cache
+D:\FPT\Capstone\Meta\Meta.BusinessTier\bin\Debug\net7.0\Meta.BusinessTier.deps.json
+D:\FPT\Capstone\Meta\Meta.BusinessTier\bin\Debug\net7.0\Meta.BusinessTier.dll
+D:\FPT\Capstone\Meta\Meta.BusinessTier\bin\Debug\net7.0\Meta.BusinessTier.pdb
+D:\FPT\Capstone\Meta\Meta.BusinessTier\bin\Debug\net7.0\Meta.DataTier.dll
+D:\FPT\Capstone\Meta\Meta.BusinessTier\bin\Debug\net7.0\Meta.DataTier.pdb
+D:\FPT\Capstone\Meta\Meta.BusinessTier\obj\Debug\net7.0\Meta.Bus.D647ACCA.Up2Date
+D:\FPT\Capstone\Meta\Meta.BusinessTier\obj\Debug\net7.0\Meta.BusinessTier.dll
+D:\FPT\Capstone\Meta\Meta.BusinessTier\obj\Debug\net7.0\refint\Meta.BusinessTier.dll
+D:\FPT\Capstone\Meta\Meta.BusinessTier\obj\Debug\net7.0\Meta.BusinessTier.pdb
+D:\FPT\Capstone\Meta\Meta.BusinessTier\obj\Debug\net7.0\ref\Meta.BusinessTier.dll
