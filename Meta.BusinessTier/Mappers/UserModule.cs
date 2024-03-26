@@ -14,6 +14,7 @@ namespace Meta.BusinessTier.Mappers
         public UserModule()
         {
             CreateMap<User, GetUsersResponse>();
+            CreateMap<CreateNewUserRequest, User>();
         }
     }
 }

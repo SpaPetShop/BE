@@ -15,5 +15,7 @@ public partial class Product
 
     public Guid? CategoryId { get; set; }
 
+    public int? Priority { get; set; }
+
     public virtual Category? Category { get; set; }
 }

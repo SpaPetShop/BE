@@ -35,6 +35,7 @@ namespace HiCamping.API.Configs
         {
 
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICategoryService, CategoryService>();
             return services;
         }
 

@@ -26,6 +26,8 @@ public static class MessageConstant
         public const string NotFoundFailedMessage = "Category ko có trong hệ thống";
         public const string UpdateCategorySuccessMessage = "Category được cập nhật thành công";
         public const string UpdateCategoryFailedMessage = "Category cập nhật thất bại";
+        public const string CategoryExistedMessage = "Category đã tồn tại";
+        public const string CategoryEmptyMessage = "Category không hợp lệ";
     }
 
     public static class Product

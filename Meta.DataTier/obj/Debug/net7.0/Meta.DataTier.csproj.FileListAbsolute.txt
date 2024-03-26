@@ -12,3 +12,4 @@ D:\FPT\Capstone\Meta\Meta.DataTier\obj\Debug\net7.0\refint\Meta.DataTier.dll
 D:\FPT\Capstone\Meta\Meta.DataTier\obj\Debug\net7.0\Meta.DataTier.pdb
 D:\FPT\Capstone\Meta\Meta.DataTier\obj\Debug\net7.0\Meta.DataTier.genruntimeconfig.cache
 D:\FPT\Capstone\Meta\Meta.DataTier\obj\Debug\net7.0\ref\Meta.DataTier.dll
+D:\FPT\Capstone\Meta\Meta.DataTier\obj\Debug\net7.0\Meta.DataTier.sourcelink.json

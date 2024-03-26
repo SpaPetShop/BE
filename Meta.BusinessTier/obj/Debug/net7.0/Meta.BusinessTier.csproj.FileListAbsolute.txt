@@ -13,3 +13,4 @@ D:\FPT\Capstone\Meta\Meta.BusinessTier\obj\Debug\net7.0\Meta.BusinessTier.dll
 D:\FPT\Capstone\Meta\Meta.BusinessTier\obj\Debug\net7.0\refint\Meta.BusinessTier.dll
 D:\FPT\Capstone\Meta\Meta.BusinessTier\obj\Debug\net7.0\Meta.BusinessTier.pdb
 D:\FPT\Capstone\Meta\Meta.BusinessTier\obj\Debug\net7.0\ref\Meta.BusinessTier.dll
+D:\FPT\Capstone\Meta\Meta.BusinessTier\obj\Debug\net7.0\Meta.BusinessTier.sourcelink.json

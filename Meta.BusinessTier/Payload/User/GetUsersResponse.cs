@@ -14,6 +14,7 @@ namespace Meta.BusinessTier.Payload.User
         public UserStatus Status { get; set; }
         public RoleEnum Role { get; set; }
 
+
         public GetUsersResponse(Guid id, string username, UserStatus status, RoleEnum role)
         {
             Id = id;
