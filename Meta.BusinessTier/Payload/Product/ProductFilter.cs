@@ -10,6 +10,8 @@ namespace Meta.BusinessTier.Payload.Product
     public class ProductFilter
     {
         public string? Name { get; set; }
+
+        public double? UnitPrice { get; set; }
         public string? Description { get; set; }
         public ProductStatus? Status { get; set; }
         public Guid? CategoryId { get; set; }

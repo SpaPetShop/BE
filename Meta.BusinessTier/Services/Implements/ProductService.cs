@@ -81,7 +81,9 @@ namespace Meta.BusinessTier.Services.Implements
             Category category = await _unitOfWork.GetRepository<Category>().SingleOrDefaultAsync(
                 predicate: x => x.Id.Equals(updateProductRequest.CategoryId))
             ?? throw new BadHttpRequestException(MessageConstant.Category.NotFoundFailedMessage);
+            
             product.Name = string.IsNullOrEmpty(updateProductRequest.Name) ? product.Name : updateProductRequest.Name;
+            product.UnitPrice = updateProductRequest.UnitPrice;
             product.Description = string.IsNullOrEmpty(updateProductRequest.Description) ? product.Description : updateProductRequest.Description;
             product.Status = updateProductRequest.Status.GetDescriptionFromEnum();
             product.Priority = updateProductRequest.Priority;
