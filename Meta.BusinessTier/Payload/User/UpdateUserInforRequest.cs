@@ -11,6 +11,7 @@ namespace Meta.BusinessTier.Payload.User
     {
         public string Password { get; set; }
         public UserStatus Status { get; set; }
+        
 
         public UpdateUserInforRequest()
         {
