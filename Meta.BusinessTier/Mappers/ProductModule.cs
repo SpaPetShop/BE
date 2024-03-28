@@ -12,15 +12,13 @@ using System.Threading.Tasks;
 
 namespace Meta.BusinessTier.Mappers
 {
-    public class CategoryModule : Profile
+    public class ProductModule : Profile
     {
-
-        public CategoryModule() {
-            CreateMap<Category, GetProductsResponse>();
-            CreateMap<CreateNewCategoryRequest, Category>()
+        public ProductModule() {
+            CreateMap<Product, GetProductsResponse>();
+            CreateMap<CreateNewProductRequest, Product>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()))
-                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => CategoryStatus.Active.GetDescriptionFromEnum()));
-
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => ProductStatus.Active.GetDescriptionFromEnum()));
         }
     }
 }
