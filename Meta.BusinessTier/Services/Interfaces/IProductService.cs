@@ -15,6 +15,7 @@ namespace Meta.BusinessTier.Services.Interfaces
         Task<Guid> CreateNewProducts(CreateNewProductRequest createNewProductRequest);
         Task<bool> UpdateProduct(Guid id, UpdateProductRequest updateProductRequest);
         Task<IPaginate<GetProductsResponse>> GetProductList(ProductFilter filter, PagingModel pagingModel);
+        Task<ICollection<GetProductsResponse>> GetProductListNotIPaginate(ProductFilter filter);
         Task<GetProductsResponse> GetProductById(Guid id);
         Task<bool> RemoveProductStatus(Guid id);
     }

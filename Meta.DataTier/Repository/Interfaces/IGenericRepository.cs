@@ -34,7 +34,8 @@ namespace Meta.DataTier.Repository.Interfaces
 			Expression<Func<T, TResult>> selector,
 			Expression<Func<T, bool>> predicate = null,
 			Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
-			Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null);
+			Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null,
+            object filter = null);
 
 		Task<IPaginate<T>> GetPagingListAsync(
 			Expression<Func<T, bool>> predicate = null,

@@ -2,18 +2,22 @@
 using Azure.Core;
 using Meta.BusinessTier.Constants;
 using Meta.BusinessTier.Enums;
+using Meta.BusinessTier.Extensions;
 using Meta.BusinessTier.Payload;
 using Meta.BusinessTier.Payload.Order;
+using Meta.BusinessTier.Payload.Product;
 using Meta.BusinessTier.Services.Interfaces;
 using Meta.BusinessTier.Utils;
 using Meta.DataTier.Models;
 using Meta.DataTier.Paginate;
 using Meta.DataTier.Repository.Interfaces;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,7 +29,7 @@ namespace Meta.BusinessTier.Services.Implements
         {
         }
 
-        public async Task<Guid> CreateNewOrder(CreateNewOrderRequest request)
+        public async Task<Guid> CreateNewOrder(CreateNewOrderResponse request)
         {
             DateTime currentTime = TimeUtils.GetCurrentSEATime();
             Order newOrder = new()
@@ -56,9 +60,19 @@ namespace Meta.BusinessTier.Services.Implements
                 });
 
             };
+            OrderHistory history = new OrderHistory()
+            {
+                Id = Guid.NewGuid() ,
+                Status = OrderHistoryStatus.PENDING.GetDescriptionFromEnum(),
+                Note = request.Note,
+                CreatedDate = currentTime,
+                OrderId = newOrder.Id,
+                UserId = request.UserId,
+            };
 
             await _unitOfWork.GetRepository<Order>().InsertAsync(newOrder);
             await _unitOfWork.GetRepository<OrderDetail>().InsertRangeAsync(orderDetails);
+            await _unitOfWork.GetRepository<OrderHistory>().InsertAsync(history);
             bool isSuccessful = await _unitOfWork.CommitAsync() > 0;
             if (!isSuccessful) throw new BadHttpRequestException(MessageConstant.Order.CreateOrderFailedMessage);
             return newOrder.Id;
@@ -103,52 +117,48 @@ namespace Meta.BusinessTier.Services.Implements
                         Role = EnumUtil.ParseEnum<RoleEnum>(x.Role)
                     },
                     predicate: x => x.Id.Equals(order.UserId))
+                
             };
             return orderDetailResponse;
         }
-        //private static Expression<Func<Order, bool>> BuildGetOrderQuery(OrderFilter filter)
-        //{
-        //    Expression<Func<Order, bool>> filterQuery = x => true;
+        private static Expression<Func<Order, bool>> BuildGetOrderQuery(OrderFilter filter)
+        {
+            Expression<Func<Order, bool>> filterQuery = x => true;
 
-        //    var invoiceId = filter.invoiceId;
-        //    var fromDate = filter.fromDate;
-        //    var toDate = filter.toDate;
-        //    var status = filter.status;
-        //    var userId = filter.userId;
+            var InvoiceCode = filter.InvoiceCode;
+            var fromDate = filter.fromDate;
+            var toDate = filter.toDate;
+            var status = filter.status;
 
-        //    if (invoiceId != null)
-        //    {
-        //        filterQuery = filterQuery.AndAlso(x => x.InvoiceId.Contains(invoiceId));
-        //    }
+            if (InvoiceCode != null)
+            {
+                filterQuery = filterQuery.AndAlso(x => x.InvoiceCode.Contains(InvoiceCode));
+            }
 
-        //    if (fromDate.HasValue)
-        //    {
-        //        filterQuery = filterQuery.AndAlso(x => x.CreatedDate >= fromDate);
-        //    }
+            if (fromDate.HasValue)
+            {
+                filterQuery = filterQuery.AndAlso(x => x.CreatedDate >= fromDate);
+            }
 
-        //    if (toDate.HasValue)
-        //    {
-        //        filterQuery = filterQuery.AndAlso(x => x.CreatedDate <= toDate);
-        //    }
+            if (toDate.HasValue)
+            {
+                filterQuery = filterQuery.AndAlso(x => x.CreatedDate <= toDate);
+            }
 
-        //    if (status != null)
-        //    {
-        //        filterQuery = filterQuery.AndAlso(x => x.Status.Equals(status.GetDescriptionFromEnum()));
-        //    }
+            if (status != null)
+            {
+                filterQuery = filterQuery.AndAlso(x => x.Status.Equals(status.GetDescriptionFromEnum()));
+            }
 
-        //    if (userId != null)
-        //    {
-        //        filterQuery = filterQuery.AndAlso(x => x.UserId.Equals(userId));
-        //    }
 
-        //    return filterQuery;
-        //}
+            return filterQuery;
+        }
 
         public async Task<IPaginate<GetOrderResponse>> GetOrderList(OrderFilter filter, PagingModel pagingModel)
         {
             IPaginate<GetOrderResponse> response = await _unitOfWork.GetRepository<Order>().GetPagingListAsync(
                 selector: x => _mapper.Map<GetOrderResponse>(x),
-                filter: filter,
+                predicate: BuildGetOrderQuery(filter),
                 orderBy: x => x.OrderByDescending(x => x.CreatedDate),
                 page: pagingModel.page,
                 size: pagingModel.size
@@ -158,22 +168,51 @@ namespace Meta.BusinessTier.Services.Implements
 
         public async Task<bool> UpdateOrder(Guid orderId, UpdateOrderRequest request)
         {
+            string currentUser = GetUsernameFromJwt();
+            var userId = await _unitOfWork.GetRepository<User>().SingleOrDefaultAsync(
+                predicate : x => x.Username.Equals(currentUser),
+                selector: x => x.Id); 
             Order updateOrder = await _unitOfWork.GetRepository<Order>().SingleOrDefaultAsync(
                 predicate: x => x.Id.Equals(orderId))
                 ?? throw new BadHttpRequestException(MessageConstant.Order.OrderNotFoundMessage);
-
             DateTime currentTime = TimeUtils.GetCurrentSEATime();
             switch (request.Status)
             {
+                case OrderStatus.COMPLETED:
+                    break;
+                case OrderStatus.CONFIRMED:
+                    break;
+                case OrderStatus.PAID:
+                    break;
                 case OrderStatus.CANCELED:
                     updateOrder.Status = OrderStatus.CANCELED.GetDescriptionFromEnum();
                     _unitOfWork.GetRepository<Order>().UpdateAsync(updateOrder);
+                    
                     break;
                 default:
                     return false;
             }
+            OrderHistory history = new OrderHistory()
+            {
+                Id = Guid.NewGuid(),
+                Status = request.Status.GetDescriptionFromEnum(),
+                Note = request.Note,
+                CreatedDate = currentTime,
+                OrderId = orderId,
+                UserId = userId,
+            };
+            await _unitOfWork.GetRepository<OrderHistory>().InsertAsync(history);
             bool isSuccessful = await _unitOfWork.CommitAsync() > 0;
             return isSuccessful;
+        }
+
+        public async Task<IEnumerable<GetOrderHistoriesResponse>> GetOrderHistories(Guid orderId)
+        {
+            IEnumerable<GetOrderHistoriesResponse> respone = await _unitOfWork.GetRepository<OrderHistory>().GetListAsync(
+               selector: x => _mapper.Map<GetOrderHistoriesResponse>(x),
+               include: x => x.Include(x => x.User),
+               orderBy: x => x.OrderByDescending(x => x.CreatedDate));
+            return respone;
         }
     }
 }

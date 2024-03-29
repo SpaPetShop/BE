@@ -13,5 +13,15 @@ namespace Meta.BusinessTier.Enums
         PAID,
         COMPLETED,
         CANCELED
+
+    }
+
+    public enum OrderHistoryStatus
+    {
+        PENDING,
+        CONFIRMED,
+        PAID,
+        COMPLETED,
+        CANCELED
     }
 }

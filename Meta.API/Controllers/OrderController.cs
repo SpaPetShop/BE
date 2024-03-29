@@ -19,7 +19,7 @@ namespace Meta.API.Controllers
             _orderService = orderService;
         }
         [HttpPost(ApiEndPointConstant.Order.OrdersEndPoint)]
-        public async Task<IActionResult> CreateNewOrder(CreateNewOrderRequest order)
+        public async Task<IActionResult> CreateNewOrder(CreateNewOrderResponse order)
         {
             var response = await _orderService.CreateNewOrder(order);
             return Ok(response);
@@ -45,6 +45,13 @@ namespace Meta.API.Controllers
             var isSuccessful = await _orderService.UpdateOrder(id, request);
             if (!isSuccessful) return Ok(MessageConstant.Order.UpdateFailedMessage);
             return Ok(MessageConstant.Order.UpdateSuccessMessage);
+        }
+        [HttpGet(ApiEndPointConstant.Order.OrderHistoriesEndPoint)]
+        [ProducesResponseType(typeof(GetOrderHistoriesResponse), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetOrderHistories(Guid id)
+        {
+            var response = await _orderService.GetOrderHistories(id);
+            return Ok(response);
         }
     }
 }

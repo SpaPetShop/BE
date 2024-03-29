@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Meta.DataTier")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce14474bab396e69ab478848e9eda923e43f96d6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+521c21007eff68a22dccb0cd73cc6b2bc93ad968")]
 [assembly: System.Reflection.AssemblyProductAttribute("Meta.DataTier")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Meta.DataTier")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

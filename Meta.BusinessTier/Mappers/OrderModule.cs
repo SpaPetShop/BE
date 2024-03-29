@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Meta.BusinessTier.Enums;
 using Meta.BusinessTier.Payload.Order;
 using Meta.DataTier.Models;
 using System;
@@ -14,6 +15,9 @@ namespace Meta.BusinessTier.Mappers
         public OrderModule()
         {
             CreateMap<Order, GetOrderResponse>();
+            CreateMap<OrderHistory, GetOrderHistoriesResponse>()
+                .ForMember(dest => dest.Username, opt => opt.MapFrom(src => src.User.Username));
+
 
         }
     }

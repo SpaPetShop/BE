@@ -10,5 +10,6 @@ namespace Meta.BusinessTier.Payload.Order
     public class UpdateOrderRequest
     {
         public OrderStatus Status { get; set; }
+        public string Note { get; set; }
     }
 }

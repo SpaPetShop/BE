@@ -60,6 +60,16 @@ namespace Meta.BusinessTier.Services.Implements
             return respone;
         }
 
+        public async Task<ICollection<GetProductsResponse>> GetProductListNotIPaginate(ProductFilter filter)
+        {
+            ICollection<GetProductsResponse> respone = await _unitOfWork.GetRepository<Product>().GetListAsync(
+               selector: x => _mapper.Map<GetProductsResponse>(x),
+               //predicate: x => ProductStatus.Active.GetDescriptionFromEnum().Equals(x.Status),
+               filter: filter,
+               orderBy: x => x.OrderBy(x => x.Priority));
+            return respone;
+        }
+
         public async Task<bool> RemoveProductStatus(Guid id)
         {
             if (id == Guid.Empty) throw new BadHttpRequestException(MessageConstant.Product.EmptyProductIdMessage);

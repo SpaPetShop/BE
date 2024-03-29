@@ -28,7 +28,9 @@ public static class ApiEndPointConstant
     public static class Product
     {
         public const string ProductsEndPoint = ApiEndpoint + "/products";
+        public const string ProductsEndPointNoPaginate = ApiEndpoint + "/products/noPaginat";
         public const string ProductEndPoint = ProductsEndPoint + "/{id}";
+
     }
    
     
@@ -36,6 +38,7 @@ public static class ApiEndPointConstant
     {
         public const string OrdersEndPoint = ApiEndpoint + "/orders";
         public const string OrderEndPoint = OrdersEndPoint + "/{id}";
+        public const string OrderHistoriesEndPoint = OrderEndPoint + "/orderHistory";
     }
 
 }

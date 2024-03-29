@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace DentalLabManagement.BusinessTier.Extensions;
+namespace Meta.BusinessTier.Extensions;
 
 public static class ExpressionExtensions
 {

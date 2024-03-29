@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Meta.BusinessTier.Payload.Order
 {
-    public class CreateNewOrderRequest
+    public class CreateNewOrderResponse
     {
         public List<OrderProduct> ProductList { get; set; } = new List<OrderProduct>();
         public string? Note { get; set; }
@@ -27,4 +27,5 @@ namespace Meta.BusinessTier.Payload.Order
         public float SellingPrice { get; set; }
         public double TotalAmount { get; set; }
     }
+    
 }

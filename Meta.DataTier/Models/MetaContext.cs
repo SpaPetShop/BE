@@ -21,6 +21,8 @@ public partial class MetaContext : DbContext
 
     public virtual DbSet<OrderDetail> OrderDetails { get; set; }
 
+    public virtual DbSet<OrderHistory> OrderHistories { get; set; }
+
     public virtual DbSet<Product> Products { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
@@ -75,6 +77,21 @@ public partial class MetaContext : DbContext
             entity.HasOne(d => d.Product).WithMany(p => p.OrderDetails)
                 .HasForeignKey(d => d.ProductId)
                 .HasConstraintName("FK_OrderDetail_Product");
+        });
+
+        modelBuilder.Entity<OrderHistory>(entity =>
+        {
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+            entity.Property(e => e.Status).HasMaxLength(10);
+
+            entity.HasOne(d => d.Order).WithMany(p => p.OrderHistories)
+                .HasForeignKey(d => d.OrderId)
+                .HasConstraintName("FK_OrderHistories_Order");
+
+            entity.HasOne(d => d.User).WithMany(p => p.OrderHistories)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_OrderHistories_User1");
         });
 
         modelBuilder.Entity<Product>(entity =>

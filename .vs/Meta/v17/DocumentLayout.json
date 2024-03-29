@@ -3,48 +3,112 @@
   "WorkspaceRootPath": "D:\\FPT\\Capstone\\Meta\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7962ED97-E399-4AD5-95FD-4CC6906D0F1E}|Meta.API\\Meta.API.csproj|d:\\fpt\\capstone\\meta\\meta.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7962ED97-E399-4AD5-95FD-4CC6906D0F1E}|Meta.API\\Meta.API.csproj|solutionrelative:meta.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\services\\implements\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\services\\implements\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\services\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\services\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\order\\updateorderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\payload\\order\\updateorderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\mappers\\ordermodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\mappers\\ordermodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\mappers\\categorymodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\mappers\\categorymodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7962ED97-E399-4AD5-95FD-4CC6906D0F1E}|Meta.API\\Meta.API.csproj|d:\\fpt\\capstone\\meta\\meta.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7962ED97-E399-4AD5-95FD-4CC6906D0F1E}|Meta.API\\Meta.API.csproj|solutionrelative:meta.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\order\\orderfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\payload\\order\\orderfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{966692A7-49FC-4739-AB81-B89C438E503E}|Meta.DataTier\\Meta.DataTier.csproj|d:\\fpt\\capstone\\meta\\meta.datatier\\models\\orderhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{966692A7-49FC-4739-AB81-B89C438E503E}|Meta.DataTier\\Meta.DataTier.csproj|solutionrelative:meta.datatier\\models\\orderhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\order\\getorderresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\payload\\order\\getorderresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\order\\createneworderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\payload\\order\\createneworderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\services\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\services\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\constants\\apiendpointconstant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\constants\\apiendpointconstant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{966692A7-49FC-4739-AB81-B89C438E503E}|Meta.DataTier\\Meta.DataTier.csproj|d:\\fpt\\capstone\\meta\\meta.datatier\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{966692A7-49FC-4739-AB81-B89C438E503E}|Meta.DataTier\\Meta.DataTier.csproj|solutionrelative:meta.datatier\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{966692A7-49FC-4739-AB81-B89C438E503E}|Meta.DataTier\\Meta.DataTier.csproj|d:\\fpt\\capstone\\meta\\meta.datatier\\note.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{966692A7-49FC-4739-AB81-B89C438E503E}|Meta.DataTier\\Meta.DataTier.csproj|solutionrelative:meta.datatier\\note.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\mappers\\productmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\mappers\\productmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\order\\getorderhistoriesresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\payload\\order\\getorderhistoriesresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\services\\implements\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\services\\implements\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\order\\createneworderresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\payload\\order\\createneworderresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\order\\getorderdetailresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\payload\\order\\getorderdetailresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\utils\\jwtutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\utils\\jwtutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\order\\updateorderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\payload\\order\\updateorderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\enums\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\enums\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\enums\\categorystatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\enums\\categorystatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7962ED97-E399-4AD5-95FD-4CC6906D0F1E}|Meta.API\\Meta.API.csproj|d:\\fpt\\capstone\\meta\\meta.api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7962ED97-E399-4AD5-95FD-4CC6906D0F1E}|Meta.API\\Meta.API.csproj|solutionrelative:meta.api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{966692A7-49FC-4739-AB81-B89C438E503E}|Meta.DataTier\\Meta.DataTier.csproj|d:\\fpt\\capstone\\meta\\meta.datatier\\repository\\implement\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{966692A7-49FC-4739-AB81-B89C438E503E}|Meta.DataTier\\Meta.DataTier.csproj|solutionrelative:meta.datatier\\repository\\implement\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\product\\getproductsresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\payload\\product\\getproductsresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\product\\productfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\payload\\product\\productfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\extensions\\expressionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\extensions\\expressionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\order\\orderfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\payload\\order\\orderfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\mappers\\categorymodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\mappers\\categorymodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7962ED97-E399-4AD5-95FD-4CC6906D0F1E}|Meta.API\\Meta.API.csproj|d:\\fpt\\capstone\\meta\\meta.api\\configs\\dependencyservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,28 +119,12 @@
       "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{966692A7-49FC-4739-AB81-B89C438E503E}|Meta.DataTier\\Meta.DataTier.csproj|d:\\fpt\\capstone\\meta\\meta.datatier\\repository\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{966692A7-49FC-4739-AB81-B89C438E503E}|Meta.DataTier\\Meta.DataTier.csproj|solutionrelative:meta.datatier\\repository\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{966692A7-49FC-4739-AB81-B89C438E503E}|Meta.DataTier\\Meta.DataTier.csproj|d:\\fpt\\capstone\\meta\\meta.datatier\\repository\\implement\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{966692A7-49FC-4739-AB81-B89C438E503E}|Meta.DataTier\\Meta.DataTier.csproj|solutionrelative:meta.datatier\\repository\\implement\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{966692A7-49FC-4739-AB81-B89C438E503E}|Meta.DataTier\\Meta.DataTier.csproj|d:\\fpt\\capstone\\meta\\meta.datatier\\repository\\implement\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{966692A7-49FC-4739-AB81-B89C438E503E}|Meta.DataTier\\Meta.DataTier.csproj|solutionrelative:meta.datatier\\repository\\implement\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7962ED97-E399-4AD5-95FD-4CC6906D0F1E}|Meta.API\\Meta.API.csproj|d:\\fpt\\capstone\\meta\\meta.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7962ED97-E399-4AD5-95FD-4CC6906D0F1E}|Meta.API\\Meta.API.csproj|solutionrelative:meta.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\services\\implements\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\services\\implements\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\services\\implements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -111,24 +159,8 @@
       "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\payload\\user\\updateuserinforrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\product\\productfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\payload\\product\\productfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\product\\getproductsresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\payload\\product\\getproductsresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\product\\createnewproductrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\payload\\product\\createnewproductrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{966692A7-49FC-4739-AB81-B89C438E503E}|Meta.DataTier\\Meta.DataTier.csproj|d:\\fpt\\capstone\\meta\\meta.datatier\\note.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{966692A7-49FC-4739-AB81-B89C438E503E}|Meta.DataTier\\Meta.DataTier.csproj|solutionrelative:meta.datatier\\note.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7962ED97-E399-4AD5-95FD-4CC6906D0F1E}|Meta.API\\Meta.API.csproj|d:\\fpt\\capstone\\meta\\meta.api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7962ED97-E399-4AD5-95FD-4CC6906D0F1E}|Meta.API\\Meta.API.csproj|solutionrelative:meta.api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\user\\createnewuserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -141,10 +173,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\user\\userfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\payload\\user\\userfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\mappers\\productmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\mappers\\productmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\mappers\\usermodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -170,7 +198,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -178,26 +206,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UpdateOrderRequest.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\UpdateOrderRequest.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Order\\UpdateOrderRequest.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\UpdateOrderRequest.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Order\\UpdateOrderRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAFAAAA",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Meta.DataTier\\Models\\User.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\User.cs",
+              "RelativeToolTip": "Meta.DataTier\\Models\\User.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAA1wAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T16:23:12.015Z",
+              "WhenOpened": "2024-03-29T15:07:23.854Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\OrderService.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\OrderService.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\OrderService.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Services\\Implements\\OrderService.cs",
+              "ViewState": "AQIAAMQAAAAAAAAAAAAswNEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T15:32:01.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "OrderModule.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Mappers\\OrderModule.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Mappers\\OrderModule.cs",
               "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Mappers\\OrderModule.cs",
               "RelativeToolTip": "Meta.BusinessTier\\Mappers\\OrderModule.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA4AAAAJAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAABUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-28T16:20:30.073Z",
               "EditorCaption": ""
@@ -205,370 +246,97 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IOrderService.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\IOrderService.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Interfaces\\IOrderService.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\IOrderService.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Services\\Interfaces\\IOrderService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAABJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T15:32:19.744Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "OrderService.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\OrderService.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\OrderService.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\OrderService.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Services\\Implements\\OrderService.cs",
-              "ViewState": "AQIAAJEAAAAAAAAAAAAhwKgAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T15:32:01.112Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "OrderFilter.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\OrderFilter.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Order\\OrderFilter.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\OrderFilter.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Order\\OrderFilter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T16:12:51.357Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\IProductService.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Interfaces\\IProductService.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\IProductService.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Services\\Interfaces\\IProductService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T10:27:03.805Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "OrderController.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "Meta.API\\Controllers\\OrderController.cs",
               "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\OrderController.cs",
               "RelativeToolTip": "Meta.API\\Controllers\\OrderController.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAAwCwAAABLAAAA",
+              "ViewState": "AQIAACYAAAAAAAAAAAAuwDIAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-28T15:47:15.998Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
+              "Title": "OrderHistory.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\OrderHistory.cs",
+              "RelativeDocumentMoniker": "Meta.DataTier\\Models\\OrderHistory.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\OrderHistory.cs",
+              "RelativeToolTip": "Meta.DataTier\\Models\\OrderHistory.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T14:03:39.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApiEndPointConstant.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Constants\\ApiEndPointConstant.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Constants\\ApiEndPointConstant.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Constants\\ApiEndPointConstant.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Constants\\ApiEndPointConstant.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAlwCcAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T19:43:28.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "GetOrderResponse.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\GetOrderResponse.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Order\\GetOrderResponse.cs",
               "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\GetOrderResponse.cs",
               "RelativeToolTip": "Meta.BusinessTier\\Payload\\Order\\GetOrderResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAOAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAowAoAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-28T16:08:59.059Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CreateNewOrderRequest.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\CreateNewOrderRequest.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Order\\CreateNewOrderRequest.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\CreateNewOrderRequest.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Order\\CreateNewOrderRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "DocumentIndex": 5,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\IOrderService.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Interfaces\\IOrderService.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\IOrderService.cs*",
+              "RelativeToolTip": "Meta.BusinessTier\\Services\\Interfaces\\IOrderService.cs*",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAcwBQAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T15:37:06.547Z",
+              "WhenOpened": "2024-03-28T15:32:19.744Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CategoryModule.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Mappers\\CategoryModule.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Mappers\\CategoryModule.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Mappers\\CategoryModule.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Mappers\\CategoryModule.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAawBEAAAAdAAAA",
+              "DocumentIndex": 9,
+              "Title": "ProductModule.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Mappers\\ProductModule.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Mappers\\ProductModule.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Mappers\\ProductModule.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Mappers\\ProductModule.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABQAAAB5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T16:33:32.859Z",
+              "WhenOpened": "2024-03-28T10:29:13.224Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "GetOrderDetailResponse.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\GetOrderDetailResponse.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Order\\GetOrderDetailResponse.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\GetOrderDetailResponse.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Order\\GetOrderDetailResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAOAAAA",
+              "Title": "GetOrderHistoriesResponse.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\GetOrderHistoriesResponse.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Order\\GetOrderHistoriesResponse.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\GetOrderHistoriesResponse.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Order\\GetOrderHistoriesResponse.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAArwBMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T15:53:47.11Z",
+              "WhenOpened": "2024-03-29T14:54:08.227Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DependencyServices.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Configs\\DependencyServices.cs",
-              "RelativeDocumentMoniker": "Meta.API\\Configs\\DependencyServices.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Configs\\DependencyServices.cs",
-              "RelativeToolTip": "Meta.API\\Configs\\DependencyServices.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAhwCgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T16:44:40.087Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ICategoryService.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\ICategoryService.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Interfaces\\ICategoryService.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\ICategoryService.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Services\\Interfaces\\ICategoryService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T16:16:46.087Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\IUserService.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Interfaces\\IUserService.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\IUserService.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Services\\Interfaces\\IUserService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T16:17:10.387Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IGenericRepository.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Repository\\Interfaces\\IGenericRepository.cs",
-              "RelativeDocumentMoniker": "Meta.DataTier\\Repository\\Interfaces\\IGenericRepository.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Repository\\Interfaces\\IGenericRepository.cs",
-              "RelativeToolTip": "Meta.DataTier\\Repository\\Interfaces\\IGenericRepository.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAA9wAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T16:06:41.965Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Repository\\Implement\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "Meta.DataTier\\Repository\\Implement\\GenericRepository.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Repository\\Implement\\GenericRepository.cs",
-              "RelativeToolTip": "Meta.DataTier\\Repository\\Implement\\GenericRepository.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAswAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T16:06:37.619Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Repository\\Implement\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "Meta.DataTier\\Repository\\Implement\\UnitOfWork.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Repository\\Implement\\UnitOfWork.cs",
-              "RelativeToolTip": "Meta.DataTier\\Repository\\Implement\\UnitOfWork.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAA9wAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T16:06:34.749Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\ProductService.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\ProductService.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\ProductService.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Services\\Implements\\ProductService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFMAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T10:26:25.38Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\UserService.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\UserService.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\UserService.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Services\\Implements\\UserService.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAgwGcAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T16:17:44.657Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Meta.API\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Meta.API\\Controllers\\UserController.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAQwCgAAABMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T16:24:57.228Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "Meta.API\\Controllers\\CategoryController.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "Meta.API\\Controllers\\CategoryController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABoAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T16:24:21.634Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "CategoryService.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\CategoryService.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\CategoryService.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\CategoryService.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Services\\Implements\\CategoryService.cs",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAowFIAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T16:48:02.825Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "BaseController.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\BaseController.cs",
-              "RelativeDocumentMoniker": "Meta.API\\Controllers\\BaseController.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\BaseController.cs",
-              "RelativeToolTip": "Meta.API\\Controllers\\BaseController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T10:36:00.646Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Order.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\Order.cs",
-              "RelativeDocumentMoniker": "Meta.DataTier\\Models\\Order.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\Order.cs",
-              "RelativeToolTip": "Meta.DataTier\\Models\\Order.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBkAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T15:37:30.996Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Product.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "Meta.DataTier\\Models\\Product.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\Product.cs",
-              "RelativeToolTip": "Meta.DataTier\\Models\\Product.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T15:21:27.534Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "UpdateProductRequest.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Product\\UpdateProductRequest.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Product\\UpdateProductRequest.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Product\\UpdateProductRequest.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Product\\UpdateProductRequest.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T10:22:31.19Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "UpdateUserInforRequest.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\User\\UpdateUserInforRequest.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\User\\UpdateUserInforRequest.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\User\\UpdateUserInforRequest.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Payload\\User\\UpdateUserInforRequest.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T14:31:49.098Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "ProductFilter.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Product\\ProductFilter.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Product\\ProductFilter.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Product\\ProductFilter.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Product\\ProductFilter.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T10:21:15.89Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "GetProductsResponse.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Product\\GetProductsResponse.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Product\\GetProductsResponse.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Product\\GetProductsResponse.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Product\\GetProductsResponse.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T10:31:36.033Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "CreateNewProductRequest.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Product\\CreateNewProductRequest.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Product\\CreateNewProductRequest.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Product\\CreateNewProductRequest.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Product\\CreateNewProductRequest.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T10:22:14.911Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 8,
               "Title": "Note.txt",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Note.txt",
               "RelativeDocumentMoniker": "Meta.DataTier\\Note.txt",
@@ -581,19 +349,365 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 11,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\ProductService.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\ProductService.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\ProductService.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Services\\Implements\\ProductService.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAtwEAAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T10:26:25.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CreateNewOrderResponse.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\CreateNewOrderResponse.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Order\\CreateNewOrderResponse.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\CreateNewOrderResponse.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Order\\CreateNewOrderResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T15:37:06.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\IProductService.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Interfaces\\IProductService.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\IProductService.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Services\\Interfaces\\IProductService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T10:27:03.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Interfaces\\IUserService.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Services\\Interfaces\\IUserService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T16:17:10.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GetOrderDetailResponse.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\GetOrderDetailResponse.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Order\\GetOrderDetailResponse.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\GetOrderDetailResponse.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Order\\GetOrderDetailResponse.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAD4vxkAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T15:53:47.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "JwtUtil.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Utils\\JwtUtil.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Utils\\JwtUtil.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Utils\\JwtUtil.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Utils\\JwtUtil.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABoAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T14:45:16.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "OrderStatus.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\OrderStatus.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Enums\\OrderStatus.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\OrderStatus.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Enums\\OrderStatus.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAsAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T14:04:55.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CategoryStatus.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\CategoryStatus.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Enums\\CategoryStatus.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\CategoryStatus.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Enums\\CategoryStatus.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T14:04:54.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UpdateOrderRequest.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\UpdateOrderRequest.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Order\\UpdateOrderRequest.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\UpdateOrderRequest.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Order\\UpdateOrderRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T16:23:12.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Meta.API\\Controllers\\ProductController.cs",
               "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\ProductController.cs",
               "RelativeToolTip": "Meta.API\\Controllers\\ProductController.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAAADIAAABDAAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAqwCMAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T10:33:45.628Z"
+              "WhenOpened": "2024-03-28T10:33:45.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Repository\\Implement\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "Meta.DataTier\\Repository\\Implement\\GenericRepository.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Repository\\Implement\\GenericRepository.cs",
+              "RelativeToolTip": "Meta.DataTier\\Repository\\Implement\\GenericRepository.cs",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAswFgAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T16:06:37.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "GetProductsResponse.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Product\\GetProductsResponse.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Product\\GetProductsResponse.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Product\\GetProductsResponse.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Product\\GetProductsResponse.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA4AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T10:31:36.033Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ProductFilter.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Product\\ProductFilter.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Product\\ProductFilter.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Product\\ProductFilter.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Product\\ProductFilter.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAkAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T10:21:15.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "OrderFilter.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\OrderFilter.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Order\\OrderFilter.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\OrderFilter.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Order\\OrderFilter.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T16:12:51.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ExpressionExtensions.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Extensions\\ExpressionExtensions.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Extensions\\ExpressionExtensions.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Extensions\\ExpressionExtensions.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Extensions\\ExpressionExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T16:36:26.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "CategoryModule.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Mappers\\CategoryModule.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Mappers\\CategoryModule.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Mappers\\CategoryModule.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Mappers\\CategoryModule.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAawBEAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T16:33:32.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "DependencyServices.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Configs\\DependencyServices.cs",
+              "RelativeDocumentMoniker": "Meta.API\\Configs\\DependencyServices.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Configs\\DependencyServices.cs",
+              "RelativeToolTip": "Meta.API\\Configs\\DependencyServices.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAhwCgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T16:44:40.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Interfaces\\ICategoryService.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Services\\Interfaces\\ICategoryService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T16:16:46.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Repository\\Implement\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Meta.DataTier\\Repository\\Implement\\UnitOfWork.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Repository\\Implement\\UnitOfWork.cs",
+              "RelativeToolTip": "Meta.DataTier\\Repository\\Implement\\UnitOfWork.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAA9wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T16:06:34.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\UserService.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\UserService.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\UserService.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Services\\Implements\\UserService.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAgwGcAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T16:17:44.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Meta.API\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Meta.API\\Controllers\\UserController.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAQwCgAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T16:24:57.228Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 32,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "Meta.API\\Controllers\\CategoryController.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "Meta.API\\Controllers\\CategoryController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T16:24:21.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\CategoryService.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\CategoryService.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\CategoryService.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Services\\Implements\\CategoryService.cs",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAowFIAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T16:48:02.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "Meta.API\\Controllers\\BaseController.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "Meta.API\\Controllers\\BaseController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T10:36:00.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "Meta.DataTier\\Models\\Order.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\Order.cs",
+              "RelativeToolTip": "Meta.DataTier\\Models\\Order.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBkAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T15:37:30.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Meta.DataTier\\Models\\Product.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\Product.cs",
+              "RelativeToolTip": "Meta.DataTier\\Models\\Product.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T15:21:27.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "UpdateProductRequest.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Product\\UpdateProductRequest.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Product\\UpdateProductRequest.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Product\\UpdateProductRequest.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Product\\UpdateProductRequest.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T10:22:31.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "UpdateUserInforRequest.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\User\\UpdateUserInforRequest.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\User\\UpdateUserInforRequest.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\User\\UpdateUserInforRequest.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Payload\\User\\UpdateUserInforRequest.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T14:31:49.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "CreateNewProductRequest.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Product\\CreateNewProductRequest.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Product\\CreateNewProductRequest.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Product\\CreateNewProductRequest.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Payload\\Product\\CreateNewProductRequest.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T10:22:14.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
               "Title": "CreateNewUserRequest.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\User\\CreateNewUserRequest.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\User\\CreateNewUserRequest.cs",
@@ -605,7 +719,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 41,
               "Title": "GetUsersResponse.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\User\\GetUsersResponse.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\User\\GetUsersResponse.cs",
@@ -617,7 +731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 42,
               "Title": "UserFilter.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\User\\UserFilter.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\User\\UserFilter.cs",
@@ -629,19 +743,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "ProductModule.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Mappers\\ProductModule.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Mappers\\ProductModule.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Mappers\\ProductModule.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Mappers\\ProductModule.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T10:29:13.224Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 43,
               "Title": "UserModule.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Mappers\\UserModule.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Mappers\\UserModule.cs",
@@ -653,7 +755,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 44,
               "Title": "CategoryFilter.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Category\\CategoryFilter.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Category\\CategoryFilter.cs",
@@ -665,7 +767,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 45,
               "Title": "UpdateCategoryRequest.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Category\\UpdateCategoryRequest.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Category\\UpdateCategoryRequest.cs",
@@ -677,7 +779,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 46,
               "Title": "Category.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\Category.cs",
               "RelativeDocumentMoniker": "Meta.DataTier\\Models\\Category.cs",

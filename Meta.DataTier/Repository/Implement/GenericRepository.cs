@@ -76,17 +76,21 @@ namespace Meta.DataTier.Repository.Implement
             return await query.AsNoTracking().ToListAsync();
         }
 
-        public virtual async Task<ICollection<TResult>> GetListAsync<TResult>(Expression<Func<T, TResult>> selector, Expression<Func<T, bool>> predicate = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null)
+        public virtual async Task<ICollection<TResult>> GetListAsync<TResult>(Expression<Func<T, TResult>> selector, Expression<Func<T, bool>> predicate = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null, object filter = null)
         {
             IQueryable<T> query = _dbSet;
 
             if (include != null) query = include(query);
+            if (filter != null)
+            {
+                query = query.DynamicFilter(filter);
+            }
 
             if (predicate != null) query = query.Where(predicate);
 
             if (orderBy != null) return await orderBy(query).AsNoTracking().Select(selector).ToListAsync();
 
-            return await query.Select(selector).ToListAsync();
+            return await query.AsNoTracking().Select(selector).ToListAsync();
         }
 
         public Task<IPaginate<T>> GetPagingListAsync(Expression<Func<T, bool>> predicate = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null, int page = 1,
