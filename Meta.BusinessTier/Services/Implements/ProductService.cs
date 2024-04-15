@@ -11,11 +11,7 @@ using Meta.DataTier.Paginate;
 using Meta.DataTier.Repository.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Meta.BusinessTier.Services.Implements
 {
@@ -64,7 +60,6 @@ namespace Meta.BusinessTier.Services.Implements
         {
             ICollection<GetProductsResponse> respone = await _unitOfWork.GetRepository<Product>().GetListAsync(
                selector: x => _mapper.Map<GetProductsResponse>(x),
-               //predicate: x => ProductStatus.Active.GetDescriptionFromEnum().Equals(x.Status),
                filter: filter,
                orderBy: x => x.OrderBy(x => x.Priority));
             return respone;
