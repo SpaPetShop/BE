@@ -55,6 +55,11 @@
         "IsRequired": false
       },
       {
+        "Name": "Priority",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
         "Name": "page",
         "Type": "System.Int32",
         "IsRequired": false
@@ -138,7 +143,7 @@
   },
   {
     "ContainingType": "Meta.API.Controllers.OrderController",
-    "Method": "GetOrderDetail",
+    "Method": "GetOrderList",
     "RelativePath": "api/v1/orders",
     "HttpMethod": "GET",
     "IsController": true,

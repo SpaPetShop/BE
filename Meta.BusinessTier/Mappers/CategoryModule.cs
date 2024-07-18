@@ -16,6 +16,7 @@ namespace Meta.BusinessTier.Mappers
     {
 
         public CategoryModule() {
+            CreateMap<Category, GetCategoriesResponse>();
             CreateMap<Category, GetProductsResponse>();
             CreateMap<CreateNewCategoryRequest, Category>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()))

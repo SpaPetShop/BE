@@ -10,4 +10,5 @@ namespace Meta.BusinessTier.Enums
         Active,
         Inactive
     }
+
 }

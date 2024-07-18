@@ -33,7 +33,7 @@ namespace Meta.API.Controllers
         }
         [HttpGet(ApiEndPointConstant.Order.OrdersEndPoint)]
         [ProducesResponseType(typeof(GetOrderResponse), StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetOrderDetail([FromQuery] OrderFilter filter, [FromQuery] PagingModel pagingModel)
+        public async Task<IActionResult> GetOrderList([FromQuery] OrderFilter filter, [FromQuery] PagingModel pagingModel)
         {
             var response = await _orderService.GetOrderList(filter, pagingModel);
             return Ok(response);
