@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\OrderService.cs",
               "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\OrderService.cs",
               "RelativeToolTip": "Meta.BusinessTier\\Services\\Implements\\OrderService.cs",
-              "ViewState": "AQIAALEAAAAAAAAAAAAAAMEAAAANAAAA",
+              "ViewState": "AQIAADQAAAAAAAAAAAAAAEIAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-10T05:33:00.112Z",
               "EditorCaption": ""
@@ -55,7 +55,8 @@
               "RelativeToolTip": "Meta.BusinessTier\\Payload\\Order\\GetOrderHistoriesResponse.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T08:51:56.396Z"
+              "WhenOpened": "2024-07-01T08:51:56.396Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
