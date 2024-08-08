@@ -1,10 +1,15 @@
 ﻿
 using LAK.Sdk.Core.Utilities;
-using Meta.DataTier.Paginate;
-using Meta.DataTier.Repository.Interfaces;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
+using Azure;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using System.Drawing;
+using Meta.DataTier.Paginate;
+using Meta.DataTier.Repository.Interfaces;
+using SAM.DataTier.Repository.Implement;
 
 namespace Meta.DataTier.Repository.Implement
 {
@@ -47,7 +52,7 @@ namespace Meta.DataTier.Repository.Implement
 
             if (orderBy != null) return await orderBy(query).AsNoTracking().FirstOrDefaultAsync();
 
-            return await query.AsNoTracking().FirstOrDefaultAsync();
+            return await query.FirstOrDefaultAsync();
         }
 
         public virtual async Task<TResult> SingleOrDefaultAsync<TResult>(Expression<Func<T, TResult>> selector, Expression<Func<T, bool>> predicate = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
@@ -76,19 +81,34 @@ namespace Meta.DataTier.Repository.Implement
             return await query.AsNoTracking().ToListAsync();
         }
 
-        public virtual async Task<ICollection<TResult>> GetListAsync<TResult>(Expression<Func<T, TResult>> selector, Expression<Func<T, bool>> predicate = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null, object filter = null)
+        public virtual async Task<ICollection<TResult>> GetListAsync<TResult>(
+        Expression<Func<T, TResult>> selector,
+        Expression<Func<T, bool>> predicate = null,
+        Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+        Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null,
+        object filter = null)
         {
             IQueryable<T> query = _dbSet;
 
-            if (include != null) query = include(query);
-            if (filter != null)
+            if (include != null)
             {
-                query = query.DynamicFilter(filter);
+                query = include(query);
             }
 
-            if (predicate != null) query = query.Where(predicate);
+            if (filter != null)
+            {
+                query = query.ApplyFilter(filter).DynamicFilter(filter);
+            }
 
-            if (orderBy != null) return await orderBy(query).AsNoTracking().Select(selector).ToListAsync();
+            if (predicate != null)
+            {
+                query = query.Where(predicate);
+            }
+
+            if (orderBy != null)
+            {
+                return await orderBy(query).AsNoTracking().Select(selector).ToListAsync();
+            }
 
             return await query.AsNoTracking().Select(selector).ToListAsync();
         }
@@ -110,8 +130,8 @@ namespace Meta.DataTier.Repository.Implement
             if (include != null) query = include(query);
             if (filter != null)
             {
-                query = query.DynamicFilter(filter);
-            }           
+                query = query.ApplyFilter(filter).DynamicFilter(filter);
+            }
             if (predicate != null) query = query.Where(predicate);
             if (orderBy != null) return orderBy(query).Select(selector).ToPaginateAsync(page, size, 1);
             return query.AsNoTracking().Select(selector).ToPaginateAsync(page, size, 1);
@@ -139,6 +159,7 @@ namespace Meta.DataTier.Repository.Implement
         {
             _dbSet.Update(entity);
 
+
         }
 
         public void UpdateRange(IEnumerable<T> entities)
@@ -155,7 +176,13 @@ namespace Meta.DataTier.Repository.Implement
         {
             _dbSet.RemoveRange(entities);
         }
-      
+
         #endregion
+        //public async Task<int?> CountAsync(Expression<Func<T, bool>> predicate)
+        //{
+        //    IQueryable<T> query = _dbSet.Where(predicate);
+
+        //    return await query.CountAsync();
+        //}
     }
 }

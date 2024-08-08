@@ -15,8 +15,6 @@ namespace Meta.BusinessTier.Mappers
         public OrderModule()
         {
             CreateMap<Order, GetOrderResponse>();
-            CreateMap<OrderHistory, GetOrderHistoriesResponse>()
-                .ForMember(dest => dest.Username, opt => opt.MapFrom(src => src.User.Username));
 
 
         }

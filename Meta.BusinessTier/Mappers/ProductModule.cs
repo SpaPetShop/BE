@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Meta.BusinessTier.Enums;
+using Meta.BusinessTier.Enums.Status;
 using Meta.BusinessTier.Payload.Category;
 using Meta.BusinessTier.Payload.Product;
 using Meta.BusinessTier.Utils;

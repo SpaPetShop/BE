@@ -13,8 +13,8 @@ namespace Meta.BusinessTier.Mappers
     {
         public UserModule()
         {
-            CreateMap<User, GetUsersResponse>();
-            CreateMap<CreateNewUserRequest, User>();
+            CreateMap<Account, GetUsersResponse>();
+            CreateMap<CreateNewUserRequest, Account>();
         }
     }
 }

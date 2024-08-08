@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Azure.Core;
 using Meta.BusinessTier.Constants;
-using Meta.BusinessTier.Enums;
+using Meta.BusinessTier.Enums.Status;
+using Meta.BusinessTier.Enums.Type;
 using Meta.BusinessTier.Payload;
 using Meta.BusinessTier.Payload.Category;
 using Meta.BusinessTier.Payload.User;
@@ -10,6 +11,7 @@ using Meta.DataTier.Models;
 using Meta.DataTier.Paginate;
 using Meta.DataTier.Repository.Interfaces;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -26,16 +28,28 @@ namespace Meta.BusinessTier.Services.Implements
         {
         }
 
-        public async Task<Guid> CreateNewCategory(CreateNewCategoryRequest createNewCategoryRequest)
+        public async Task<Guid> CreateNewCategory(CreateNewCategoryRequest request)
         {
-            Category category = await _unitOfWork.GetRepository<Category>().SingleOrDefaultAsync(
-                predicate: x => x.Name.Equals(createNewCategoryRequest.Name));
-            if (category != null) throw new BadHttpRequestException(MessageConstant.Category.CategoryExistedMessage);
-            category = _mapper.Map<Category>(createNewCategoryRequest);
-            await _unitOfWork.GetRepository<Category>().InsertAsync(category);
-            bool isSuccess = await _unitOfWork.CommitAsync() > 0;
-            if (!isSuccess) throw new BadHttpRequestException(MessageConstant.Category.CreateCategoryFailedMessage);
-            return category.Id;
+
+            Category newCategory = _mapper.Map<Category>(request);
+            newCategory.Id = Guid.NewGuid();
+            newCategory.Status = CategoryStatus.Active.GetDescriptionFromEnum();
+            if (request.MasterCategoryId != null)
+            {
+                var parentCategory = await _unitOfWork.GetRepository<Category>().SingleOrDefaultAsync(
+                    predicate: x => x.Id.Equals(request.MasterCategoryId))
+                    ?? throw new BadHttpRequestException(MessageConstant.Category.Parent_NotFoundFailedMessage);
+                newCategory.Type = CategoryType.Child.GetDescriptionFromEnum();
+            }
+            else newCategory.Type = CategoryType.Parent.GetDescriptionFromEnum();
+
+
+            await _unitOfWork.GetRepository<Category>().InsertAsync(newCategory);
+
+            bool isSuccessful = await _unitOfWork.CommitAsync() > 0;
+            if (!isSuccessful) throw new BadHttpRequestException(MessageConstant.Category.CreateCategoryFailedMessage);
+
+            return newCategory.Id;
         }
 
         public async Task<IPaginate<GetCategoriesResponse>> GetCategories(CategoryFilter filter, PagingModel pagingModel)
@@ -44,9 +58,16 @@ namespace Meta.BusinessTier.Services.Implements
                selector: x => _mapper.Map<GetCategoriesResponse>(x),
                filter: filter,
                page: pagingModel.page,
-               size: pagingModel.size,
-               orderBy: x => x.OrderBy(x => x.Priority));
+               size: pagingModel.size);
             return respone;
+        }
+        public async Task<ICollection<GetCategoriesResponse>> GetCategoriesNoPagingNate(CategoryFilter filter)
+        {
+            ICollection<GetCategoriesResponse> respone = await _unitOfWork.GetRepository<Category>().GetListAsync(
+               selector: x => _mapper.Map<GetCategoriesResponse>(x),
+               filter: filter);
+            return respone;
+
         }
 
         public async Task<GetCategoriesResponse> GetCategory(Guid id)
@@ -62,8 +83,17 @@ namespace Meta.BusinessTier.Services.Implements
         {
             if (id == Guid.Empty) throw new BadHttpRequestException(MessageConstant.Category.CategoryEmptyMessage);
             Category category = await _unitOfWork.GetRepository<Category>().SingleOrDefaultAsync(
-                predicate: x => x.Id.Equals(id))
+                predicate: x => x.Id.Equals(id),
+                include: x => x.Include(x => x.Products))
                 ?? throw new BadHttpRequestException(MessageConstant.Category.NotFoundFailedMessage);
+            foreach (var item in category.Products)
+            {
+                item.Status = ProductStatus.Active.GetDescriptionFromEnum();
+            }
+            //foreach (var item in category.Products)
+            //{
+            //    item.Status = ProductStatus.InActive.GetDescriptionFromEnum();
+            //}
             category.Status = CategoryStatus.Inactive.GetDescriptionFromEnum();
             _unitOfWork.GetRepository<Category>().UpdateAsync(category);
             bool isSuccessful = await _unitOfWork.CommitAsync() > 0;
@@ -74,16 +104,44 @@ namespace Meta.BusinessTier.Services.Implements
         {
             if (id == Guid.Empty) throw new BadHttpRequestException(MessageConstant.Category.CategoryEmptyMessage);
             Category category = await _unitOfWork.GetRepository<Category>().SingleOrDefaultAsync(
-                predicate: x => x.Id.Equals(id))
-            ?? throw new BadHttpRequestException(MessageConstant.Category.CategoryExistedMessage);
+                predicate: x => x.Id.Equals(id),
+                include: x => x.Include(x => x.Products))
+                ?? throw new BadHttpRequestException(MessageConstant.Category.NotFoundFailedMessage);
+
+
             category.Name = string.IsNullOrEmpty(updateCategoryRequest.Name) ? category.Name : updateCategoryRequest.Name;
             category.Description = string.IsNullOrEmpty(updateCategoryRequest.Description) ? category.Description : updateCategoryRequest.Description;
-            category.Status = updateCategoryRequest.Status.GetDescriptionFromEnum();
-            category.Priority = updateCategoryRequest.Priority;
+            switch (updateCategoryRequest.Status)
+            {
+                case CategoryStatus.Active:
+                    foreach (var item in category.Products)
+                    {
+                        item.Status = ProductStatus.Active.GetDescriptionFromEnum();
+                    }
+                    //foreach (var item in category.MachineComponents)
+                    //{
+                    //    item.Status = MachineryStatus.Available.GetDescriptionFromEnum();
+                    //}
+                    break;
+                case CategoryStatus.Inactive:
+                    foreach (var item in category.Products)
+                    {
+                        item.Status = ProductStatus.Active.GetDescriptionFromEnum();
+                    }
+                    //foreach (var item in updateCategory.MachineComponents)
+                    //{
+                    //    item.Status = ComponentStatus.InActive.GetDescriptionFromEnum();
+                    //}
+
+                    break;
+                default:
+                    return false;
+            }
             _unitOfWork.GetRepository<Category>().UpdateAsync(category);
             bool isSuccess = await _unitOfWork.CommitAsync() > 0;
             return isSuccess;
 
         }
+
     }
 }

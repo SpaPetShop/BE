@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Meta.BusinessTier.Enums;
+using Meta.BusinessTier.Enums.Status;
 using Meta.BusinessTier.Payload.Category;
 using Meta.BusinessTier.Payload.Product;
 using Meta.BusinessTier.Utils;
@@ -18,9 +18,7 @@ namespace Meta.BusinessTier.Mappers
         public CategoryModule() {
             CreateMap<Category, GetCategoriesResponse>();
             CreateMap<Category, GetProductsResponse>();
-            CreateMap<CreateNewCategoryRequest, Category>()
-                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()))
-                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => CategoryStatus.Active.GetDescriptionFromEnum()));
+            CreateMap<CreateNewCategoryRequest, Category>();
 
         }
     }

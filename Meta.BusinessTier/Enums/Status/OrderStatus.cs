@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Meta.BusinessTier.Enums
+namespace Meta.BusinessTier.Enums.Status
 {
     public enum OrderStatus
-    { 
+    {
         PENDING,
         CONFIRMED,
         PAID,

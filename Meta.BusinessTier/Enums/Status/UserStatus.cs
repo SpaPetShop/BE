@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Meta.BusinessTier.Enums
+namespace Meta.BusinessTier.Enums.Status
 {
-    public enum RoleEnum
+    public enum UserStatus
     {
-        Admin,
-        User
+        Activate,
+        Deactivate
     }
 }

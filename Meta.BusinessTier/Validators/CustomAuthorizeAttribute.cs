@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Meta.BusinessTier.Utils;
-using Meta.BusinessTier.Enums;
+using Meta.BusinessTier.Enums.Status;
 
 namespace HiCamping.BusinessTier.Validators;
 

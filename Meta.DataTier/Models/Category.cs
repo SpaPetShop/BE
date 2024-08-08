@@ -13,7 +13,9 @@ public partial class Category
 
     public string? Status { get; set; }
 
-    public int? Priority { get; set; }
+    public string? Type { get; set; }
+
+    public Guid? MaterCategory { get; set; }
 
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 }

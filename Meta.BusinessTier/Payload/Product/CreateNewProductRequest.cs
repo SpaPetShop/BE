@@ -1,4 +1,4 @@
-﻿using Meta.BusinessTier.Enums;
+﻿using Meta.BusinessTier.Enums.Status;
 using Meta.DataTier.Models;
 using System;
 using System.Collections.Generic;

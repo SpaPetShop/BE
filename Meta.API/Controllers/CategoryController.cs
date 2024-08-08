@@ -26,9 +26,15 @@ namespace Meta.API.Controllers
             return Ok(response);
         }
         [HttpGet(ApiEndPointConstant.Category.CategoriesEndPoint)]
-        public async Task<IActionResult> GetAllCategories([FromQuery] CategoryFilter filter, [FromQuery] PagingModel pagingModel)
+        public async Task<IActionResult> GetCategories([FromQuery] CategoryFilter filter, [FromQuery] PagingModel pagingModel)
         {
             var response = await _categoryService.GetCategories(filter, pagingModel);
+            return Ok(response);
+        }
+        [HttpGet(ApiEndPointConstant.Category.CategoriesNopagingNateEndPoint)]
+        public async Task<IActionResult> GetCategoriesNoPagingNate([FromQuery] CategoryFilter filter)
+        {
+            var response = await _categoryService.GetCategoriesNoPagingNate(filter);
             return Ok(response);
         }
         [HttpGet(ApiEndPointConstant.Category.CategoryEndPoint)]

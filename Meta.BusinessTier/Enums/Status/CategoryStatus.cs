@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Meta.BusinessTier.Enums
+namespace Meta.BusinessTier.Enums.Status
 {
-    public enum CategoryStatus { 
+    public enum CategoryStatus
+    {
         Active,
         Inactive
     }

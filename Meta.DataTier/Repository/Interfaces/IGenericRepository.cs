@@ -1,77 +1,80 @@
 ﻿using System.Linq.Expressions;
-using Meta.DataTier.Paginate;
 using Microsoft.EntityFrameworkCore.Query;
+using Meta.DataTier.Paginate;
 
 namespace Meta.DataTier.Repository.Interfaces
 {
-	public interface IGenericRepository<T> : IDisposable where T : class
-	{
-		#region Get Async
+    public interface IGenericRepository<T> : IDisposable where T : class
+    {
+        #region Get Async
 
-		Task<T> AsQueryableAsync(
+        Task<T> AsQueryableAsync(
             Expression<Func<T, bool>> predicate = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
             Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null);
 
 
         Task<T> SingleOrDefaultAsync(
-			Expression<Func<T, bool>> predicate = null,
-			Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
-			Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null);
+            Expression<Func<T, bool>> predicate = null,
+            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+            Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null);
 
-		Task<TResult> SingleOrDefaultAsync<TResult>(
-			Expression<Func<T, TResult>> selector,
-			Expression<Func<T, bool>> predicate = null,
-			Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
-			Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null);
+        Task<TResult> SingleOrDefaultAsync<TResult>(
+            Expression<Func<T, TResult>> selector,
+            Expression<Func<T, bool>> predicate = null,
+            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+            Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null);
 
-		Task<ICollection<T>> GetListAsync(
-			Expression<Func<T, bool>> predicate = null,
-			Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
-			Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null);
+        Task<ICollection<T>> GetListAsync(
+            Expression<Func<T, bool>> predicate = null,
+            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+            Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null);
 
-		Task<ICollection<TResult>> GetListAsync<TResult>(
-			Expression<Func<T, TResult>> selector,
-			Expression<Func<T, bool>> predicate = null,
-			Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
-			Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null,
+        Task<ICollection<TResult>> GetListAsync<TResult>(
+            Expression<Func<T, TResult>> selector,
+            Expression<Func<T, bool>> predicate = null,
+            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+            Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null,
             object filter = null);
 
-		Task<IPaginate<T>> GetPagingListAsync(
-			Expression<Func<T, bool>> predicate = null,
-			Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
-			Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null,
-			int page = 1,
-			int size = 10);
+        Task<IPaginate<T>> GetPagingListAsync(
+            Expression<Func<T, bool>> predicate = null,
+            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+            Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null,
+            int page = 1,
+            int size = 10);
 
-		Task<IPaginate<TResult>> GetPagingListAsync<TResult>(
-			Expression<Func<T, TResult>> selector,
-			Expression<Func<T, bool>> predicate = null,
-			Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
-			Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null,
-			int page = 1,
-			int size = 10,
-			object filter = null);
+        Task<IPaginate<TResult>> GetPagingListAsync<TResult>(
+            Expression<Func<T, TResult>> selector,
+            Expression<Func<T, bool>> predicate = null,
+            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+            Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null,
+            int page = 1,
+            int size = 10,
+            object filter = null);
 
-		#endregion
 
-		#region Insert
+        #endregion
 
-		Task InsertAsync(T entity);
+        #region Insert
 
-		Task InsertRangeAsync(IEnumerable<T> entities);
+        Task InsertAsync(T entity);
 
-		#endregion
+        Task InsertRangeAsync(IEnumerable<T> entities);
 
-		#region Update
+        #endregion
 
-		void UpdateAsync(T entity);
+        #region Update
 
-		void UpdateRange(IEnumerable<T> entities);
+        void UpdateAsync(T entity);
 
-		#endregion
+        void UpdateRange(IEnumerable<T> entities);
 
-		void DeleteAsync(T entity);
-		void DeleteRangeAsync(IEnumerable<T> entities);
+        #endregion
+
+        void DeleteAsync(T entity);
+        void DeleteRangeAsync(IEnumerable<T> entities);
+        //Task<int?> CountAsync(Expression<Func<T, bool>> predicate);
+
     }
 }

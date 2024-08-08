@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Meta.BusinessTier.Enums
+namespace Meta.BusinessTier.Enums.Type
 {
-    public enum ProductStatus
+    public enum CategoryType
     {
-        Active,
-        Inactive
+        Parent,
+        Child
     }
 }

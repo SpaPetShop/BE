@@ -11,23 +11,25 @@ public partial class Order
 
     public string? Status { get; set; }
 
-    public DateTime? CreatedDate { get; set; }
-
-    public DateTime? CompletedDate { get; set; }
-
     public string? Note { get; set; }
 
     public double? TotalAmount { get; set; }
 
-    public double? Discount { get; set; }
+    public string? Description { get; set; }
 
     public double? FinalAmount { get; set; }
 
-    public Guid? UserId { get; set; }
+    public DateTime? CreatedDate { get; set; }
+
+    public DateTime? CompletedDate { get; set; }
+
+    public Guid? AccountId { get; set; }
+
+    public Guid? PetId { get; set; }
 
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
 
-    public virtual ICollection<OrderHistory> OrderHistories { get; set; } = new List<OrderHistory>();
+    public virtual Pet? Pet { get; set; }
 
-    public virtual User? User { get; set; }
+    public virtual ICollection<TaskManager> TaskManagers { get; set; } = new List<TaskManager>();
 }

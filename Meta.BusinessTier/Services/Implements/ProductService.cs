@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Meta.BusinessTier.Constants;
-using Meta.BusinessTier.Enums;
+using Meta.BusinessTier.Enums.Status;
 using Meta.BusinessTier.Payload;
 using Meta.BusinessTier.Payload.Category;
 using Meta.BusinessTier.Payload.Product;

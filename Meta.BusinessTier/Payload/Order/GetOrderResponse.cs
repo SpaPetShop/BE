@@ -1,5 +1,4 @@
-﻿
-using Meta.BusinessTier.Enums;
+﻿using Meta.BusinessTier.Enums.Status;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Meta.BusinessTier.Enums
+namespace Meta.BusinessTier.Enums.EnumTypes
 {
-    public enum UserStatus
+    public enum AccountTypeGender
     {
-        Activate,
-        Deactivate
+        Male,
+        Female
     }
 }
