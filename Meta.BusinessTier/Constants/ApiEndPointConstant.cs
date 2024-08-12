@@ -44,6 +44,13 @@ public static class ApiEndPointConstant
         public const string CategoryAddDiscountEndPoint = CategoryEndPoint + "/discount";
         public const string CategoriesNopagingNateEndPoint = CategoriesEndPoint + "/noPagingNate";
     }
+    public static class TypePet
+    {
+        public const string TypePetsEndPoint = ApiEndpoint + "/categories";
+        public const string TypePetEndPoint = TypePetsEndPoint + "/{id}";
+        public const string TypePetAddDiscountEndPoint = TypePetEndPoint + "/discount";
+        public const string TypePetsNopagingNateEndPoint = TypePetEndPoint + "/noPagingNate";
+    }
     public static class Product
     {
         public const string ProductsEndPoint = ApiEndpoint + "/products";

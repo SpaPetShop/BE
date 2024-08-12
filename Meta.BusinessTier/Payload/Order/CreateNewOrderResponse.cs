@@ -9,15 +9,16 @@ namespace Meta.BusinessTier.Payload.Order
     public class CreateNewOrderResponse
     {
         public List<OrderProduct> ProductList { get; set; } = new List<OrderProduct>();
+
         public string? Note { get; set; }
 
-        public double? TotalAmount { get; set; }
+        public string? Description { get; set; }
 
-        public double? Discount { get; set; }
+        public Guid PetId { get; set; }
 
-        public double? FinalAmount { get; set; }
+        public Guid AccountId { get; set; }
 
-        public Guid? UserId { get; set; }
+
 
     }
     public class OrderProduct

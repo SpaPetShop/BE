@@ -16,9 +16,7 @@ namespace Meta.BusinessTier.Mappers
     {
         public ProductModule() {
             CreateMap<Product, GetProductsResponse>();
-            CreateMap<CreateNewProductRequest, Product>()
-                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()))
-                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => ProductStatus.Active.GetDescriptionFromEnum()));
+            CreateMap<CreateNewPetServiceRequest, Product>();
         }
     }
 }

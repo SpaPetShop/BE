@@ -17,7 +17,11 @@ public partial class OrderDetail
 
     public Guid? ProductId { get; set; }
 
+    public Guid? SupProductId { get; set; }
+
     public virtual Order? Order { get; set; }
 
     public virtual Product? Product { get; set; }
+
+    public virtual SupProduct? SupProduct { get; set; }
 }

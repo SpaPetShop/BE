@@ -15,7 +15,9 @@ public partial class Category
 
     public string? Type { get; set; }
 
-    public Guid? MaterCategory { get; set; }
+    public Guid? MasterCategoryId { get; set; }
 
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
+
+    public virtual ICollection<SupProduct> SupProducts { get; set; } = new List<SupProduct>();
 }

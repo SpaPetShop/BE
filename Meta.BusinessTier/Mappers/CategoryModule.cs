@@ -17,7 +17,6 @@ namespace Meta.BusinessTier.Mappers
 
         public CategoryModule() {
             CreateMap<Category, GetCategoriesResponse>();
-            CreateMap<Category, GetProductsResponse>();
             CreateMap<CreateNewCategoryRequest, Category>();
 
         }

@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
-using Microsoft.EntityFrameworkCore.Query;
 using Meta.DataTier.Paginate;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace Meta.DataTier.Repository.Interfaces
 {

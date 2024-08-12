@@ -22,7 +22,5 @@ namespace Meta.BusinessTier.Payload.User
         public string? Email { get; set; }
 
         public string? Image { get; set; }
-
-
     }
 }

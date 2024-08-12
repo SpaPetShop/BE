@@ -25,13 +25,21 @@ public partial class MetaContext : DbContext
 
     public virtual DbSet<OrderDetail> OrderDetails { get; set; }
 
+    public virtual DbSet<Payment> Payments { get; set; }
+
     public virtual DbSet<Pet> Pets { get; set; }
 
     public virtual DbSet<Product> Products { get; set; }
 
+    public virtual DbSet<ProductPetService> ProductPetServices { get; set; }
+
     public virtual DbSet<Rank> Ranks { get; set; }
 
+    public virtual DbSet<SupProduct> SupProducts { get; set; }
+
     public virtual DbSet<TaskManager> TaskManagers { get; set; }
+
+    public virtual DbSet<Transaction> Transactions { get; set; }
 
     public virtual DbSet<TypePet> TypePets { get; set; }
 
@@ -50,9 +58,7 @@ public partial class MetaContext : DbContext
             entity.Property(e => e.FullName).HasMaxLength(250);
             entity.Property(e => e.Gender).HasMaxLength(50);
             entity.Property(e => e.Image).HasMaxLength(250);
-            entity.Property(e => e.Password)
-                .HasMaxLength(10)
-                .IsFixedLength();
+            entity.Property(e => e.Password).HasMaxLength(255);
             entity.Property(e => e.PhoneNumber).HasMaxLength(50);
             entity.Property(e => e.Role).HasMaxLength(50);
             entity.Property(e => e.Status).HasMaxLength(50);
@@ -122,6 +128,25 @@ public partial class MetaContext : DbContext
             entity.HasOne(d => d.Product).WithMany(p => p.OrderDetails)
                 .HasForeignKey(d => d.ProductId)
                 .HasConstraintName("FK_OrderDetail_Product");
+
+            entity.HasOne(d => d.SupProduct).WithMany(p => p.OrderDetails)
+                .HasForeignKey(d => d.SupProductId)
+                .HasConstraintName("FK_OrderDetail_SupProduct");
+        });
+
+        modelBuilder.Entity<Payment>(entity =>
+        {
+            entity.ToTable("Payment");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Note).HasMaxLength(4000);
+            entity.Property(e => e.PaymentDate).HasColumnType("datetime");
+            entity.Property(e => e.PaymentMethod).HasMaxLength(50);
+            entity.Property(e => e.Status).HasMaxLength(50);
+
+            entity.HasOne(d => d.Order).WithMany(p => p.Payments)
+                .HasForeignKey(d => d.OrderId)
+                .HasConstraintName("FK_Payment_Order");
         });
 
         modelBuilder.Entity<Pet>(entity =>
@@ -146,6 +171,7 @@ public partial class MetaContext : DbContext
             entity.ToTable("Product");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.CreateDate).HasColumnType("datetime");
             entity.Property(e => e.Description).HasMaxLength(250);
             entity.Property(e => e.Name).HasMaxLength(50);
             entity.Property(e => e.Status)
@@ -157,12 +183,47 @@ public partial class MetaContext : DbContext
                 .HasConstraintName("FK_Product_Category");
         });
 
+        modelBuilder.Entity<ProductPetService>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK_ProductService");
+
+            entity.ToTable("ProductPetService");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+
+            entity.HasOne(d => d.Product).WithMany(p => p.ProductPetServices)
+                .HasForeignKey(d => d.ProductId)
+                .HasConstraintName("FK_ProductPetService_Product");
+
+            entity.HasOne(d => d.SupProduct).WithMany(p => p.ProductPetServices)
+                .HasForeignKey(d => d.SupProductId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_ProductPetService_SupProduct");
+        });
+
         modelBuilder.Entity<Rank>(entity =>
         {
             entity.ToTable("Rank");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.Name).HasMaxLength(50);
+        });
+
+        modelBuilder.Entity<SupProduct>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK_PetService");
+
+            entity.ToTable("SupProduct");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.CreateDate).HasColumnType("datetime");
+            entity.Property(e => e.Desctiprion).HasMaxLength(250);
+            entity.Property(e => e.Name).HasMaxLength(50);
+            entity.Property(e => e.Status).HasMaxLength(50);
+
+            entity.HasOne(d => d.Category).WithMany(p => p.SupProducts)
+                .HasForeignKey(d => d.CategoryId)
+                .HasConstraintName("FK_SupProduct_Category");
         });
 
         modelBuilder.Entity<TaskManager>(entity =>
@@ -182,6 +243,23 @@ public partial class MetaContext : DbContext
             entity.HasOne(d => d.Order).WithMany(p => p.TaskManagers)
                 .HasForeignKey(d => d.OrderId)
                 .HasConstraintName("FK_TaskManager_Order");
+        });
+
+        modelBuilder.Entity<Transaction>(entity =>
+        {
+            entity.ToTable("Transaction");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.CreatedAt).HasColumnType("datetime");
+            entity.Property(e => e.Description).HasMaxLength(4000);
+            entity.Property(e => e.InvoiceCode).HasMaxLength(50);
+            entity.Property(e => e.PayType).HasMaxLength(50);
+            entity.Property(e => e.Status).HasMaxLength(50);
+            entity.Property(e => e.TransactionJson).HasMaxLength(250);
+
+            entity.HasOne(d => d.Payment).WithMany(p => p.Transactions)
+                .HasForeignKey(d => d.PaymentId)
+                .HasConstraintName("FK_Transaction_Payment");
         });
 
         modelBuilder.Entity<TypePet>(entity =>

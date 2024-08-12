@@ -116,34 +116,43 @@ namespace Meta.BusinessTier.Services.Implements
             bool isSuccessful = await _unitOfWork.CommitAsync() > 0;
             return isSuccessful;
         }
-
         public async Task<Guid> CreateNewUser(CreateNewUserRequest request)
         {
-            Account account = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
-                predicate: x => x.Username.Equals(request.Username));
-            if (account != null) throw new BadHttpRequestException(MessageConstant.User.UserExisted);
-            account = new Account()
+            try
             {
-                Id = Guid.NewGuid(),
-                Username = request.Username,
-                Password = PasswordUtil.HashPassword(request.Password),
-                Role = RoleEnum.User.GetDescriptionFromEnum(),
-                FullName = request.FullName,
-                Gender = request.Gender,
-                PhoneNumber = request.PhoneNumber,
-                Status = UserStatus.Activate.GetDescriptionFromEnum(),
-                Email = request.Email,
-                Image = request.Image,
+                Account account = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
+                    predicate: x => x.Username.Equals(request.Username));
+                if (account != null) throw new BadHttpRequestException(MessageConstant.User.UserExisted);
 
-            };
+                account = new Account()
+                {
+                    Id = Guid.NewGuid(),
+                    Username = request.Username,
+                    Password = PasswordUtil.HashPassword(request.Password),
+                    Role = RoleEnum.User.GetDescriptionFromEnum(),
+                    FullName = request.FullName,
+                    Gender = request.Gender,
+                    PhoneNumber = request.PhoneNumber,
+                    Status = UserStatus.Activate.GetDescriptionFromEnum(),
+                    Email = request.Email,
+                    Image = request.Image,
+                };
 
+                await _unitOfWork.GetRepository<Account>().InsertAsync(account);
 
-            await _unitOfWork.GetRepository<Account>().InsertAsync(account);
+                bool isSuccessful = await _unitOfWork.CommitAsync() > 0;
+                if (!isSuccessful) throw new BadHttpRequestException(MessageConstant.User.CreateFailedMessage);
 
-            bool isSuccessful = await _unitOfWork.CommitAsync() > 0;
-            if (!isSuccessful) throw new BadHttpRequestException(MessageConstant.User.CreateFailedMessage);
-            return account.Id;
+                return account.Id;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception details here, including inner exception if available
+                // Example: _logger.LogError(ex, "An error occurred while creating a new user");
+                throw new BadHttpRequestException("An error occurred while creating a new user", ex);
+            }
         }
+
         public async Task<Guid> CreateNewStaff(CreateNewStaffRequest request)
         {
             Account account = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(

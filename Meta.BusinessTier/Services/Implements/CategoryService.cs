@@ -88,7 +88,7 @@ namespace Meta.BusinessTier.Services.Implements
                 ?? throw new BadHttpRequestException(MessageConstant.Category.NotFoundFailedMessage);
             foreach (var item in category.Products)
             {
-                item.Status = ProductStatus.Active.GetDescriptionFromEnum();
+                item.Status = ProductStatus.UnAvailable.GetDescriptionFromEnum();
             }
             //foreach (var item in category.Products)
             //{
@@ -116,7 +116,7 @@ namespace Meta.BusinessTier.Services.Implements
                 case CategoryStatus.Active:
                     foreach (var item in category.Products)
                     {
-                        item.Status = ProductStatus.Active.GetDescriptionFromEnum();
+                        item.Status = ProductStatus.Available.GetDescriptionFromEnum();
                     }
                     //foreach (var item in category.MachineComponents)
                     //{
@@ -126,7 +126,7 @@ namespace Meta.BusinessTier.Services.Implements
                 case CategoryStatus.Inactive:
                     foreach (var item in category.Products)
                     {
-                        item.Status = ProductStatus.Active.GetDescriptionFromEnum();
+                        item.Status = ProductStatus.UnAvailable.GetDescriptionFromEnum();
                     }
                     //foreach (var item in updateCategory.MachineComponents)
                     //{

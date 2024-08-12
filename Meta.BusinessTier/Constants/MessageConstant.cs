@@ -14,6 +14,13 @@ public static class MessageConstant
     {
         public const string ExsitingValue = "Cần nhập giá trị cho các loại trạng thái";
     }
+    public static class TypePet
+    {
+        public const string Parent_NotFoundFailedMessage = "Parent type not found.";
+        public const string CreateTypeFailedMessage = "Failed to create a new type.";
+        public const string NotFoundFailedMessage = "Type not found.";
+        public const string TypeEmptyMessage = "Type ID cannot be empty.";
+    }
     public static class Notification
     {
         public const string UpdateNotificationSuccessMessage = "Update notification successfully.";

@@ -1,4 +1,4 @@
-using HiCamping.API.Configs;
+using Meta.API.Configs;
 using Meta.BusinessTier.Constants;
 using Meta.BusinessTier.Converter;
 using Meta.BusinessTier.Middlewares;

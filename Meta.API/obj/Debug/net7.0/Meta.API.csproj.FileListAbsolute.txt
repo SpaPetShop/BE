@@ -76,5 +76,4 @@ D:\FPT\Capstone\Meta\Meta.API\obj\Debug\net7.0\refint\Meta.API.dll
 D:\FPT\Capstone\Meta\Meta.API\obj\Debug\net7.0\Meta.API.pdb
 D:\FPT\Capstone\Meta\Meta.API\obj\Debug\net7.0\Meta.API.genruntimeconfig.cache
 D:\FPT\Capstone\Meta\Meta.API\obj\Debug\net7.0\ref\Meta.API.dll
-D:\FPT\Capstone\Meta\Meta.API\obj\Debug\net7.0\Meta.API.MvcApplicationPartsAssemblyInfo.cs
 D:\FPT\Capstone\Meta\Meta.API\obj\Debug\net7.0\Meta.API.sourcelink.json

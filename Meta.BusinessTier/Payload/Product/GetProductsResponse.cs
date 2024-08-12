@@ -11,11 +11,16 @@ namespace Meta.BusinessTier.Payload.Product
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-
-        public double? UnitPrice { get; set; }
+        public double? StockPrice { get; set; }
+        public double? SellingPrice { get; set; }
         public string Description { get; set; }
         public ProductStatus Status { get; set; }
-        public Guid CategoryId { get; set; }
-        public int Priority { get; set; }
+        public int? Priority { get; set; }
+        public CategoryResponse Category { get; set; }
+    }
+    public class CategoryResponse
+    {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
     }
 }

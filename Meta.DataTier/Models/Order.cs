@@ -29,6 +29,8 @@ public partial class Order
 
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
 
+    public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
+
     public virtual Pet? Pet { get; set; }
 
     public virtual ICollection<TaskManager> TaskManagers { get; set; } = new List<TaskManager>();

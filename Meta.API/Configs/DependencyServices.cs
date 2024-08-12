@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Meta.BusinessTier.Services.Interfaces;
 using Meta.BusinessTier.Services.Implements;
 using Meta.BusinessTier.Utils;
-namespace HiCamping.API.Configs
+namespace Meta.API.Configs
 {
 
     public static class DependencyServices
@@ -19,7 +19,7 @@ namespace HiCamping.API.Configs
         {
             services.AddScoped<IUnitOfWork<MetaContext>, UnitOfWork<MetaContext>>();
             return services;
-        }       
+        }
 
         public static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
         {
@@ -35,9 +35,13 @@ namespace HiCamping.API.Configs
         {
 
             services.AddScoped<IUserService, UserService>();
-            services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
-            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            //services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<ITaskService, TaskService>();
+            services.AddScoped<IRankService, RankService>();
+            services.AddScoped<ISupProductService, SupProductService>();
+            services.AddScoped<ITypeService, TypeService>();
 
             return services;
         }
@@ -69,7 +73,7 @@ namespace HiCamping.API.Configs
         {
             services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo() { Title = "Spa Pet Shop", Version = "v1" });
+                options.SwaggerDoc("v1", new OpenApiInfo() { Title = "SMMMS", Version = "v1" });
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
                 {
                     In = ParameterLocation.Header,

@@ -8,7 +8,8 @@ namespace Meta.BusinessTier.Enums.Status
 {
     public enum ProductStatus
     {
-        Active,
-        Inactive
+        Available,
+        UnAvailable,
+        OutOfStock
     }
 }
