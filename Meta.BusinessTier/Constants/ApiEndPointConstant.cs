@@ -58,6 +58,13 @@ public static class ApiEndPointConstant
         public const string ProductEndPoint = ProductsEndPoint + "/{id}";
 
     }
+    public static class Pet
+    {
+        public const string PetsEndPoint = ApiEndpoint + "/pet";
+        public const string PetsEndPointNoPaginate = ApiEndpoint + "/pet/noPaginat";
+        public const string PetEndPoint = PetsEndPoint + "/{id}";
+
+    }
     public static class SupProduct
     {
         public const string SupProductsEndPoint = ApiEndpoint + "/supProducts";

@@ -157,6 +157,19 @@ public static class MessageConstant
         public const string ExceedQuantityMessage = "Số lượng vượt mức tồn kho";
 
     }
+    public static class Pet
+    {
+        public const string NameExisted = "Thú cưng đã tồn tại";
+        public const string CreateNewFailedMessage = "Tạo mới thú cưng thất bại";
+        public const string UpdateFailedMessage = "Cập nhật thông tin thú cưng thất bại";
+        public const string UpdateSuccessMessage = "Cập nhật thông tin thú cưng thành công";
+        public const string EmptyPetIdMessage = "mã số thú cưng không hợp lệ";
+        public const string NotFoundMessage = "Thú cưng không tồn tại trong hệ thống";
+        public const string UpdateStatusSuccessMessage = "Cập nhật trạng thái thành công";
+        public const string UpdateStatusFailedMessage = "Cập nhật trạng thái thất bại";
+        public const string ExceedQuantityMessage = "Số lượng vượt mức tồn kho";
+
+    }
     public static class Specification
     {
         public const string SpecificationNameExisted = "Thông số kỹ thuật đã tồn tại";

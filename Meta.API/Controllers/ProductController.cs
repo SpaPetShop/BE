@@ -32,12 +32,6 @@ namespace Meta.API.Controllers
             var response = await _iProductService.GetProductList(filter, pagingModel);
             return Ok(response);
         }
-        //[HttpGet(ApiEndPointConstant.Product.ProductsEndPointNoPaginate)]
-        //public async Task<IActionResult> GetProductListNotIPaginate([FromQuery] ProductFilter filter)
-        //{
-        //    var response = await _iProductService.GetProductListNotIPaginate(filter);
-        //    return Ok(response);
-        //}
         [HttpGet(ApiEndPointConstant.Product.ProductEndPoint)]
         public async Task<IActionResult> GetProductById(Guid id)
         {
