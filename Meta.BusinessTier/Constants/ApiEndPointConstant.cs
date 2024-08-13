@@ -46,7 +46,7 @@ public static class ApiEndPointConstant
     }
     public static class TypePet
     {
-        public const string TypePetsEndPoint = ApiEndpoint + "/categories";
+        public const string TypePetsEndPoint = ApiEndpoint + "/typePet";
         public const string TypePetEndPoint = TypePetsEndPoint + "/{id}";
         public const string TypePetAddDiscountEndPoint = TypePetEndPoint + "/discount";
         public const string TypePetsNopagingNateEndPoint = TypePetEndPoint + "/noPagingNate";
@@ -58,8 +58,15 @@ public static class ApiEndPointConstant
         public const string ProductEndPoint = ProductsEndPoint + "/{id}";
 
     }
-   
-    
+    public static class SupProduct
+    {
+        public const string SupProductsEndPoint = ApiEndpoint + "/supProducts";
+        public const string SupProductsEndPointNoPaginate = ApiEndpoint + "/supProducts/noPaginat";
+        public const string SupProductEndPoint = SupProductsEndPoint + "/{id}";
+
+    }
+
+
     public static class Order
     {
         public const string OrdersEndPoint = ApiEndpoint + "/orders";

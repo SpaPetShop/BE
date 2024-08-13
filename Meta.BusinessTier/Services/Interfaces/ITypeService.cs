@@ -15,5 +15,6 @@ namespace Meta.BusinessTier.Services.Implements
         Task<IPaginate<GetTypeResponse>> GetTypes(TypesFilter filter, PagingModel pagingModel);
         Task<ICollection<GetTypeResponse>> GetTypesNoPaging(TypesFilter filter);
         Task<bool> RemoveTypeStatus(Guid id);
+        Task<GetTypeResponse> GetType(Guid id);
     }
 }

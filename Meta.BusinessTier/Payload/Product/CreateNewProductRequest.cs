@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Meta.BusinessTier.Payload.Product
 {
-    public class CreateNewPetServiceRequest
+    public class CreateNewProductRequest
     {
         public string Name { get; set; }
         public double? StockPrice { get; set; }

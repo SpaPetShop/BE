@@ -12,7 +12,7 @@ namespace Meta.BusinessTier.Services.Interfaces
 {
     public interface IProductService
     {
-        Task<Guid> CreateNewProducts(CreateNewPetServiceRequest createNewProductRequest);
+        Task<Guid> CreateNewProducts(CreateNewProductRequest createNewProductRequest);
         Task<bool> UpdateProduct(Guid id, UpdateProductRequest updateProductRequest);
         Task<IPaginate<GetProductsResponse>> GetProductList(ProductFilter filter, PagingModel pagingModel);
         //Task<ICollection<GetProductsResponse>> GetProductListNotIPaginate(ProductFilter filter);

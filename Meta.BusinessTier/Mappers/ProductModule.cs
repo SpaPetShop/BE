@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Meta.BusinessTier.Enums.Status;
 using Meta.BusinessTier.Payload.Category;
+using Meta.BusinessTier.Payload.PetService;
 using Meta.BusinessTier.Payload.Product;
 using Meta.BusinessTier.Utils;
 using Meta.DataTier.Models;
@@ -15,8 +16,8 @@ namespace Meta.BusinessTier.Mappers
     public class ProductModule : Profile
     {
         public ProductModule() {
-            CreateMap<Product, GetProductsResponse>();
-            CreateMap<CreateNewPetServiceRequest, Product>();
+            CreateMap<Product, GetSupProductsResponse>();
+            CreateMap<CreateNewSupProductRequest, Product>();
         }
     }
 }

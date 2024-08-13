@@ -16,10 +16,12 @@ public static class MessageConstant
     }
     public static class TypePet
     {
-        public const string Parent_NotFoundFailedMessage = "Parent type not found.";
-        public const string CreateTypeFailedMessage = "Failed to create a new type.";
-        public const string NotFoundFailedMessage = "Type not found.";
-        public const string TypeEmptyMessage = "Type ID cannot be empty.";
+        public const string Parent_NotFoundFailedMessage = "không tìm thấy loại thú cưng chung.";
+        public const string CreateTypeFailedMessage = "Tạo mới thất bại";
+        public const string NotFoundFailedMessage = "Không tìm thấy loại thú cưng";
+        public const string TypeEmptyMessage = "loại thú cưng trống.";
+        public const string UpdateTypeSuccessMessage = "Loại thú cưng được cập nhật thành công";
+        public const string UpdateTypeFailedMessage = "Loại thú cưng cập nhật thất bại";
     }
     public static class Notification
     {

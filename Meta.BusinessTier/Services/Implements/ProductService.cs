@@ -67,7 +67,7 @@ namespace Meta.BusinessTier.Services.Implements
             return isSuccessful;
         }
 
-        public async Task<Guid> CreateNewProducts(CreateNewPetServiceRequest createNewProductRequest)
+        public async Task<Guid> CreateNewProducts(CreateNewProductRequest createNewProductRequest)
         {
             var currentUser = GetUsernameFromJwt();
             Account account = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(

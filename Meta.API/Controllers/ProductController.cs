@@ -21,7 +21,7 @@ namespace Meta.API.Controllers
             _iProductService = productService;
         }
         [HttpPost(ApiEndPointConstant.Product.ProductsEndPoint)]
-        public async Task<IActionResult> CreateNewProducts(CreateNewPetServiceRequest product)
+        public async Task<IActionResult> CreateNewProducts(CreateNewProductRequest product)
         {
             var response = await _iProductService.CreateNewProducts(product);
             return Ok(response);
