@@ -97,7 +97,7 @@ namespace Meta.API.Controllers
             return Ok(MessageConstant.User.UpdateStatusSuccessMessage);
         }
         [HttpPost(ApiEndPointConstant.Account.AccountToRankEndPoint)]
-        public async Task<IActionResult> AddrankForAccount(Guid id,[FromBody] Guid rankId)
+        public async Task<IActionResult> AddrankForAccount(Guid id, [FromBody] Guid rankId)
         {
             var response = await _userService.AddrankForAccount(id, rankId);
             return Ok(response);

@@ -11,7 +11,7 @@ namespace Meta.API.Controllers
 {
     [ApiController]
     public class CategoryController : BaseController<CategoryController>
-        
+
     {
         private readonly ICategoryService _categoryService;
 
@@ -20,7 +20,7 @@ namespace Meta.API.Controllers
             _categoryService = categoryService;
         }
         [HttpPost(ApiEndPointConstant.Category.CategoriesEndPoint)]
-        public async Task<IActionResult> CreateNewCategory (CreateNewCategoryRequest category)
+        public async Task<IActionResult> CreateNewCategory(CreateNewCategoryRequest category)
         {
             var response = await _categoryService.CreateNewCategory(category);
             return Ok(response);

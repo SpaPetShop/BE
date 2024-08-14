@@ -17,5 +17,11 @@ namespace Meta.BusinessTier.Payload.PetService
         public ProductStatus Status { get; set; }
         public Guid CategoryId { get; set; }
         public int Priority { get; set; }
+        public List<Images>? Image { get; set; } = new List<Images>();
+    }
+    public class Images
+    {
+        public string? ImageURL { get; set; }
+
     }
 }

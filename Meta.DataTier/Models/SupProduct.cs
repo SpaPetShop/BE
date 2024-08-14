@@ -26,4 +26,6 @@ public partial class SupProduct
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
 
     public virtual ICollection<ProductPetService> ProductPetServices { get; set; } = new List<ProductPetService>();
+
+    public virtual ICollection<SupProductImage> SupProductImages { get; set; } = new List<SupProductImage>();
 }

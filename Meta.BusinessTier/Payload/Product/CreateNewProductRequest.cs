@@ -18,5 +18,11 @@ namespace Meta.BusinessTier.Payload.Product
         public Guid CategoryId { get; set; }
         public int Priority { get; set; }
         public List<Guid>? supProductId { get; set; }
+        public List<Image>? Image { get; set; } = new List<Image>();
+    }
+    public class Image
+    {
+        public string? ImageURL { get; set; }
+
     }
 }

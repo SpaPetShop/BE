@@ -73,7 +73,7 @@ namespace Meta.API.Configs
         {
             services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo() { Title = "SMMMS", Version = "v1" });
+                options.SwaggerDoc("v1", new OpenApiInfo() { Title = "SpaPet", Version = "v1" });
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
                 {
                     In = ParameterLocation.Header,

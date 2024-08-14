@@ -18,6 +18,7 @@ namespace Meta.BusinessTier.Payload.Product
         public int? Priority { get; set; }
         public CategoryResponse Category { get; set; }
         public List<SupProductResponse> SupProducts { get; set; } = new List<SupProductResponse>();
+        public List<ImageResponse> Image { get; set; } = new List<ImageResponse>();
     }
     public class CategoryResponse
     {
@@ -30,6 +31,12 @@ namespace Meta.BusinessTier.Payload.Product
         public string? Name { get; set; }
         public double? StockPrice { get; set; }
         public double? SellingPrice { get; set; }
+        public List<ImageResponse> Image { get; set; } = new List<ImageResponse>();
+
+    }
+    public class ImageResponse
+    {
+        public string? ImageURL { get; set; }
 
     }
 }
