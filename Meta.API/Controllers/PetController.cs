@@ -7,6 +7,9 @@ using Meta.BusinessTier.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Meta.BusinessTier.Payload.Pet;
+using Microsoft.AspNetCore.Authorization;
+using HiCamping.BusinessTier.Validators;
+using Meta.BusinessTier.Enums.Status;
 
 namespace Meta.API.Controllers
 {
@@ -19,6 +22,7 @@ namespace Meta.API.Controllers
         {
             _petService = petService;
         }
+        [CustomAuthorize(RoleEnum.User)]
         [HttpPost(ApiEndPointConstant.Pet.PetsEndPoint)]
         public async Task<IActionResult> CreateNewPets(CreateNewPetRequest pet)
         {
