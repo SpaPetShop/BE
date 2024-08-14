@@ -14,6 +14,7 @@ namespace Meta.BusinessTier.Payload.Login
         public string Username { get; set; }
         public string Password { get; set; }
         public string FullName { get; set; }
+        public string Image {  get; set; }
         public UserStatus Status { get; set; }
         public RoleEnum Role { get; set; }
 
@@ -21,13 +22,14 @@ namespace Meta.BusinessTier.Payload.Login
         {
         }
 
-        public LoginResponse(TokenModel tokenModel, Guid id, string username, string password, string fullName, UserStatus status, RoleEnum role)
+        public LoginResponse(TokenModel tokenModel, Guid id, string username, string password, string fullName,string image, UserStatus status, RoleEnum role)
         {
             TokenModel = tokenModel;
             Id = id;
             Username = username;
             Password = password;
             FullName = fullName;
+            Image = image;
             Status = status;
             Role = role;
         }
