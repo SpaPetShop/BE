@@ -10,7 +10,6 @@ namespace Meta.BusinessTier.Payload.Category
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public Guid? MasterCategoryId { get; set; }
 
     }
 }

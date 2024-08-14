@@ -41,17 +41,6 @@ namespace Meta.BusinessTier.Services.Implements
             TypePet newType = _mapper.Map<TypePet>(createNewTypeRequest);
             newType.Id = Guid.NewGuid();
             newType.Status = TypePetStatus.Active.GetDescriptionFromEnum();
-            if (createNewTypeRequest.MasterTypeId != null)
-            {
-                var parentType = await _unitOfWork.GetRepository<TypePet>().SingleOrDefaultAsync(
-                    predicate: x => x.Id.Equals(createNewTypeRequest.MasterTypeId))
-                    ?? throw new BadHttpRequestException(MessageConstant.TypePet.Parent_NotFoundFailedMessage);
-                newType.Status = TypePetType.Child.GetDescriptionFromEnum();
-            }
-            else
-            {
-                newType.Status = TypePetType.Parent.GetDescriptionFromEnum();
-            }
 
             await _unitOfWork.GetRepository<TypePet>().InsertAsync(newType);
 

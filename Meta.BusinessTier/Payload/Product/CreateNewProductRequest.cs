@@ -17,5 +17,6 @@ namespace Meta.BusinessTier.Payload.Product
         public ProductStatus Status { get; set; }
         public Guid CategoryId { get; set; }
         public int Priority { get; set; }
+        public List<Guid>? supProductId { get; set; }
     }
 }

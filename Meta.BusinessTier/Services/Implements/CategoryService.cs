@@ -34,14 +34,6 @@ namespace Meta.BusinessTier.Services.Implements
             Category newCategory = _mapper.Map<Category>(request);
             newCategory.Id = Guid.NewGuid();
             newCategory.Status = CategoryStatus.Active.GetDescriptionFromEnum();
-            if (request.MasterCategoryId != null)
-            {
-                var parentCategory = await _unitOfWork.GetRepository<Category>().SingleOrDefaultAsync(
-                    predicate: x => x.Id.Equals(request.MasterCategoryId))
-                    ?? throw new BadHttpRequestException(MessageConstant.Category.Parent_NotFoundFailedMessage);
-                newCategory.Type = CategoryType.Child.GetDescriptionFromEnum();
-            }
-            else newCategory.Type = CategoryType.Parent.GetDescriptionFromEnum();
 
 
             await _unitOfWork.GetRepository<Category>().InsertAsync(newCategory);

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Azure.Core;
 using Meta.BusinessTier.Constants;
 using Meta.BusinessTier.Enums.Status;
 using Meta.BusinessTier.Payload;
@@ -100,12 +101,21 @@ namespace Meta.BusinessTier.Services.Implements
                 CreateDate = currentTime
             };
 
+
             await _unitOfWork.GetRepository<Product>().InsertAsync(newProduct);
             bool isSuccess = await _unitOfWork.CommitAsync() > 0;
 
             if (!isSuccess)
             {
                 throw new BadHttpRequestException(MessageConstant.Product.CreateNewProductFailedMessage);
+            }
+            if (createNewProductRequest.supProductId != null && createNewProductRequest.supProductId.Count > 0)
+            {
+                bool componentsAdded = await AddSupProductToProduct(newProduct.Id, createNewProductRequest.supProductId);
+                if (!componentsAdded)
+                {
+                    throw new BadHttpRequestException(MessageConstant.MachineryComponents.CreateNewMachineryComponentsFailedMessage);
+                }
             }
             return newProduct.Id;
         }
@@ -117,7 +127,9 @@ namespace Meta.BusinessTier.Services.Implements
 
             Product product = await _unitOfWork.GetRepository<Product>().SingleOrDefaultAsync(
                 predicate: x => x.Id.Equals(id),
-                include: x => x.Include(p => p.Category))
+                include: x => x.Include(p => p.Category)
+                               .Include(s => s.ProductPetServices)
+                               .ThenInclude(sup => sup.SupProduct))
             ?? throw new BadHttpRequestException(MessageConstant.Product.ProductNotFoundMessage);
 
             GetProductsResponse response = new GetProductsResponse
@@ -133,7 +145,14 @@ namespace Meta.BusinessTier.Services.Implements
                 {
                     Id = (Guid)product.CategoryId,
                     Name = product.Category.Name
-                }
+                },
+                SupProducts = product.ProductPetServices.Select(sup => new SupProductResponse
+                {
+                    Id =sup.SupProduct.Id,
+                    Name = sup.SupProduct.Name,
+                    SellingPrice = sup.SupProduct.SellingPrice,
+                    StockPrice = sup.SupProduct.StockPrice
+                }).ToList(),
             };
 
             return response;
@@ -156,11 +175,21 @@ namespace Meta.BusinessTier.Services.Implements
                     {
                         Id = x.Id,
                         Name = x.Category.Name
-                    }
+                    },
+                    SupProducts = x.ProductPetServices.Select(sup => new SupProductResponse
+                    {
+                        Id = sup.SupProduct.Id,
+                        Name = sup.SupProduct.Name,
+                        SellingPrice = sup.SupProduct.SellingPrice,
+                        StockPrice = sup.SupProduct.StockPrice
+                    }).ToList(),
+
                 },
                 filter: filter,
                 orderBy: x => x.OrderByDescending(x => x.CreateDate),
-                include: x => x.Include(p => p.Category),
+                include: x => x.Include(p => p.Category)
+                               .Include(s => s.ProductPetServices)
+                               .ThenInclude(sup => sup.SupProduct),
                 page: pagingModel.page,
                 size: pagingModel.size
             ) ?? throw new BadHttpRequestException(MessageConstant.Product.ProductNotFoundMessage);

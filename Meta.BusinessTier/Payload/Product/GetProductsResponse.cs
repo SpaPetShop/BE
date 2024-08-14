@@ -17,10 +17,19 @@ namespace Meta.BusinessTier.Payload.Product
         public ProductStatus Status { get; set; }
         public int? Priority { get; set; }
         public CategoryResponse Category { get; set; }
+        public List<SupProductResponse> SupProducts { get; set; } = new List<SupProductResponse>();
     }
     public class CategoryResponse
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
+    }
+    public class SupProductResponse
+    {
+        public Guid Id { get; set; }
+        public string? Name { get; set; }
+        public double? StockPrice { get; set; }
+        public double? SellingPrice { get; set; }
+
     }
 }

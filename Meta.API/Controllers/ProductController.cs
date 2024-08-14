@@ -53,5 +53,11 @@ namespace Meta.API.Controllers
             return Ok(MessageConstant.Product.UpdateStatusSuccessMessage);
 
         }
+        [HttpPost(ApiEndPointConstant.Product.AddSupProductToProductEndPoint)]
+        public async Task<IActionResult> AddrankForAccount(Guid id, [FromBody] List<Guid> supProductId)
+        {
+            var response = await _iProductService.AddSupProductToProduct(id, supProductId);
+            return Ok(response);
+        }
     }
 }

@@ -56,6 +56,7 @@ public static class ApiEndPointConstant
         public const string ProductsEndPoint = ApiEndpoint + "/products";
         public const string ProductsEndPointNoPaginate = ApiEndpoint + "/products/noPaginat";
         public const string ProductEndPoint = ProductsEndPoint + "/{id}";
+        public const string AddSupProductToProductEndPoint = ProductEndPoint + "/supProduct";
 
     }
     public static class Pet
