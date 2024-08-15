@@ -141,8 +141,9 @@ namespace Meta.BusinessTier.Services.Implements
             Product product = await _unitOfWork.GetRepository<Product>().SingleOrDefaultAsync(
                 predicate: x => x.Id.Equals(id),
                 include: x => x.Include(p => p.Category)
-                               .Include(s => s.ProductPetServices)
-                               .ThenInclude(sup => sup.SupProduct)
+                               .Include(p => p.ProductPetServices)
+                               .ThenInclude(ps => ps.SupProduct)
+                               .ThenInclude(sup => sup.SupProductImages) // Bao gồm hình ảnh của SupProduct
                                .Include(x => x.ProductImages))
             ?? throw new BadHttpRequestException(MessageConstant.Product.ProductNotFoundMessage);
 
@@ -165,8 +166,11 @@ namespace Meta.BusinessTier.Services.Implements
                     Id = sup.SupProduct.Id,
                     Name = sup.SupProduct.Name,
                     SellingPrice = sup.SupProduct.SellingPrice,
-                    StockPrice = sup.SupProduct.StockPrice
-
+                    StockPrice = sup.SupProduct.StockPrice,
+                    Image = sup.SupProduct.SupProductImages.Select(img => new ImageResponse
+                    {
+                        ImageURL = img.ImageUrl
+                    }).ToList() // Ánh xạ hình ảnh của SupProduct
                 }).ToList(),
                 Image = product.ProductImages.Select(image => new ImageResponse
                 {
@@ -176,6 +180,7 @@ namespace Meta.BusinessTier.Services.Implements
 
             return response;
         }
+
 
 
         public async Task<IPaginate<GetProductsResponse>> GetProductList(ProductFilter filter, PagingModel pagingModel)
@@ -200,7 +205,11 @@ namespace Meta.BusinessTier.Services.Implements
                         Id = sup.SupProduct.Id,
                         Name = sup.SupProduct.Name,
                         SellingPrice = sup.SupProduct.SellingPrice,
-                        StockPrice = sup.SupProduct.StockPrice
+                        StockPrice = sup.SupProduct.StockPrice,
+                        Image = sup.SupProduct.SupProductImages.Select(img => new ImageResponse
+                        {
+                            ImageURL = img.ImageUrl
+                        }).ToList() // Ánh xạ hình ảnh của SupProduct
                     }).ToList(),
                     Image = x.ProductImages.Select(image => new ImageResponse
                     {
@@ -213,6 +222,7 @@ namespace Meta.BusinessTier.Services.Implements
                 include: x => x.Include(p => p.Category)
                                .Include(s => s.ProductPetServices)
                                .ThenInclude(sup => sup.SupProduct)
+                               .ThenInclude(sup => sup.SupProductImages)
                                .Include(x => x.ProductImages),
                 page: pagingModel.page,
                 size: pagingModel.size
