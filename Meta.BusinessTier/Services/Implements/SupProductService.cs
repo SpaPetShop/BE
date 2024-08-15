@@ -81,16 +81,6 @@ namespace Meta.BusinessTier.Services.Implements
             return subProductService.Id;
         }
 
-        public Task<GetSupProductsResponse> GetSupProductById(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IPaginate<GetSupProductsResponse>> GetSupProductList(SupProductFilter filter, PagingModel pagingModel)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<GetSupProductsResponse> GetSupProductById(Guid id)
         {
             if (id == Guid.Empty)
