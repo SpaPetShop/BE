@@ -132,103 +132,94 @@ namespace Meta.BusinessTier.Services.Implements
             return newProduct.Id;
         }
 
-        public Task<GetProductsResponse> GetProductById(Guid id)
+
+        public async Task<GetProductsResponse> GetProductById(Guid id)
         {
-            throw new NotImplementedException();
+            if (id == Guid.Empty)
+                throw new BadHttpRequestException(MessageConstant.Product.EmptyProductIdMessage);
+
+            Product product = await _unitOfWork.GetRepository<Product>().SingleOrDefaultAsync(
+                predicate: x => x.Id.Equals(id),
+                include: x => x.Include(p => p.Category)
+                               .Include(s => s.ProductPetServices)
+                               .ThenInclude(sup => sup.SupProduct)
+                               .Include(x => x.ProductImages))
+            ?? throw new BadHttpRequestException(MessageConstant.Product.ProductNotFoundMessage);
+
+            GetProductsResponse response = new GetProductsResponse
+            {
+                Id = product.Id,
+                Name = product.Name,
+                StockPrice = product.StockPrice,
+                SellingPrice = product.SellingPrice,
+                Description = product.Description,
+                Status = EnumUtil.ParseEnum<ProductStatus>(product.Status),
+                Priority = product.Priority,
+                Category = new CategoryResponse
+                {
+                    Id = (Guid)product.CategoryId,
+                    Name = product.Category.Name
+                },
+                SupProducts = product.ProductPetServices.Select(sup => new SupProductResponse
+                {
+                    Id = sup.SupProduct.Id,
+                    Name = sup.SupProduct.Name,
+                    SellingPrice = sup.SupProduct.SellingPrice,
+                    StockPrice = sup.SupProduct.StockPrice
+
+                }).ToList(),
+                Image = product.ProductImages.Select(image => new ImageResponse
+                {
+                    ImageURL = image.ImageUrl
+                }).ToList(),
+            };
+
+            return response;
         }
 
-        public Task<IPaginate<GetProductsResponse>> GetProductList(ProductFilter filter, PagingModel pagingModel)
+
+        public async Task<IPaginate<GetProductsResponse>> GetProductList(ProductFilter filter, PagingModel pagingModel)
         {
-            throw new NotImplementedException();
+            IPaginate<GetProductsResponse> productList = await _unitOfWork.GetRepository<Product>().GetPagingListAsync(
+                selector: x => new GetProductsResponse
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    StockPrice = x.StockPrice,
+                    SellingPrice = x.SellingPrice,
+                    Description = x.Description,
+                    Status = EnumUtil.ParseEnum<ProductStatus>(x.Status),
+                    Priority = x.Priority,
+                    Category = new CategoryResponse
+                    {
+                        Id = x.Id,
+                        Name = x.Category.Name
+                    },
+                    SupProducts = x.ProductPetServices.Select(sup => new SupProductResponse
+                    {
+                        Id = sup.SupProduct.Id,
+                        Name = sup.SupProduct.Name,
+                        SellingPrice = sup.SupProduct.SellingPrice,
+                        StockPrice = sup.SupProduct.StockPrice
+                    }).ToList(),
+                    Image = x.ProductImages.Select(image => new ImageResponse
+                    {
+                        ImageURL = image.ImageUrl
+                    }).ToList(),
+
+                },
+                filter: filter,
+                orderBy: x => x.OrderByDescending(x => x.CreateDate),
+                include: x => x.Include(p => p.Category)
+                               .Include(s => s.ProductPetServices)
+                               .ThenInclude(sup => sup.SupProduct)
+                               .Include(x => x.ProductImages),
+                page: pagingModel.page,
+                size: pagingModel.size
+            ) ?? throw new BadHttpRequestException(MessageConstant.Product.ProductNotFoundMessage);
+
+            return productList;
         }
-
-        //public async Task<GetProductsResponse> GetProductById(Guid id)
-        //{
-        //    if (id == Guid.Empty)
-        //        throw new BadHttpRequestException(MessageConstant.Product.EmptyProductIdMessage);
-
-        //    Product product = await _unitOfWork.GetRepository<Product>().SingleOrDefaultAsync(
-        //        predicate: x => x.Id.Equals(id),
-        //        include: x => x.Include(p => p.Category)
-        //                       .Include(s => s.ProductPetServices)
-        //                       .ThenInclude(sup => sup.SupProduct)
-        //                       .Include(x => x.ProductImages))
-        //    ?? throw new BadHttpRequestException(MessageConstant.Product.ProductNotFoundMessage);
-
-        //    GetProductsResponse response = new GetProductsResponse
-        //    {
-        //        Id = product.Id,
-        //        Name = product.Name,
-        //        StockPrice = product.StockPrice,
-        //        SellingPrice = product.SellingPrice,
-        //        Description = product.Description,
-        //        Status = EnumUtil.ParseEnum<ProductStatus>(product.Status),
-        //        Priority = product.Priority,
-        //        Category = new CategoryResponse
-        //        {
-        //            Id = (Guid)product.CategoryId,
-        //            Name = product.Category.Name
-        //        },
-        //        SupProducts = product.ProductPetServices.Select(sup => new SupProductResponse
-        //        {
-        //            Id =sup.SupProduct.Id,
-        //            Name = sup.SupProduct.Name,
-        //            SellingPrice = sup.SupProduct.SellingPrice,
-        //            StockPrice = sup.SupProduct.StockPrice
-
-        //        }).ToList(),
-        //        Image = product.ProductImages.Select(image => new ImageResponse
-        //        {
-        //            ImageURL = image.ImageUrl
-        //        }).ToList(),
-        //    };
-
-        //    return response;
-        //}
-
-
-        //public async Task<IPaginate<GetProductsResponse>> GetProductList(ProductFilter filter, PagingModel pagingModel)
-        //{
-        //    IPaginate<GetProductsResponse> productList = await _unitOfWork.GetRepository<Product>().GetPagingListAsync(
-        //        selector: x => new GetProductsResponse
-        //        {
-        //            Id = x.Id,
-        //            Name = x.Name,
-        //            StockPrice = x.StockPrice,
-        //            SellingPrice = x.SellingPrice,
-        //            Description = x.Description,
-        //            Status = EnumUtil.ParseEnum<ProductStatus>(x.Status),
-        //            Priority = x.Priority,
-        //            Category = new CategoryResponse
-        //            {
-        //                Id = x.Id,
-        //                Name = x.Category.Name
-        //            },
-        //            SupProducts = x.ProductPetServices.Select(sup => new SupProductResponse
-        //            {
-        //                Id = sup.SupProduct.Id,
-        //                Name = sup.SupProduct.Name,
-        //                SellingPrice = sup.SupProduct.SellingPrice,
-        //                StockPrice = sup.SupProduct.StockPrice
-        //            }).ToList(),
-        //            Image = x.ProductImages.Select(image => new ImageResponse
-        //            {
-        //                ImageURL = image.ImageUrl
-        //            }).ToList(),
-
-        //        },
-        //        filter: filter,
-        //        orderBy: x => x.OrderByDescending(x => x.CreateDate),
-        //        include: x => x.Include(p => p.Category)
-        //                       .Include(s => s.ProductPetServices)
-        //                       .ThenInclude(sup => sup.SupProduct)
-        //                       .Include(x => x.ProductImages),
-        //        page: pagingModel.page,
-        //        size: pagingModel.size
-        //    ) ?? throw new BadHttpRequestException(MessageConstant.Product.ProductNotFoundMessage);
-
-        //    return productList;
-        //}
 
 
         public async Task<bool> RemoveProductStatus(Guid id)

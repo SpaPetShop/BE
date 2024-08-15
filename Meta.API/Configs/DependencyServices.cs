@@ -42,6 +42,8 @@ namespace Meta.API.Configs
             services.AddScoped<IRankService, RankService>();
             services.AddScoped<ISupProductService, SupProductService>();
             services.AddScoped<ITypeService, TypeService>();
+            services.AddScoped<IPetService, PetService>();
+            services.AddScoped<ITaskService, TaskService>();
 
             return services;
         }

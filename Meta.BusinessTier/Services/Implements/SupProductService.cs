@@ -91,67 +91,67 @@ namespace Meta.BusinessTier.Services.Implements
             throw new NotImplementedException();
         }
 
-        //public async Task<GetSupProductsResponse> GetSupProductById(Guid id)
-        //{
-        //    if (id == Guid.Empty)
-        //        throw new BadHttpRequestException(MessageConstant.Product.EmptyProductIdMessage);
+        public async Task<GetSupProductsResponse> GetSupProductById(Guid id)
+        {
+            if (id == Guid.Empty)
+                throw new BadHttpRequestException(MessageConstant.Product.EmptyProductIdMessage);
 
-        //    SupProduct supProduct = await _unitOfWork.GetRepository<SupProduct>().SingleOrDefaultAsync(
-        //        predicate: x => x.Id.Equals(id),
-        //        include: x => x.Include(sp => sp.Category)
-        //                        .Include(x => x.SupProductImages))
-        //    ?? throw new BadHttpRequestException(MessageConstant.Product.ProductNotFoundMessage);
+            SupProduct supProduct = await _unitOfWork.GetRepository<SupProduct>().SingleOrDefaultAsync(
+                predicate: x => x.Id.Equals(id),
+                include: x => x.Include(sp => sp.Category)
+                                .Include(x => x.SupProductImages))
+            ?? throw new BadHttpRequestException(MessageConstant.Product.ProductNotFoundMessage);
 
-        //    return new GetSupProductsResponse
-        //    {
-        //        Id = supProduct.Id,
-        //        Name = supProduct.Name,
-        //        StockPrice = supProduct.StockPrice,
-        //        SellingPrice = supProduct.SellingPrice,
-        //        Description = supProduct.Desctiprion,
-        //        Status = EnumUtil.ParseEnum<ProductStatus>(supProduct.Status),
-        //        Category = new CategoryResponse
-        //        {
-        //            Id = (Guid)supProduct.CategoryId,
-        //            Name = supProduct.Category.Name
-        //        },
-        //        Image = supProduct.SupProductImages.Select(image => new ImageResponse
-        //        {
-        //            ImageURL = image.ImageUrl
-        //        }).ToList(),
-        //    };
-        //}
+            return new GetSupProductsResponse
+            {
+                Id = supProduct.Id,
+                Name = supProduct.Name,
+                StockPrice = supProduct.StockPrice,
+                SellingPrice = supProduct.SellingPrice,
+                Description = supProduct.Desctiprion,
+                Status = EnumUtil.ParseEnum<ProductStatus>(supProduct.Status),
+                Category = new CategoryResponse
+                {
+                    Id = (Guid)supProduct.CategoryId,
+                    Name = supProduct.Category.Name
+                },
+                Image = supProduct.SupProductImages.Select(image => new ImageResponse
+                {
+                    ImageURL = image.ImageUrl
+                }).ToList(),
+            };
+        }
 
-        //public async Task<IPaginate<GetSupProductsResponse>> GetSupProductList(SupProductFilter filter, PagingModel pagingModel)
-        //{
-        //    return await _unitOfWork.GetRepository<SupProduct>().GetPagingListAsync(
-        //        selector: x => new GetSupProductsResponse
-        //        {
-        //            Id = x.Id,
-        //            Name = x.Name,
-        //            StockPrice = x.StockPrice,
-        //            SellingPrice = x.SellingPrice,
-        //            Description = x.Desctiprion,
-        //            Status = EnumUtil.ParseEnum<ProductStatus>(x.Status),
-        //            Category = new CategoryResponse
-        //            {
-        //                Id = (Guid)x.CategoryId,
-        //                Name = x.Category.Name
-        //            },
-        //            Image = x.SupProductImages.Select(image => new ImageResponse
-        //            {
-        //                ImageURL = image.ImageUrl
-        //            }).ToList(),
+        public async Task<IPaginate<GetSupProductsResponse>> GetSupProductList(SupProductFilter filter, PagingModel pagingModel)
+        {
+            return await _unitOfWork.GetRepository<SupProduct>().GetPagingListAsync(
+                selector: x => new GetSupProductsResponse
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    StockPrice = x.StockPrice,
+                    SellingPrice = x.SellingPrice,
+                    Description = x.Desctiprion,
+                    Status = EnumUtil.ParseEnum<ProductStatus>(x.Status),
+                    Category = new CategoryResponse
+                    {
+                        Id = (Guid)x.CategoryId,
+                        Name = x.Category.Name
+                    },
+                    Image = x.SupProductImages.Select(image => new ImageResponse
+                    {
+                        ImageURL = image.ImageUrl
+                    }).ToList(),
 
-        //        },
-        //        filter: filter,
-        //        orderBy: x => x.OrderByDescending(x => x.CreateDate),
-        //        include: x => x.Include(sp => sp.Category)
-        //                        .Include(x => x.SupProductImages),
-        //        page: pagingModel.page,
-        //        size: pagingModel.size
-        //    ) ?? throw new BadHttpRequestException(MessageConstant.Product.ProductNotFoundMessage);
-        //}
+                },
+                filter: filter,
+                orderBy: x => x.OrderByDescending(x => x.CreateDate),
+                include: x => x.Include(sp => sp.Category)
+                                .Include(x => x.SupProductImages),
+                page: pagingModel.page,
+                size: pagingModel.size
+            ) ?? throw new BadHttpRequestException(MessageConstant.Product.ProductNotFoundMessage);
+        }
 
 
         public async Task<bool> RemoveSupProductStatus(Guid id)
