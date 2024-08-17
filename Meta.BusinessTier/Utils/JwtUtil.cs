@@ -29,7 +29,7 @@ public class JwtUtil
         var expires = DateTime.Now.AddDays(1);
         var token = new JwtSecurityToken(issuer, null, claims, notBefore: DateTime.Now, expires, credentials);
 
-        var accessToken = jwtHandler.WriteToken(token);
+        var accessToken =  jwtHandler.WriteToken(token);
         var refreshToken = GenerateRefreshToken();
         return new TokenModel
         {

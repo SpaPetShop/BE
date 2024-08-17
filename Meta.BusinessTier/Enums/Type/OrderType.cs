@@ -8,7 +8,7 @@ namespace Meta.BusinessTier.Enums.Type
 {
     public enum OrderType
     {
-        CustomerRequest,
-        ManagerRequest
+        CUSTOMERREQUEST,
+        MANAGERREQUEST
     }
 }

@@ -40,7 +40,7 @@ namespace Meta.BusinessTier.Services.Implements
         {
             TypePet newType = _mapper.Map<TypePet>(createNewTypeRequest);
             newType.Id = Guid.NewGuid();
-            newType.Status = TypePetStatus.Active.GetDescriptionFromEnum();
+            newType.Status = TypePetStatus.ACTIVE.GetDescriptionFromEnum();
 
             await _unitOfWork.GetRepository<TypePet>().InsertAsync(newType);
 

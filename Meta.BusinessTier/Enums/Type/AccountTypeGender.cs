@@ -8,7 +8,7 @@ namespace Meta.BusinessTier.Enums.EnumTypes
 {
     public enum AccountTypeGender
     {
-        Male,
-        Female
+        MALE,
+        FEMALE
     }
 }

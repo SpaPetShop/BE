@@ -8,8 +8,8 @@ namespace Meta.BusinessTier.Enums.EnumTypes
 {
     public enum TaskType
     {
-        CustomerRequest,
-        ManagerRequest
+        CUSTOMERREQUEST,
+        MANAGERREQUEST
         
     }
 }

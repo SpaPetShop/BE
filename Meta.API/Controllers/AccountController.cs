@@ -34,7 +34,7 @@ namespace Meta.API.Controllers
                     TimeStamp = DateTime.Now
                 });
             }
-            if (response.Status == UserStatus.Deactivate)
+            if (response.Status == UserStatus.DEACTIVE)
             {
                 return Unauthorized(new ErrorResponse
                 {

@@ -129,11 +129,11 @@ namespace Meta.BusinessTier.Services.Implements
                     Id = Guid.NewGuid(),
                     Username = request.Username,
                     Password = PasswordUtil.HashPassword(request.Password),
-                    Role = RoleEnum.User.GetDescriptionFromEnum(),
+                    Role = RoleEnum.USER.GetDescriptionFromEnum(),
                     FullName = request.FullName,
                     Gender = request.Gender,
                     PhoneNumber = request.PhoneNumber,
-                    Status = UserStatus.Activate.GetDescriptionFromEnum(),
+                    Status = UserStatus.ACTIVE.GetDescriptionFromEnum(),
                     Email = request.Email,
                     Image = request.Image,
                 };
@@ -167,7 +167,7 @@ namespace Meta.BusinessTier.Services.Implements
                 FullName = request.FullName,
                 Gender = request.Gender,
                 PhoneNumber = request.PhoneNumber,
-                Status = UserStatus.Activate.GetDescriptionFromEnum(),
+                Status = UserStatus.ACTIVE.GetDescriptionFromEnum(),
                 Email = request.Email,
                 Image = request.Image,
 
@@ -339,7 +339,7 @@ namespace Meta.BusinessTier.Services.Implements
             Account user = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
                 predicate: x => x.Id.Equals(id))
                 ?? throw new BadHttpRequestException(MessageConstant.User.UserNotFoundMessage);
-            user.Status = UserStatus.Deactivate.GetDescriptionFromEnum();
+            user.Status = UserStatus.DEACTIVE.GetDescriptionFromEnum();
             _unitOfWork.GetRepository<Account>().UpdateAsync(user);
             bool isSuccessful = await _unitOfWork.CommitAsync() > 0;
             return isSuccessful;

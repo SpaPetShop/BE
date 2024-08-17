@@ -151,7 +151,7 @@ namespace Meta.BusinessTier.Services.Implements
             SupProduct supProduct = await _unitOfWork.GetRepository<SupProduct>().SingleOrDefaultAsync(
                 predicate: x => x.Id.Equals(id))
                 ?? throw new BadHttpRequestException(MessageConstant.Product.ProductNotFoundMessage);
-            supProduct.Status = ProductStatus.UnAvailable.GetDescriptionFromEnum();
+            supProduct.Status = ProductStatus.UNAVAILABLE.GetDescriptionFromEnum();
             _unitOfWork.GetRepository<SupProduct>().UpdateAsync(supProduct);
             return await _unitOfWork.CommitAsync() > 0;
         }

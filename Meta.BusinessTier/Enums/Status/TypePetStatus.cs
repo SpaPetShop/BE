@@ -8,8 +8,8 @@ namespace Meta.BusinessTier.Enums.Status
 {
     public enum TypePetStatus
     {
-        Active,
-        Inactive
+        ACTIVE,
+        INACTIVE
     }
 
 }

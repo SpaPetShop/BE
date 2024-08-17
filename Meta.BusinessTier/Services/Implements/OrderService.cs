@@ -79,7 +79,7 @@ namespace Meta.BusinessTier.Services.Implements
                         Id = Guid.NewGuid(),
                         OrderId = newOrder.Id,
                         SupProductId = product.ProductId,
-                        Quantity = product.Quantity,
+                        Quantity = 1,
                         SellingPrice = product.SellingPrice,
                         TotalAmount = product.SellingPrice * product.Quantity
                     };
@@ -97,7 +97,7 @@ namespace Meta.BusinessTier.Services.Implements
                         Id = Guid.NewGuid(),
                         OrderId = newOrder.Id,
                         ProductId = product.ProductId,
-                        Quantity = product.Quantity,
+                        Quantity = 1,
                         SellingPrice = product.SellingPrice,
                         TotalAmount = product.SellingPrice * product.Quantity
                     };
@@ -123,12 +123,12 @@ namespace Meta.BusinessTier.Services.Implements
                 newOrder.FinalAmount = totalAmount;
             }
 
-            if (request.Type == OrderType.CustomerRequest)
+            if (request.Type == OrderType.CUSTOMERREQUEST)
             {
-                TaskManager newTask = new TaskManager
+                var newTask = new TaskManager
                 {
                     Id = Guid.NewGuid(),
-                    Type = TaskType.CustomerRequest.ToString(),
+                    Type = TaskType.CUSTOMERREQUEST.ToString(),
                     Status = TaskManagerStatus.PENDING.GetDescriptionFromEnum(),
                     CreateDate = currentTime,
                     ExcutionDate = newOrder.ExcutionDate,

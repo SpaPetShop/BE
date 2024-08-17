@@ -8,7 +8,7 @@ namespace Meta.BusinessTier.Enums.Status
 {
     public enum UserStatus
     {
-        Activate,
-        Deactivate
+        ACTIVE,
+        DEACTIVE
     }
 }

@@ -22,7 +22,7 @@ namespace Meta.API.Controllers
         {
             _petService = petService;
         }
-        [CustomAuthorize(RoleEnum.User)]
+        [CustomAuthorize(RoleEnum.USER)]
         [HttpPost(ApiEndPointConstant.Pet.PetsEndPoint)]
         public async Task<IActionResult> CreateNewPets(CreateNewPetRequest pet)
         {

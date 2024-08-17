@@ -8,7 +8,7 @@ namespace Meta.BusinessTier.Enums.Type
 {
     public enum CategoryType
     {
-        Parent,
-        Child
+        PARENT,
+        CHILD
     }
 }

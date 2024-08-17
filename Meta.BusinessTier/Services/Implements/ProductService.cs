@@ -28,7 +28,7 @@ namespace Meta.BusinessTier.Services.Implements
             // Retrieve the product or throw an exception if not found
             Product product = await _unitOfWork.GetRepository<Product>().SingleOrDefaultAsync(
                 predicate: x => x.Id.Equals(productId))
-            ?? throw new BadHttpRequestException("Product not found");
+            ?? throw new BadHttpRequestException(MessageConstant.Product.ProductNotFoundMessage);
 
             // Retrieve current SupProduct IDs associated with the product
             List<Guid> currentSupProductIds = (await _unitOfWork.GetRepository<ProductPetService>()
@@ -239,7 +239,7 @@ namespace Meta.BusinessTier.Services.Implements
             Product product = await _unitOfWork.GetRepository<Product>().SingleOrDefaultAsync(
                 predicate: x => x.Id.Equals(id))
                 ?? throw new BadHttpRequestException(MessageConstant.Product.ProductNotFoundMessage);
-            product.Status = ProductStatus.UnAvailable.GetDescriptionFromEnum();
+            product.Status = ProductStatus.UNAVAILABLE.GetDescriptionFromEnum();
             _unitOfWork.GetRepository<Product>().UpdateAsync(product);
             bool isSuccessful = await _unitOfWork.CommitAsync() > 0;
             return isSuccessful;

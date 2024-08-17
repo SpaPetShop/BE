@@ -50,12 +50,12 @@ namespace Meta.BusinessTier.Services.Implements
                 throw new BadHttpRequestException(MessageConstant.TaskManager.FullTaskMessage);
             }
             var order = await _unitOfWork.GetRepository<Order>().SingleOrDefaultAsync(
-                    predicate: o => o.Id == createNewTaskRequest.OrderId.Value && o.Type == OrderType.ManagerRequest.GetDescriptionFromEnum())
+                    predicate: o => o.Id == createNewTaskRequest.OrderId.Value && o.Type == OrderType.MANAGERREQUEST.GetDescriptionFromEnum())
                 ?? throw new BadHttpRequestException(MessageConstant.Order.OrderNoteManagerRequestMessage);
             TaskManager newTask = new()
             {
                 Id = Guid.NewGuid(),
-                Type = TaskType.ManagerRequest.GetDescriptionFromEnum(),
+                Type = TaskType.MANAGERREQUEST.GetDescriptionFromEnum(),
                 Status = TaskManagerStatus.PROCESS.GetDescriptionFromEnum(),
                 CreateDate = currentTime,
                 ExcutionDate = createNewTaskRequest.ExcutionDate,

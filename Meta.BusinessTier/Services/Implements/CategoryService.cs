@@ -33,7 +33,7 @@ namespace Meta.BusinessTier.Services.Implements
 
             Category newCategory = _mapper.Map<Category>(request);
             newCategory.Id = Guid.NewGuid();
-            newCategory.Status = CategoryStatus.Active.GetDescriptionFromEnum();
+            newCategory.Status = CategoryStatus.ACTIVE.GetDescriptionFromEnum();
 
 
             await _unitOfWork.GetRepository<Category>().InsertAsync(newCategory);
@@ -80,13 +80,13 @@ namespace Meta.BusinessTier.Services.Implements
                 ?? throw new BadHttpRequestException(MessageConstant.Category.NotFoundFailedMessage);
             foreach (var item in category.Products)
             {
-                item.Status = ProductStatus.UnAvailable.GetDescriptionFromEnum();
+                item.Status = ProductStatus.UNAVAILABLE.GetDescriptionFromEnum();
             }
             //foreach (var item in category.Products)
             //{
             //    item.Status = ProductStatus.InActive.GetDescriptionFromEnum();
             //}
-            category.Status = CategoryStatus.Inactive.GetDescriptionFromEnum();
+            category.Status = CategoryStatus.INACTIVE.GetDescriptionFromEnum();
             _unitOfWork.GetRepository<Category>().UpdateAsync(category);
             bool isSuccessful = await _unitOfWork.CommitAsync() > 0;
             return isSuccessful;
@@ -105,20 +105,20 @@ namespace Meta.BusinessTier.Services.Implements
             category.Description = string.IsNullOrEmpty(updateCategoryRequest.Description) ? category.Description : updateCategoryRequest.Description;
             switch (updateCategoryRequest.Status)
             {
-                case CategoryStatus.Active:
+                case CategoryStatus.ACTIVE:
                     foreach (var item in category.Products)
                     {
-                        item.Status = ProductStatus.Available.GetDescriptionFromEnum();
+                        item.Status = ProductStatus.AVAILABLE.GetDescriptionFromEnum();
                     }
                     //foreach (var item in category.MachineComponents)
                     //{
                     //    item.Status = MachineryStatus.Available.GetDescriptionFromEnum();
                     //}
                     break;
-                case CategoryStatus.Inactive:
+                case CategoryStatus.INACTIVE:
                     foreach (var item in category.Products)
                     {
-                        item.Status = ProductStatus.UnAvailable.GetDescriptionFromEnum();
+                        item.Status = ProductStatus.UNAVAILABLE.GetDescriptionFromEnum();
                     }
                     //foreach (var item in updateCategory.MachineComponents)
                     //{

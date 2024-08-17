@@ -8,9 +8,9 @@ namespace Meta.BusinessTier.Enums.Status
 {
     public enum RoleEnum
     {
-        Admin,
-        User,
-        Staff,
-        Manager
+        ADMIN,
+        USER,
+        STAFF,
+        MANAGER
     }
 }
