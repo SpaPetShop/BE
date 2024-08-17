@@ -8,8 +8,7 @@ namespace Meta.BusinessTier.Enums.Status
 {
     public enum OrderStatus
     {
-        PENDING,
-        CONFIRMED,
+        UNPAID,
         PAID,
         COMPLETED,
         CANCELED

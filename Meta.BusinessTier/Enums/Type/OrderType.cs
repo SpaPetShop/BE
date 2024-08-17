@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Meta.BusinessTier.Enums.EnumTypes
+namespace Meta.BusinessTier.Enums.Type
 {
-    public enum TaskType
+    public enum OrderType
     {
         CustomerRequest,
         ManagerRequest
-        
     }
 }

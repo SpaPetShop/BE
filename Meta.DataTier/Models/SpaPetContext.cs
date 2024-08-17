@@ -21,6 +21,8 @@ public partial class SpaPetContext : DbContext
 
     public virtual DbSet<Category> Categories { get; set; }
 
+    public virtual DbSet<Note> Notes { get; set; }
+
     public virtual DbSet<Order> Orders { get; set; }
 
     public virtual DbSet<OrderDetail> OrderDetails { get; set; }
@@ -98,6 +100,20 @@ public partial class SpaPetContext : DbContext
             entity.Property(e => e.Type).HasMaxLength(50);
         });
 
+        modelBuilder.Entity<Note>(entity =>
+        {
+            entity.ToTable("Note");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.CreateDate).HasColumnType("datetime");
+            entity.Property(e => e.Description).HasMaxLength(4000);
+            entity.Property(e => e.Status).HasMaxLength(50);
+
+            entity.HasOne(d => d.Order).WithMany(p => p.Notes)
+                .HasForeignKey(d => d.OrderId)
+                .HasConstraintName("FK_Note_Order");
+        });
+
         modelBuilder.Entity<Order>(entity =>
         {
             entity.ToTable("Order");
@@ -106,6 +122,7 @@ public partial class SpaPetContext : DbContext
             entity.Property(e => e.CompletedDate).HasColumnType("datetime");
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
             entity.Property(e => e.Description).HasMaxLength(4000);
+            entity.Property(e => e.ExcutionDate).HasColumnType("datetime");
             entity.Property(e => e.InvoiceCode)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -113,6 +130,7 @@ public partial class SpaPetContext : DbContext
             entity.Property(e => e.Status)
                 .HasMaxLength(10)
                 .IsUnicode(false);
+            entity.Property(e => e.Type).HasMaxLength(50);
 
             entity.HasOne(d => d.Pet).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.PetId)
@@ -261,6 +279,7 @@ public partial class SpaPetContext : DbContext
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.CompletedDate).HasColumnType("datetime");
             entity.Property(e => e.CreateDate).HasColumnType("datetime");
+            entity.Property(e => e.ExcutionDate).HasColumnType("datetime");
             entity.Property(e => e.Status).HasMaxLength(50);
             entity.Property(e => e.Type).HasMaxLength(50);
 

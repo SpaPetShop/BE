@@ -37,7 +37,7 @@ namespace Meta.API.Configs
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICategoryService, CategoryService>();
-            //services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<ITaskService, TaskService>();
             services.AddScoped<IRankService, RankService>();
             services.AddScoped<ISupProductService, SupProductService>();
