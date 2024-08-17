@@ -62,8 +62,7 @@ namespace Meta.BusinessTier.Services.Implements
                 Status = OrderStatus.UNPAID.GetDescriptionFromEnum(),
                 AccountId = account.Id,
                 PetId = request.PetId,
-                Type = request.Type.ToString() // Assign the type of request
-            };
+                Type = request.Type.GetDescriptionFromEnum()           };
 
             var orderDetails = new List<OrderDetail>();
             double totalAmount = 0;
@@ -124,11 +123,6 @@ namespace Meta.BusinessTier.Services.Implements
                 newOrder.FinalAmount = totalAmount;
             }
 
-            // Insert the new order and its details
-            await _unitOfWork.GetRepository<Order>().InsertAsync(newOrder);
-            await _unitOfWork.GetRepository<OrderDetail>().InsertRangeAsync(orderDetails);
-
-            // Handle task creation based on the request type
             if (request.Type == OrderType.CustomerRequest)
             {
                 TaskManager newTask = new TaskManager
@@ -139,12 +133,13 @@ namespace Meta.BusinessTier.Services.Implements
                     CreateDate = currentTime,
                     ExcutionDate = newOrder.ExcutionDate,
                     OrderId = newOrder.Id,
-                    AccountId = request.StaffId // Assuming you have this in the request
+                    AccountId = request.StaffId
                 };
 
                 await _unitOfWork.GetRepository<TaskManager>().InsertAsync(newTask);
             }
-
+            await _unitOfWork.GetRepository<Order>().InsertAsync(newOrder);
+            await _unitOfWork.GetRepository<OrderDetail>().InsertRangeAsync(orderDetails);
             await _unitOfWork.CommitAsync();
 
             return newOrder.Id;
@@ -295,13 +290,13 @@ namespace Meta.BusinessTier.Services.Implements
                     updateOrder.Status = OrderStatus.COMPLETED.GetDescriptionFromEnum();
                     updateOrder.CompletedDate = currentTime;
 
-                    // Calculate points and update account
+                    // tính điểm và cập nhật điểm cho người dùng
                     int points = (int)(updateOrder.FinalAmount / 10000);
                     var account = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
                         predicate: x => x.Id.Equals(updateOrder.AccountId))
                         ?? throw new BadHttpRequestException(MessageConstant.Account.NotFoundFailedMessage);
 
-                    // Update points and save account
+                    // cập nhật điểm cho người dùng
                     account.Point += points;
                     if (account.Point != null)
                     {
