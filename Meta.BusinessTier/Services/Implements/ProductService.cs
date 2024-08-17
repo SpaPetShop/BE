@@ -115,6 +115,7 @@ namespace Meta.BusinessTier.Services.Implements
 
 
             await _unitOfWork.GetRepository<Product>().InsertAsync(newProduct);
+            await _unitOfWork.GetRepository<ProductImage>().InsertRangeAsync(imagesUrl);
             bool isSuccess = await _unitOfWork.CommitAsync() > 0;
 
             if (!isSuccess)

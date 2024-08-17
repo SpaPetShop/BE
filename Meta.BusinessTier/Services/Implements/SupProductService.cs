@@ -72,6 +72,7 @@ namespace Meta.BusinessTier.Services.Implements
             };
 
             await _unitOfWork.GetRepository<SupProduct>().InsertAsync(subProductService);
+            await _unitOfWork.GetRepository<SupProductImage>().InsertRangeAsync(imagesUrl);
             bool isSuccess = await _unitOfWork.CommitAsync() > 0;
 
             if (!isSuccess)
