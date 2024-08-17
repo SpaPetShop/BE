@@ -1060,7 +1060,7 @@
   },
   {
     "ContainingType": "Meta.API.Controllers.TaskController",
-    "Method": "RemoveTaskStatus",
+    "Method": "DeletaTask",
     "RelativePath": "api/v1/task/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,

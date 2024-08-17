@@ -43,9 +43,9 @@ namespace Meta.API.Controllers
         }
 
         [HttpDelete(ApiEndPointConstant.TaskManager.TaskEndPoint)]
-        public async Task<IActionResult> RemoveTaskStatus(Guid id)
+        public async Task<IActionResult> DeletaTask(Guid id)
         {
-            var isSuccessful = await _taskService.RemoveTaskStatus(id);
+            var isSuccessful = await _taskService.DeletaTask(id);
             if (!isSuccessful) return Ok(MessageConstant.TaskManager.UpdateTaskFailedMessage);
             return Ok(MessageConstant.TaskManager.UpdateTaskSuccessMessage);
         }
