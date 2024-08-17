@@ -193,6 +193,7 @@ public static class MessageConstant
 
     public static class Order
     {
+        public const string OrderNoteManagerRequestMessage = "Đơn hàng này đã được khách hàng chỉ định nhân viên";
         public const string OrderNotFoundMessage = "Đơn hàng không tồn tại trong hệ thống";
         public const string CreateOrderFailedMessage = "Tạo mới Đơn hàng thất bại";
         public const string UpdateSuccessMessage = "Đơn hàng được cập nhật thành công";
@@ -274,7 +275,7 @@ public static class MessageConstant
         public const string UpdateStatusSuccessMessage = "Cập nhật trạng thái thành công";
         public const string UpdateStatusFailedMessage = "Cập nhật trạng thái thất bại";
         public const string ExceedQuantityMessage = "Số lượng vượt mức tồn kho";
-        public const string FullTaskMessage = "Nhân viên đã có 3 nhiệm vụ trong ngày. Không thể giao thêm nhiệm vụ.";
+        public const string FullTaskMessage = "Nhân viên đã đủ số lượng nhiệm vụ trong ngày. Không thể giao thêm nhiệm vụ.";
     }
     public static class MachineryComponents
     {

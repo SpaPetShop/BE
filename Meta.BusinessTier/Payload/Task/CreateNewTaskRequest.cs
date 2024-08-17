@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Meta.BusinessTier.Enums.EnumTypes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +10,11 @@ namespace Meta.BusinessTier.Payload.Task
     public class CreateNewTaskRequest
     {
 
-        public string? Type { get; set; }
+        public TaskType? Type { get; set; }
 
         public Guid? OrderId { get; set; }
-
         public Guid? AccountId { get; set; }
+        public DateTime ExcutionDate { get; set; }
 
     }
 }

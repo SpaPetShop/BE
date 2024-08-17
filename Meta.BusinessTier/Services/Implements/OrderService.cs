@@ -296,7 +296,7 @@ namespace Meta.BusinessTier.Services.Implements
                     updateOrder.CompletedDate = currentTime;
 
                     // Calculate points and update account
-                    int points = (int)(updateOrder.FinalAmount / 100000);
+                    int points = (int)(updateOrder.FinalAmount / 10000);
                     var account = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
                         predicate: x => x.Id.Equals(updateOrder.AccountId))
                         ?? throw new BadHttpRequestException(MessageConstant.Account.NotFoundFailedMessage);

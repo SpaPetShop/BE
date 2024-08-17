@@ -2,7 +2,8 @@
 using Meta.BusinessTier.Enums.EnumStatus;
 using Meta.BusinessTier.Enums.EnumTypes;
 using Meta.BusinessTier.Enums.Status;
-
+using Meta.BusinessTier.Payload.Order;
+using Meta.BusinessTier.Payload.Pet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,7 @@ namespace Meta.BusinessTier.Payload.Task
         public OrderResponse? Order { get; set; }
 
         public AccountResponse? Staff { get; set; }
+        public OrderPetResponse? Pets { get; set; }
     }
     public class OrderResponse
     {
