@@ -9,7 +9,10 @@ namespace Meta.BusinessTier.Payload.Order
 {
     public class UpdateOrderRequest
     {
-        public OrderStatus Status { get; set; }
-        public string Note { get; set; }
+        public OrderStatus? Status { get; set; }
+        public string? Note { get; set; }
+        public string? Description { get; set; }
+
+        public Guid? StaffId { get; set; }
     }
 }

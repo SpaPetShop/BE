@@ -197,6 +197,7 @@ public static class MessageConstant
         public const string CreateOrderFailedMessage = "Tạo mới Đơn hàng thất bại";
         public const string UpdateSuccessMessage = "Đơn hàng được cập nhật thành công";
         public const string UpdateFailedMessage = "Đơn hàng cập nhật thất bại";
+        public const string UpdateFailedCompletedMessage = "Không thể cập nhật đơn hàng khi đã hoàn thành";
     }
 
     public static class OrderDetail

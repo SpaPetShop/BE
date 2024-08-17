@@ -8,7 +8,8 @@ namespace Meta.BusinessTier.Enums.EnumStatus
 {
     public enum TaskManagerStatus
     {
-        Process,
-        Completed
+        PENDING,
+        PROCESS,
+        COMPLETED
     }
 }

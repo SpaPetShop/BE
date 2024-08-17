@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Meta.BusinessTier.Constants;
 using Meta.BusinessTier.Payload.Task;
 using Meta.BusinessTier.Services.Interfaces;
 using Meta.DataTier.Models;
@@ -33,11 +34,22 @@ namespace Meta.BusinessTier.Services.Implements
         {
             throw new NotImplementedException();
         }
-
-        public Task<bool> RemoveTaskStatus(Guid id)
+        public async Task<bool> DeletaTask(Guid id)
         {
-            throw new NotImplementedException();
+            var task = await _unitOfWork.GetRepository<TaskManager>()
+                .SingleOrDefaultAsync(predicate: x => x.Id.Equals(id));
+
+            if (task == null)
+            {
+                throw new BadHttpRequestException(MessageConstant.TaskManager.TaskNotFoundMessage);
+            }
+
+            _unitOfWork.GetRepository<TaskManager>().DeleteAsync(task);
+            await _unitOfWork.CommitAsync();
+
+            return true;
         }
+
 
         public Task<bool> UpdateTask(Guid id, UpdateTaskRequest updateTaskRequest)
         {

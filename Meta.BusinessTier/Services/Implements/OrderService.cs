@@ -30,8 +30,12 @@ namespace Meta.BusinessTier.Services.Implements
 {
     public class OrderService : BaseService<OrderService>, IOrderService
     {
-        public OrderService(IUnitOfWork<MetaContext> unitOfWork, ILogger<OrderService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
+        private readonly IUserService _accountService;
+        private readonly ITaskService _taskService;
+        public OrderService(IUnitOfWork<MetaContext> unitOfWork, ILogger<OrderService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor, IUserService accountService, ITaskService taskService) : base(unitOfWork, logger, mapper, httpContextAccessor)
         {
+            _accountService = accountService;
+            _taskService = taskService;
         }
 
         public async Task<Guid> CreateNewOrder(CreateNewOrderResponse request)
@@ -131,7 +135,7 @@ namespace Meta.BusinessTier.Services.Implements
                 {
                     Id = Guid.NewGuid(),
                     Type = TaskType.CustomerRequest.ToString(),
-                    Status = TaskManagerStatus.Process.GetDescriptionFromEnum(),
+                    Status = TaskManagerStatus.PENDING.GetDescriptionFromEnum(),
                     CreateDate = currentTime,
                     ExcutionDate = newOrder.ExcutionDate,
                     OrderId = newOrder.Id,
@@ -279,18 +283,112 @@ namespace Meta.BusinessTier.Services.Implements
                 predicate: x => x.Id.Equals(orderId))
                 ?? throw new BadHttpRequestException(MessageConstant.Order.OrderNotFoundMessage);
             DateTime currentTime = TimeUtils.GetCurrentSEATime();
+            var taskManagers = await _unitOfWork.GetRepository<TaskManager>().SingleOrDefaultAsync(
+                predicate: t => t.OrderId == orderId);
+            if (updateOrder.Status == OrderStatus.COMPLETED.GetDescriptionFromEnum())
+            {
+                throw new BadHttpRequestException(MessageConstant.Order.UpdateFailedCompletedMessage);
+            }
             switch (request.Status)
             {
                 case OrderStatus.COMPLETED:
-                    break;
-                case OrderStatus.UNPAID:
+                    updateOrder.Status = OrderStatus.COMPLETED.GetDescriptionFromEnum();
+                    updateOrder.CompletedDate = currentTime;
+
+                    // Calculate points and update account
+                    int points = (int)(updateOrder.FinalAmount / 100000);
+                    var account = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
+                        predicate: x => x.Id.Equals(updateOrder.AccountId))
+                        ?? throw new BadHttpRequestException(MessageConstant.Account.NotFoundFailedMessage);
+
+                    // Update points and save account
+                    account.Point += points;
+                    if (account.Point != null)
+                    {
+                        account.Point += points;
+                    }
+                    else
+                    {
+                        account.Point = points;
+                    }
+                    _unitOfWork.GetRepository<Account>().UpdateAsync(account);
+
+                    // Lấy danh sách các rank
+                    var ranks = await _unitOfWork.GetRepository<Rank>().GetListAsync(
+                        predicate: x => points >= x.Range,
+                        orderBy: x => x.OrderByDescending(x => x.Range)
+                        );
+
+                    var rankCheck = ranks.FirstOrDefault();
+                    // Kiểm tra kết quả và thêm rank cho account nếu có
+                    if (rankCheck != null)
+                    {
+                        var addRankResult = await _accountService.AddrankForAccount(account.Id, rankCheck.Id);
+                    }
+
+
+                    if (taskManagers != null)
+                    {
+                        taskManagers.Status = TaskManagerStatus.COMPLETED.GetDescriptionFromEnum();
+                        taskManagers.CompletedDate = currentTime;
+                        _unitOfWork.GetRepository<TaskManager>().UpdateAsync(taskManagers);
+                    }
+                    var note = new Note()
+                    {
+                        Id = Guid.NewGuid(),
+                        Status = NoteStatus.SUCCESS.GetDescriptionFromEnum(),
+                        CreateDate = currentTime,
+                        Description = request.Note,
+                        OrderId = updateOrder.Id
+
+                    };
+                    if (note != null)
+                    {
+                        await _unitOfWork.GetRepository<Note>().InsertAsync(note);
+                    }
                     break;
                 case OrderStatus.PAID:
+                    updateOrder.Status = OrderStatus.PAID.GetDescriptionFromEnum();
+                    if(taskManagers != null)
+                    {
+                        taskManagers.Status = TaskManagerStatus.PROCESS.GetDescriptionFromEnum();
+                        _unitOfWork.GetRepository<TaskManager>().UpdateAsync(taskManagers);
+                    }
+                    note = new Note()
+                    {
+                        Id = Guid.NewGuid(),
+                        Status = NoteStatus.SUCCESS.GetDescriptionFromEnum(),
+                        CreateDate = currentTime,
+                        Description = request.Note,
+                        OrderId = updateOrder.Id
+
+                    };
+                    if (note != null)
+                    {
+                        await _unitOfWork.GetRepository<Note>().InsertAsync(note);
+                    }
                     break;
                 case OrderStatus.CANCELED:
                     updateOrder.Status = OrderStatus.CANCELED.GetDescriptionFromEnum();
-                    _unitOfWork.GetRepository<Order>().UpdateAsync(updateOrder);
+                    
+                    if (taskManagers != null)
+                    {
+                        await _taskService.DeletaTask(taskManagers.Id);
+                    }
+                    note = new Note()
+                    {
+                        Id = Guid.NewGuid(),
+                        Status = NoteStatus.FAILED.GetDescriptionFromEnum(),
+                        CreateDate = currentTime,
+                        Description = request.Note,
+                        OrderId = updateOrder.Id
 
+                    };
+                    if (note != null)
+                    {
+                        await _unitOfWork.GetRepository<Note>().InsertAsync(note);
+                    }
+                    _unitOfWork.GetRepository<Order>().UpdateAsync(updateOrder);
                     break;
                 default:
                     return false;
@@ -299,19 +397,6 @@ namespace Meta.BusinessTier.Services.Implements
             return isSuccessful;
         }
 
-        public Task<IEnumerable<GetOrderHistoriesResponse>> GetOrderHistories(Guid orderId)
-        {
-            throw new NotImplementedException();
-        }
-
-        //public async Task<IEnumerable<GetOrderHistoriesResponse>> GetOrderHistories(Guid orderId)
-        //{
-        //    IEnumerable<GetOrderHistoriesResponse> respone = await _unitOfWork.GetRepository<OrderHistory>().GetListAsync(
-        //       selector: x => _mapper.Map<GetOrderHistoriesResponse>(x),
-        //       include: x => x.Include(x => x.User),
-        //       orderBy: x => x.OrderByDescending(x => x.CreatedDate));
-        //    return respone;
-        //}
     }
 }
 
