@@ -1,4 +1,6 @@
 ﻿using Meta.BusinessTier.Enums.Status;
+using Meta.BusinessTier.Enums.Type;
+using Meta.BusinessTier.Payload.Pet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +19,10 @@ namespace Meta.BusinessTier.Payload.Order
         public double? TotalAmount { get; set; }
         public double? FinalAmount { get; set; }
         public OrderStatus? Status { get; set; }
+        public OrderType? Type { get; set; }
         public OrderUserResponse? UserInfo { get; set; }
         public OrderPetResponse? PetInfor { get; set; }
+        public StaffResponse? Staff {  get; set; }
         public List<NoteResponse>? Note { get; set; } = new List<NoteResponse>();
         public List<OrderDetailResponse>? ProductList { get; set; } = new List<OrderDetailResponse>();
     }
@@ -54,5 +58,12 @@ namespace Meta.BusinessTier.Payload.Order
     {
         public Guid? Id { get; set; }
         public string? Name { get; set; }
+        public TypePetResponse? TypePet { get; set; }
+    }
+    public class StaffResponse
+    {
+        public Guid Id { get; set; }
+        public string? FullName { get; set; }
+        public RoleEnum? Role { get; set;}
     }
 }

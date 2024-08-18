@@ -8,8 +8,10 @@ using Meta.BusinessTier.Enums.Type;
 using Meta.BusinessTier.Extensions;
 using Meta.BusinessTier.Payload;
 using Meta.BusinessTier.Payload.Order;
+using Meta.BusinessTier.Payload.Pet;
 using Meta.BusinessTier.Payload.Product;
 using Meta.BusinessTier.Payload.Task;
+using Meta.BusinessTier.Payload.TypePet;
 using Meta.BusinessTier.Services.Interfaces;
 using Meta.BusinessTier.Utils;
 using Meta.DataTier.Models;
@@ -161,6 +163,7 @@ namespace Meta.BusinessTier.Services.Implements
                     TotalAmount = x.TotalAmount,
                     FinalAmount = x.FinalAmount,
                     Status = EnumUtil.ParseEnum<OrderStatus>(x.Status),
+                    Type = EnumUtil.ParseEnum<OrderType>(x.Type),
                     Note = x.Notes.Select(note => new NoteResponse
                     {
                         Id = note.Id,
@@ -168,17 +171,28 @@ namespace Meta.BusinessTier.Services.Implements
                         Description = note.Description,
                         CreateDate = note.CreateDate.Value,
                     }).ToList(),
-                    UserInfo = x.Pet.Account == null ? null : new OrderUserResponse
+                    UserInfo = new OrderUserResponse
                     {
                         Id = x.Pet.Account.Id,
                         FullName = x.Pet.Account.FullName,
                         Role = EnumUtil.ParseEnum<RoleEnum>(x.Pet.Account.Role)
                     },
-                    PetInfor = x.Pet == null ? null : new OrderPetResponse
+                    PetInfor = new OrderPetResponse
                     {
                         Id = x.Pet.Id,
                         Name = x.Pet.Name,
+                        TypePet = new TypePetResponse
+                        {
+                            Id = x.Pet.TypePet.Id,
+                            Name = x.Pet.TypePet.Name,
+                        }
                     },
+                    Staff = x.TaskManagers.Select(tm => new StaffResponse
+                    {
+                        Id = tm.Account.Id,
+                        FullName = tm.Account.FullName,
+                        Role = EnumUtil.ParseEnum<RoleEnum>(tm.Account.Role)
+                    }).FirstOrDefault(),
                     ProductList = x.OrderDetails.Select(detail => new OrderDetailResponse
                     {
                         OrderDetailId = detail.Id,
@@ -191,14 +205,16 @@ namespace Meta.BusinessTier.Services.Implements
                         TotalAmount = detail.TotalAmount,
                     }).ToList()
                 },
-                include: x => x.Include(x => x.Pet)
-                               .ThenInclude(pet => pet.Account)
-                               .Include(x => x.OrderDetails)
-                                   .ThenInclude(detail => detail.Product)
-                               .Include(x => x.OrderDetails)
-                                   .ThenInclude(detail => detail.SupProduct)
-                               .Include(x => x.Notes)
-            );
+                include: x => x.Include(x => x.Pet.Account)
+                              .Include(x => x.Pet)
+                                  .ThenInclude(x => x.TypePet)
+                              .Include(x => x.OrderDetails)
+                                  .ThenInclude(detail => detail.Product)
+                              .Include(x => x.OrderDetails)
+                                  .ThenInclude(detail => detail.SupProduct)
+                              .Include(x => x.Notes)
+                              .Include(x => x.TaskManagers)
+                                  .ThenInclude(tm => tm.Account));
 
             if (order == null)
             {
@@ -221,6 +237,7 @@ namespace Meta.BusinessTier.Services.Implements
                     FinalAmount = x.FinalAmount,
                     Description = x.Description,
                     Status = EnumUtil.ParseEnum<OrderStatus>(x.Status),
+                    Type = EnumUtil.ParseEnum<OrderType>(x.Type),
                     Note = x.Notes.Select(note => new NoteResponse
                     {
                         Id = note.Id,
@@ -228,17 +245,28 @@ namespace Meta.BusinessTier.Services.Implements
                         Description = note.Description,
                         CreateDate = note.CreateDate.Value,
                     }).ToList(),
-                    UserInfo = x.Pet.Account == null ? null : new OrderUserResponse
+                    UserInfo = new OrderUserResponse
                     {
                         Id = x.Pet.Account.Id,
                         FullName = x.Pet.Account.FullName,
                         Role = EnumUtil.ParseEnum<RoleEnum>(x.Pet.Account.Role)
                     },
-                    PetInfor = x.Pet == null ? null : new OrderPetResponse
+                    PetInfor = new OrderPetResponse
                     {
                         Id = x.Pet.Id,
                         Name = x.Pet.Name,
+                        TypePet = new TypePetResponse
+                        {
+                           Id = x.Pet.TypePet.Id,
+                           Name = x.Pet.TypePet.Name,
+                        }
                     },
+                    Staff = x.TaskManagers.Select(tm => new StaffResponse
+                    {
+                        Id = tm.Account.Id,
+                        FullName = tm.Account.FullName,
+                        Role = EnumUtil.ParseEnum<RoleEnum>(tm.Account.Role)
+                    }).FirstOrDefault(),
                     ProductList = x.OrderDetails.Select(detail => new OrderDetailResponse
                     {
                         OrderDetailId = detail.Id,
@@ -255,11 +283,15 @@ namespace Meta.BusinessTier.Services.Implements
                 orderBy: x => x.OrderByDescending(x => x.CreatedDate),
                 include: x => x.Include(x => x.Pet.Account)
                               .Include(x => x.Pet)
+                                  .ThenInclude(x => x.TypePet)
                               .Include(x => x.OrderDetails)
                                   .ThenInclude(detail => detail.Product)
                               .Include(x => x.OrderDetails)
                                   .ThenInclude(detail => detail.SupProduct)
-                              .Include(x => x.Notes),
+                              .Include(x => x.Notes)
+                              .Include(x => x.TaskManagers)
+                                  .ThenInclude(tm => tm.Account),
+
                 page: pagingModel.page,
                 size: pagingModel.size
             );
