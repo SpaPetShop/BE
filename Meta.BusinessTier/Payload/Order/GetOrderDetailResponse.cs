@@ -52,6 +52,8 @@ namespace Meta.BusinessTier.Payload.Order
     {
         public Guid? Id { get; set; }
         public string? FullName { get; set; }
+        public string? Image { get; set; }
+        public string? PhoneNumber { get; set; }
         public RoleEnum? Role { get; set; }
     }
     public class OrderPetResponse
@@ -65,6 +67,8 @@ namespace Meta.BusinessTier.Payload.Order
     {
         public Guid Id { get; set; }
         public string? FullName { get; set; }
+        public string? Image { get; set; }
+        public string? PhoneNumber { get; set; }
         public RoleEnum? Role { get; set;}
     }
 }

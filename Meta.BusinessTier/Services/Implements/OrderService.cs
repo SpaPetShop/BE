@@ -175,6 +175,8 @@ namespace Meta.BusinessTier.Services.Implements
                     {
                         Id = x.Pet.Account.Id,
                         FullName = x.Pet.Account.FullName,
+                        PhoneNumber = x.Pet.Account.PhoneNumber,
+                        Image = x.Pet.Account.Image,
                         Role = EnumUtil.ParseEnum<RoleEnum>(x.Pet.Account.Role)
                     },
                     PetInfor = new OrderPetResponse
@@ -192,6 +194,8 @@ namespace Meta.BusinessTier.Services.Implements
                     {
                         Id = tm.Account.Id,
                         FullName = tm.Account.FullName,
+                        PhoneNumber = x.Pet.Account.PhoneNumber,
+                        Image = x.Pet.Account.Image,
                         Role = EnumUtil.ParseEnum<RoleEnum>(tm.Account.Role)
                     }).FirstOrDefault(),
                     ProductList = x.OrderDetails.Select(detail => new OrderDetailResponse
@@ -250,6 +254,8 @@ namespace Meta.BusinessTier.Services.Implements
                     {
                         Id = x.Pet.Account.Id,
                         FullName = x.Pet.Account.FullName,
+                        PhoneNumber = x.Pet.Account.PhoneNumber,
+                        Image = x.Pet.Account.Image,
                         Role = EnumUtil.ParseEnum<RoleEnum>(x.Pet.Account.Role)
                     },
                     PetInfor = new OrderPetResponse
@@ -267,6 +273,8 @@ namespace Meta.BusinessTier.Services.Implements
                     {
                         Id = tm.Account.Id,
                         FullName = tm.Account.FullName,
+                        PhoneNumber = x.Pet.Account.PhoneNumber,
+                        Image = x.Pet.Account.Image,
                         Role = EnumUtil.ParseEnum<RoleEnum>(tm.Account.Role)
                     }).FirstOrDefault(),
                     ProductList = x.OrderDetails.Select(detail => new OrderDetailResponse
