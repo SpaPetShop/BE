@@ -181,6 +181,7 @@ namespace Meta.BusinessTier.Services.Implements
                     {
                         Id = x.Pet.Id,
                         Name = x.Pet.Name,
+                        Image = x.Pet.Image,
                         TypePet = new TypePetResponse
                         {
                             Id = x.Pet.TypePet.Id,
@@ -255,6 +256,7 @@ namespace Meta.BusinessTier.Services.Implements
                     {
                         Id = x.Pet.Id,
                         Name = x.Pet.Name,
+                        Image = x.Pet.Image,
                         TypePet = new TypePetResponse
                         {
                            Id = x.Pet.TypePet.Id,

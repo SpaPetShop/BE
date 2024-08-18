@@ -58,6 +58,7 @@ namespace Meta.BusinessTier.Payload.Order
     {
         public Guid? Id { get; set; }
         public string? Name { get; set; }
+        public string? Image {  get; set; }
         public TypePetResponse? TypePet { get; set; }
     }
     public class StaffResponse
