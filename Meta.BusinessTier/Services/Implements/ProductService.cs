@@ -95,6 +95,7 @@ namespace Meta.BusinessTier.Services.Implements
                 Name = createNewProductRequest.Name,
                 StockPrice = createNewProductRequest.StockPrice,
                 SellingPrice = createNewProductRequest.SellingPrice,
+                TimeWork = createNewProductRequest.TimeWork,
                 Description = createNewProductRequest.Description,
                 Status = createNewProductRequest.Status.GetDescriptionFromEnum(),
                 Priority = createNewProductRequest.Priority,
@@ -155,6 +156,7 @@ namespace Meta.BusinessTier.Services.Implements
                 StockPrice = product.StockPrice,
                 SellingPrice = product.SellingPrice,
                 Description = product.Description,
+                TimeWork = product.TimeWork,
                 Status = EnumUtil.ParseEnum<ProductStatus>(product.Status),
                 Priority = product.Priority,
                 Category = new CategoryResponse
@@ -194,6 +196,7 @@ namespace Meta.BusinessTier.Services.Implements
                     StockPrice = x.StockPrice,
                     SellingPrice = x.SellingPrice,
                     Description = x.Description,
+                    TimeWork = x.TimeWork,
                     Status = EnumUtil.ParseEnum<ProductStatus>(x.Status),
                     Priority = x.Priority,
                     Category = new CategoryResponse
@@ -270,6 +273,7 @@ namespace Meta.BusinessTier.Services.Implements
             product.SellingPrice = updateProductRequest.SellingPrice.HasValue ? updateProductRequest.SellingPrice.Value : product.SellingPrice;
             product.Description = string.IsNullOrEmpty(updateProductRequest.Description) ? product.Description : updateProductRequest.Description;
             product.Priority = updateProductRequest.Priority.HasValue ? updateProductRequest.Priority.Value : product.Priority;
+            product.TimeWork = updateProductRequest.TimeWork.HasValue ? updateProductRequest.TimeWork.Value : product.TimeWork;
 
             // Update the status if provided
             if (updateProductRequest.Status != null)

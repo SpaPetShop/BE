@@ -17,6 +17,8 @@ public partial class SupProduct
 
     public string? Status { get; set; }
 
+    public double? TimeWork { get; set; }
+
     public DateTime? CreateDate { get; set; }
 
     public Guid? CategoryId { get; set; }

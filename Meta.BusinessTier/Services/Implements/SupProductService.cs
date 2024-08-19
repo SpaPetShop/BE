@@ -55,6 +55,7 @@ namespace Meta.BusinessTier.Services.Implements
                 StockPrice = request.StockPrice,
                 SellingPrice = request.SellingPrice,
                 Desctiprion = request.Description,
+                TimeWork = request.TimeWork,
                 Status = request.Status.GetDescriptionFromEnum(),
                 CreateDate = currentTime,
                 CategoryId = request.CategoryId
@@ -99,6 +100,7 @@ namespace Meta.BusinessTier.Services.Implements
                 Name = supProduct.Name,
                 StockPrice = supProduct.StockPrice,
                 SellingPrice = supProduct.SellingPrice,
+                TimeWork = supProduct.TimeWork,
                 Description = supProduct.Desctiprion,
                 Status = EnumUtil.ParseEnum<ProductStatus>(supProduct.Status),
                 Category = new CategoryResponse
@@ -123,6 +125,7 @@ namespace Meta.BusinessTier.Services.Implements
                     StockPrice = x.StockPrice,
                     SellingPrice = x.SellingPrice,
                     Description = x.Desctiprion,
+                    TimeWork = x.TimeWork,
                     Status = EnumUtil.ParseEnum<ProductStatus>(x.Status),
                     Category = new CategoryResponse
                     {
@@ -178,6 +181,7 @@ namespace Meta.BusinessTier.Services.Implements
             supProduct.StockPrice = request.StockPrice.HasValue ? request.StockPrice.Value : supProduct.StockPrice;
             supProduct.SellingPrice = request.SellingPrice.HasValue ? request.SellingPrice.Value : supProduct.SellingPrice;
             supProduct.Desctiprion = string.IsNullOrEmpty(request.Description) ? supProduct.Desctiprion : request.Description;
+            supProduct.TimeWork = request.TimeWork.HasValue ? request.TimeWork.Value : supProduct.TimeWork;
 
             if (request.Status != null)
             {

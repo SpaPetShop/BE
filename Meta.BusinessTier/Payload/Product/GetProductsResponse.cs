@@ -15,6 +15,7 @@ namespace Meta.BusinessTier.Payload.Product
         public double? SellingPrice { get; set; }
         public string Description { get; set; }
         public ProductStatus Status { get; set; }
+        public double? TimeWork { get; set; }
         public int? Priority { get; set; }
         public CategoryResponse Category { get; set; }
         public List<SupProductResponse> SupProducts { get; set; } = new List<SupProductResponse>();

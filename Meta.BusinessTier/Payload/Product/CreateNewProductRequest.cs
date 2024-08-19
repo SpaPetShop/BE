@@ -16,6 +16,7 @@ namespace Meta.BusinessTier.Payload.Product
         public string Description { get; set; }
         public ProductStatus Status { get; set; }
         public Guid CategoryId { get; set; }
+        public double? TimeWork { get; set; }
         public int Priority { get; set; }
         public List<Guid>? supProductId { get; set; }
         public List<Image>? Image { get; set; } = new List<Image>();

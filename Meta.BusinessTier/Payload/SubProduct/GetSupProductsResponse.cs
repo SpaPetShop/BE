@@ -16,6 +16,7 @@ namespace Meta.BusinessTier.Payload.PetService
         public double? SellingPrice { get; set; }
         public string Description { get; set; }
         public ProductStatus Status { get; set; }
+        public double? TimeWork { get; set; }
         public int? Priority { get; set; }
         public CategoryResponse Category { get; set; }
         public List<ImageResponse>? Image { get; set; } = new List<ImageResponse>();

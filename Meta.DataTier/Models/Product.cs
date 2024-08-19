@@ -19,6 +19,8 @@ public partial class Product
 
     public int? Priority { get; set; }
 
+    public double? TimeWork { get; set; }
+
     public DateTime? CreateDate { get; set; }
 
     public Guid? CategoryId { get; set; }
