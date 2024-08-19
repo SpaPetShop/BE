@@ -22,7 +22,7 @@ namespace Meta.BusinessTier.Payload.Login
         {
         }
 
-        public LoginResponse(TokenModel tokenModel, Guid id, string username, string password, string fullName,string image, UserStatus status, RoleEnum role)
+        public LoginResponse(TokenModel tokenModel, Guid id, string username, string password, string fullName, string image, UserStatus status, RoleEnum role)
         {
             TokenModel = tokenModel;
             Id = id;

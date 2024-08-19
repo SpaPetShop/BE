@@ -10,8 +10,6 @@ namespace Meta.BusinessTier.Payload.Task
     public class CreateNewTaskRequest
     {
 
-        public TaskType? Type { get; set; }
-
         public Guid? OrderId { get; set; }
         public Guid? AccountId { get; set; }
         public DateTime ExcutionDate { get; set; }

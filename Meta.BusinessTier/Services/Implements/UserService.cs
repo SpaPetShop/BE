@@ -324,6 +324,7 @@ namespace Meta.BusinessTier.Services.Implements
                 Username = loginRequest.Username,
                 FullName = user.FullName,
                 Role = EnumUtil.ParseEnum<RoleEnum>(user.Role),
+                Image = user.Image,
                 Status = EnumUtil.ParseEnum<UserStatus>(user.Status),
                 Id = user.Id,
                 TokenModel = tokenModel,
