@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Meta.BusinessTier.Payload.CustomerRequest;
+using HiCamping.BusinessTier.Validators;
+using Meta.BusinessTier.Enums.Status;
 
 namespace Meta.API.Controllers
 {
@@ -19,6 +21,7 @@ namespace Meta.API.Controllers
         {
             _customerRequestService = customerRequestService;
         }
+        [CustomAuthorize(RoleEnum.USER)]
         [HttpPost(ApiEndPointConstant.CustomerRequest.CustomerRequestsEndPoint)]
         public async Task<IActionResult> CreateNewCustomerRequest(CreateNewCustomerRequest createNewCustomerRequest)
         {

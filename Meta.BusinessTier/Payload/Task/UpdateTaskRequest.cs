@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Meta.BusinessTier.Enums.EnumStatus;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,6 @@ namespace Meta.BusinessTier.Payload.Task
 
         public Guid? AccountId { get; set; }
         public DateTime? ExcutionDate { get; set; }
+        public string? Status { get; set; }
     }
 }
