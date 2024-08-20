@@ -224,33 +224,7 @@ public static class MessageConstant
         public const string CreateFailedMessage = "Tạo mới review thất bại";
 
     }
-    public static class Warranty
-    {
-        public const string WarrantyNameExisted = "Bảo trì đã tồn tại";
-        public const string WarrantyOrderCompletedExisted = "Không thể tạo yêu cầu bảo hành khi đơn hàng chưa được hoàn thành";
-        public const string WarrantyCompletedExisted = "Phiếu yêu cần trước đó của máy này chưa hoàn thành, hãy đợi hoàn thành rồi mới tiếp tục tạo yêu cầu mới";
-        public const string WarrantyHaveExisted = "Đã có phiếu bảo trì tương tự trong ngày.";
-        public const string CreateNewWarrantyFailedMessage = "Tạo mới Bảo trì thất bại";
-        public const string UpdateWarrantyFailedMessage = "Cập nhật thông tin Bảo trì thất bại";
-        public const string UpdateWarrantySuccessMessage = "Cập nhật thông tin Bảo trì thành công";
-        public const string EmptyWarrantyIdMessage = "Bảo trì Id không hợp lệ";
-        public const string WarrantyNotFoundMessage = "Bảo trì không tồn tại trong hệ thống";
-        public const string UpdateStatusSuccessMessage = "Cập nhật trạng thái thành công";
-        public const string UpdateStatusFailedMessage = "Cập nhật trạng thái thất bại";
-        public const string ExceedQuantityMessage = "Số lượng vượt mức tồn kho";
-    }
-    public static class WarrantyDetail
-    {
-        public const string WarrantyDetailNameExisted = "Chi tiết bao trì đã tồn tại";
-        public const string CreateNewWarrantyDetailFailedMessage = "Tạo mới Chi tiết bao trì Detail thất bại";
-        public const string UpdateWarrantyDetailFailedMessage = "Cập nhật thông tin Chi tiết bao trì Detail thất bại";
-        public const string UpdateWarrantyDetailSuccessMessage = "Cập nhật thông tin Chi tiết bao trì Detail thành công";
-        public const string EmptyWarrantyDetailIdMessage = "Chi tiết bao trì Detail Id không hợp lệ";
-        public const string WarrantyDetailNotFoundMessage = "Chi tiết bao trì Detail không tồn tại trong hệ thống";
-        public const string UpdateStatusSuccessMessage = "Cập nhật trạng thái thành công";
-        public const string UpdateStatusFailedMessage = "Cập nhật trạng thái thất bại";
-        public const string ExceedQuantityMessage = "Số lượng vượt mức tồn kho";
-    }
+
 
     public static class Rank
     {
@@ -263,6 +237,17 @@ public static class MessageConstant
         public const string UpdateStatusSuccessMessage = "Cập nhật trạng thái thành công";
         public const string UpdateStatusFailedMessage = "Cập nhật trạng thái thất bại";
         public const string ExceedQuantityMessage = "Số lượng vượt mức tồn kho";
+    }
+    public static class CustomerRequest
+    {
+        public const string CreateNewFailedMessage = "Tạo mới yêu cầu thất bại";
+        public const string UpdateFailedMessage = "Cập nhật yêu cầu thất bại";
+        public const string UpdateSuccessMessage = "Cập nhật yêu cầu thành công";
+        public const string EmptyIdMessage = "Mã yêu cầu không hợp lệ";
+        public const string RankNotFoundMessage = "Yêu cầu không tồn tại trong hệ thống";
+        public const string UpdateStatusSuccessMessage = "Cập nhật trạng thái thành công";
+        public const string UpdateStatusFailedMessage = "Cập nhật trạng thái thất bại";
+        public const string UpdateStatusCompletedFailedMessage = "Cập nhật trạng thái thất bại. Nhiệm vụ đã hoàn tất.";
     }
     public static class TaskManager
     {
@@ -278,30 +263,7 @@ public static class MessageConstant
         public const string FullTaskMessage = "Nhân viên đã đủ số lượng nhiệm vụ trong ngày. Không thể giao thêm nhiệm vụ.";
         public const string TimeTaskMessage = "Nhân viên đã có nhiệm vụ ở khung giờ này. Không thể giao thêm nhiệm vụ.";
     }
-    public static class MachineryComponents
-    {
-        public const string MachineryComponentsNameExisted = "Bộ phận máy cơ khí đã tồn tại";
-        public const string CreateNewMachineryComponentsFailedMessage = "Tạo mới Bộ phận máy cơ khí thất bại";
-        public const string UpdateMachineryComponentsFailedMessage = "Cập nhật thông tin Bộ phận máy cơ khí thất bại";
-        public const string UpdateMachineryComponentsSuccessMessage = "Cập nhật thông tin Bộ phận máy cơ khí thành công";
-        public const string EmptyMachineryComponentsIdMessage = "Bộ phận máy cơ khí Id không hợp lệ";
-        public const string MachineryComponentsNotFoundMessage = "Bộ phận máy cơ khí không tồn tại trong hệ thống";
-        public const string UpdateStatusSuccessMessage = "Cập nhật trạng thái thành công";
-        public const string UpdateStatusFailedMessage = "Cập nhật trạng thái thất bại";
-        public const string ExceedQuantityMessage = "Số lượng vượt mức tồn kho";
-    }
-    public static class News
-    {
-        public const string NewsNameExisted = "Tin tức đã tồn tại";
-        public const string CreateNewNewsFailedMessage = "Tạo mới Tin tức thất bại";
-        public const string UpdateNewsFailedMessage = "Cập nhật thông tin Tin tức thất bại";
-        public const string UpdateNewsSuccessMessage = "Cập nhật thông tin Tin tức thành công";
-        public const string EmptyNewsIdMessage = "Tin tức không hợp lệ";
-        public const string NewsNotFoundMessage = "Tin tức không tồn tại trong hệ thống";
-        public const string UpdateStatusSuccessMessage = "Cập nhật trạng thái thành công";
-        public const string UpdateStatusFailedMessage = "Cập nhật trạng thái thất bại";
-        public const string ExceedQuantityMessage = "Số lượng vượt mức tồn kho";
-    }
+
     public static class Discount
     {
         public const string DiscountNameExisted = "Khuyến mãi đã tồn tại";

@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Meta.BusinessTier.Payload.CustomerRequest
 {
-    internal class CreateNewCustomerRequest
+    public class CreateNewCustomerRequest
     {
+        public string? Note { get; set; }
+
+        public DateTime? ExctionDate { get; set; }
+
+        public Guid? StaffId { get; set; }
+
+        public Guid? OrderId { get; set; }
     }
 }

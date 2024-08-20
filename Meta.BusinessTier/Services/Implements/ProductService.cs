@@ -77,18 +77,11 @@ namespace Meta.BusinessTier.Services.Implements
             DateTime currentTime = TimeUtils.GetCurrentSEATime();
 
             Product existingProduct = await _unitOfWork.GetRepository<Product>().SingleOrDefaultAsync(
-                predicate: x => x.Name.Equals(createNewProductRequest.Name));
-            if (existingProduct != null)
-            {
-                throw new BadHttpRequestException(MessageConstant.Product.ProductNameExisted);
-            }
-
+                predicate: x => x.Name.Equals(createNewProductRequest.Name))
+                ?? throw new BadHttpRequestException(MessageConstant.Product.ProductNameExisted);
             Category category = await _unitOfWork.GetRepository<Category>().SingleOrDefaultAsync(
-                predicate: x => x.Id.Equals(createNewProductRequest.CategoryId));
-            if (category == null)
-            {
-                throw new BadHttpRequestException(MessageConstant.Category.NotFoundFailedMessage);
-            }
+                predicate: x => x.Id.Equals(createNewProductRequest.CategoryId))
+                ?? throw new BadHttpRequestException(MessageConstant.Category.NotFoundFailedMessage);
             var newProduct = new Product
             {
                 Id = Guid.NewGuid(),
@@ -128,7 +121,7 @@ namespace Meta.BusinessTier.Services.Implements
                 bool componentsAdded = await AddSupProductToProduct(newProduct.Id, createNewProductRequest.supProductId);
                 if (!componentsAdded)
                 {
-                    throw new BadHttpRequestException(MessageConstant.MachineryComponents.CreateNewMachineryComponentsFailedMessage);
+                    throw new BadHttpRequestException(MessageConstant.Product.CreateNewProductFailedMessage);
                 }
             }
             return newProduct.Id;
@@ -137,8 +130,6 @@ namespace Meta.BusinessTier.Services.Implements
 
         public async Task<GetProductsResponse> GetProductById(Guid id)
         {
-            if (id == Guid.Empty)
-                throw new BadHttpRequestException(MessageConstant.Product.EmptyProductIdMessage);
 
             Product product = await _unitOfWork.GetRepository<Product>().SingleOrDefaultAsync(
                 predicate: x => x.Id.Equals(id),

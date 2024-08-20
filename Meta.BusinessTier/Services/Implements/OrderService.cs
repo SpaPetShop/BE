@@ -219,12 +219,9 @@ namespace Meta.BusinessTier.Services.Implements
                                   .ThenInclude(detail => detail.SupProduct)
                               .Include(x => x.Notes)
                               .Include(x => x.TaskManagers)
-                                  .ThenInclude(tm => tm.Account));
-
-            if (order == null)
-            {
-                throw new KeyNotFoundException(MessageConstant.Order.OrderNotFoundMessage);
-            }
+                                  .ThenInclude(tm => tm.Account))
+                ?? throw new KeyNotFoundException(MessageConstant.Order.OrderNotFoundMessage);
+            
 
             return order;
         }
