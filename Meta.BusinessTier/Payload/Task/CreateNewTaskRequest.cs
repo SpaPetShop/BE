@@ -9,9 +9,8 @@ namespace Meta.BusinessTier.Payload.Task
 {
     public class CreateNewTaskRequest
     {
-
-        public Guid? OrderId { get; set; }
-        public Guid? AccountId { get; set; }
+        public Guid OrderId { get; set; }
+        public Guid AccountId { get; set; }
 
     }
 }

@@ -27,36 +27,53 @@ namespace Meta.BusinessTier.Services.Implements
         public TaskService(IUnitOfWork<MetaContext> unitOfWork, ILogger<TaskService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
         {
         }
-
         public async Task<Guid> CreateNewTask(CreateNewTaskRequest createNewTaskRequest)
         {
             var currentUser = GetUsernameFromJwt();
             Account account = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
                 predicate: x => x.Username.Equals(currentUser));
+
             DateTime currentTime = TimeUtils.GetCurrentSEATime();
-            Guid? addressId = null;
 
             // Lấy danh sách task trong ngày của nhân viên
             var tasksForToday = await _unitOfWork.GetRepository<TaskManager>().GetListAsync(
-                predicate: t => t.AccountId == createNewTaskRequest.AccountId && t.ExcutionDate.HasValue && t.ExcutionDate.Value.Date.Day == DateTime.Now.Date.Day);
+                predicate: t => t.AccountId == createNewTaskRequest.AccountId
+                                && t.ExcutionDate.HasValue
+                                && t.ExcutionDate.Value.Date == currentTime.Date);
+
             int taskCountForToday = tasksForToday.Count();
-            var existTime= await _unitOfWork.GetRepository<TaskManager>().GetListAsync(
-                predicate: t => t.AccountId == createNewTaskRequest.AccountId && t.ExcutionDate.HasValue && t.ExcutionDate.Value.Date.Hour == DateTime.Now.Date.Hour);
+
+            //// Kiểm tra nếu đã tồn tại task trong cùng một giờ
+            //var existTimeTask = await _unitOfWork.GetRepository<TaskManager>().SingleOrDefaultAsync(
+            //    predicate: t => t.AccountId == createNewTaskRequest.AccountId
+            //                    && t.ExcutionDate.HasValue
+            //                    && t.ExcutionDate.Value.Date == currentTime.Date
+            //                    && t.ExcutionDate.Value.Hour == currentTime.Hour);
+
             // Lấy danh sách tất cả task của nhân viên với trạng thái Process
             var processTasks = await _unitOfWork.GetRepository<TaskManager>().GetListAsync(
-                predicate: t => t.AccountId == createNewTaskRequest.AccountId && t.Status == TaskManagerStatus.PROCESS.GetDescriptionFromEnum());
+                predicate: t => t.AccountId == createNewTaskRequest.AccountId
+                                && t.Status == TaskManagerStatus.PROCESS.GetDescriptionFromEnum() && t.ExcutionDate.HasValue && t.ExcutionDate.Value.Day == currentTime.Day);
+
             int processTaskCount = processTasks.Count();
+
+            // Kiểm tra nếu số task trong ngày đã đạt tới giới hạn
             if (taskCountForToday >= 4)
             {
                 throw new BadHttpRequestException(MessageConstant.TaskManager.FullTaskMessage);
             }
-            if (existTime != null)
-            {
-                throw new BadHttpRequestException(MessageConstant.TaskManager.TimeTaskMessage);
-            }
+
+            //// Kiểm tra nếu đã có task trong cùng giờ
+            //if (existTimeTask != null)
+            //{
+            //    throw new BadHttpRequestException(MessageConstant.TaskManager.TimeTaskMessage);
+            //}
+
             var order = await _unitOfWork.GetRepository<Order>().SingleOrDefaultAsync(
-                    predicate: o => o.Id == createNewTaskRequest.OrderId.Value && o.Type == OrderType.MANAGERREQUEST.GetDescriptionFromEnum())
-                ?? throw new BadHttpRequestException(MessageConstant.Order.OrderNoteManagerRequestMessage);
+                predicate: o => o.Id == createNewTaskRequest.OrderId
+                                && o.Type == OrderType.MANAGERREQUEST.GetDescriptionFromEnum())
+                    ?? throw new BadHttpRequestException(MessageConstant.Order.OrderNoteManagerRequestMessage);
+
             TaskManager newTask = new()
             {
                 Id = Guid.NewGuid(),
@@ -67,14 +84,18 @@ namespace Meta.BusinessTier.Services.Implements
                 AccountId = createNewTaskRequest.AccountId,
                 OrderId = createNewTaskRequest.OrderId,
             };
+
             await _unitOfWork.GetRepository<TaskManager>().InsertAsync(newTask);
             bool isSuccessful = await _unitOfWork.CommitAsync() > 0;
+
             if (!isSuccessful)
             {
                 throw new BadHttpRequestException(MessageConstant.TaskManager.CreateNewTaskFailedMessage);
             }
+
             return newTask.Id;
         }
+
 
         public async Task<GetTaskResponse> GetTaskById(Guid id)
         {
