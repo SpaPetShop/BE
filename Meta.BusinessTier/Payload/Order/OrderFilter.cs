@@ -12,8 +12,6 @@ namespace Meta.BusinessTier.Payload.Order
     public class OrderFilter
     {
         public string? InvoiceCode { get; set; }
-        public DateTime? CreateDate { get; set; }
-        public DateTime? CompletedDate { get; set; }
         public Guid? NoteId { get; set; }
         public string? Description { get; set; }
         public OrderStatus? Status { get; set; }
