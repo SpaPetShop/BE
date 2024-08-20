@@ -35,7 +35,6 @@ namespace Meta.BusinessTier.Services.Implements
 
             DateTime currentTime = TimeUtils.GetCurrentSEATime();
 
-            // Lấy danh sách task trong ngày của nhân viên
             var tasksForToday = await _unitOfWork.GetRepository<TaskManager>().GetListAsync(
                 predicate: t => t.AccountId == createNewTaskRequest.AccountId
                                 && t.ExcutionDate.HasValue
@@ -43,31 +42,27 @@ namespace Meta.BusinessTier.Services.Implements
 
             int taskCountForToday = tasksForToday.Count();
 
-            //// Kiểm tra nếu đã tồn tại task trong cùng một giờ
-            //var existTimeTask = await _unitOfWork.GetRepository<TaskManager>().SingleOrDefaultAsync(
-            //    predicate: t => t.AccountId == createNewTaskRequest.AccountId
-            //                    && t.ExcutionDate.HasValue
-            //                    && t.ExcutionDate.Value.Date == currentTime.Date
-            //                    && t.ExcutionDate.Value.Hour == currentTime.Hour);
 
-            // Lấy danh sách tất cả task của nhân viên với trạng thái Process
             var processTasks = await _unitOfWork.GetRepository<TaskManager>().GetListAsync(
                 predicate: t => t.AccountId == createNewTaskRequest.AccountId
                                 && t.Status == TaskManagerStatus.PROCESS.GetDescriptionFromEnum() && t.ExcutionDate.HasValue && t.ExcutionDate.Value.Day == currentTime.Day);
 
             int processTaskCount = processTasks.Count();
 
-            // Kiểm tra nếu số task trong ngày đã đạt tới giới hạn
             if (taskCountForToday >= 4)
             {
                 throw new BadHttpRequestException(MessageConstant.TaskManager.FullTaskMessage);
             }
 
-            //// Kiểm tra nếu đã có task trong cùng giờ
-            //if (existTimeTask != null)
-            //{
-            //    throw new BadHttpRequestException(MessageConstant.TaskManager.TimeTaskMessage);
-            //}
+            // Kiểm tra xem có task nào chưa hoàn thành cho đơn hàng này không
+            var existingTasksForOrder = await _unitOfWork.GetRepository<TaskManager>().GetListAsync(
+                predicate: t => t.OrderId == createNewTaskRequest.OrderId
+                                && t.Status != TaskManagerStatus.COMPLETED.GetDescriptionFromEnum());
+
+            if (existingTasksForOrder.Any())
+            {
+                throw new BadHttpRequestException(MessageConstant.TaskManager.ExceedQuantityMessage);
+            }
 
             var order = await _unitOfWork.GetRepository<Order>().SingleOrDefaultAsync(
                 predicate: o => o.Id == createNewTaskRequest.OrderId
@@ -201,7 +196,7 @@ namespace Meta.BusinessTier.Services.Implements
 
             TaskManager task = await _unitOfWork.GetRepository<TaskManager>().SingleOrDefaultAsync(
                 predicate: x => x.Id.Equals(id))
-                ?? throw new BadHttpRequestException(MessageConstant.TaskManager.TaskNameExisted);
+                ?? throw new BadHttpRequestException(MessageConstant.TaskManager.TaskNotFoundMessage);
 
             Account account = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
                 predicate: x => x.Id.Equals(updateTaskRequest.AccountId))

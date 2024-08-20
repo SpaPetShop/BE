@@ -259,7 +259,7 @@ public static class MessageConstant
         public const string TaskNotFoundMessage = "Nhiệm vụ không tồn tại trong hệ thống";
         public const string UpdateStatusSuccessMessage = "Cập nhật trạng thái thành công";
         public const string UpdateStatusFailedMessage = "Cập nhật trạng thái thất bại";
-        public const string ExceedQuantityMessage = "Số lượng vượt mức tồn kho";
+        public const string ExceedQuantityMessage = "Đang có 1 nhiệm vụ cho đơn hàng này.";
         public const string FullTaskMessage = "Nhân viên đã đủ số lượng nhiệm vụ trong ngày. Không thể giao thêm nhiệm vụ.";
         public const string TimeTaskMessage = "Nhân viên đã có nhiệm vụ ở khung giờ này. Không thể giao thêm nhiệm vụ.";
     }
