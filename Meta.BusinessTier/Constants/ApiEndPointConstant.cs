@@ -8,7 +8,13 @@ public static class ApiEndPointConstant
     public const string RootEndPoint = "/api";
     public const string ApiVersion = "/v1";
     public const string ApiEndpoint = RootEndPoint + ApiVersion;
+    public static class Payment
+    {
+        public const string PaymentEndpoint = ApiEndpoint + "/payments";
+        public const string VnPayEndpoint = PaymentEndpoint + "/vnpay";
+        public const string PaymentsEndpoint = PaymentEndpoint + "/{id}";
 
+    }
     public static class Authentication
     {
         public const string AuthenticationEndpoint = ApiEndpoint + "/auth";
