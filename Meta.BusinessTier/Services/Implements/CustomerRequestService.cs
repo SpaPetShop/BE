@@ -64,23 +64,21 @@ namespace Meta.BusinessTier.Services.Implements
                     Status = x.Status,
                     CreateDate = x.CreateDate,
                     ExctionDate = x.ExctionDate,
-                    StaffId = new AccountResponse
-                    {
-                        Id = x.Staff.Id,
-                        FullName = x.Staff.FullName,
-                        Role = EnumUtil.ParseEnum<RoleEnum>(x.Staff.Role)
-                    },
-                    UserId = new AccountResponse
-                    {
-                        Id = x.User.Id,
-                        FullName = x.User.FullName,
-                        Role = EnumUtil.ParseEnum<RoleEnum>(x.User.Role)
-                    },
+                    //StaffId = new AccountResponse
+                    //{
+                    //    Id = x.Staff.Id,
+                    //    FullName = x.Staff.FullName,
+                    //    Role = EnumUtil.ParseEnum<RoleEnum>(x.Staff.Role)
+                    //},
+                    //UserId = new AccountResponse
+                    //{
+                    //    Id = x.User.Id,
+                    //    FullName = x.User.FullName,
+                    //    Role = EnumUtil.ParseEnum<RoleEnum>(x.User.Role)
+                    //},
                     OrderId = x.OrderId
                 },
-                include: x => x.Include(cr => cr.Staff)
-                               .Include(cr => cr.User)
-                               .Include(cr => cr.Order)) 
+                include: x => x.Include(cr => cr.Order)) 
             ?? throw new BadHttpRequestException("Customer request not found.");
 
 
@@ -99,24 +97,22 @@ namespace Meta.BusinessTier.Services.Implements
                     CreateDate = x.CreateDate,
                     ExctionDate = x.ExctionDate,
                     OrderId = x.OrderId,
-                    StaffId = new AccountResponse
-                    {
-                        Id = x.Staff.Id,
-                        FullName = x.Staff.FullName,
-                        Role = EnumUtil.ParseEnum<RoleEnum>(x.Staff.Role)
-                    },
-                    UserId = new AccountResponse
-                    {
-                        Id = x.User.Id,
-                        FullName = x.User.FullName,
-                        Role = EnumUtil.ParseEnum<RoleEnum>(x.User.Role)
-                    }
+                    //StaffId = new AccountResponse
+                    //{
+                    //    Id = x.Staff.Id,
+                    //    FullName = x.Staff.FullName,
+                    //    Role = EnumUtil.ParseEnum<RoleEnum>(x.Staff.Role)
+                    //},
+                    //UserId = new AccountResponse
+                    //{
+                    //    Id = x.User.Id,
+                    //    FullName = x.User.FullName,
+                    //    Role = EnumUtil.ParseEnum<RoleEnum>(x.User.Role)
+                    //}
                 },
                 filter: filter,
                 orderBy: x => x.OrderByDescending(x => x.CreateDate),
-                include: x => x.Include(cr => cr.Staff)
-                               .Include(cr => cr.User)
-                               .Include(cr => cr.Order),
+                include: x => x.Include(cr => cr.Order),
                 page: pagingModel.page,
                 size: pagingModel.size
             );
