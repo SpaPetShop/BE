@@ -477,6 +477,89 @@
     ]
   },
   {
+    "ContainingType": "Meta.API.Controllers.PaymentController",
+    "Method": "CreateVnPayPaymentUrl",
+    "RelativePath": "api/v1/payments",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createPaymentRequest",
+        "Type": "Meta.BusinessTier.Payload.Payment.CreatePaymentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Meta.BusinessTier.Payload.Payment.CreatePaymentResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Meta.API.Controllers.PaymentController",
+    "Method": "UpdatePayment",
+    "RelativePath": "api/v1/payments/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "createPaymentRequest",
+        "Type": "Meta.BusinessTier.Payload.Payment.UpdatePaymentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Meta.BusinessTier.Payload.Payment.CreatePaymentResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Meta.API.Controllers.PaymentController",
+    "Method": "VnPayPaymentCallBack",
+    "RelativePath": "api/v1/payments/vnpay",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "vnp_ResponseCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "vnp_TxnRef",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "urlCallBack",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Meta.API.Controllers.PetController",
     "Method": "CreateNewPets",
     "RelativePath": "api/v1/pet",

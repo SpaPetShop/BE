@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\FPT\\Capstone\\Meta\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\services\\implements\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\services\\implements\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7962ED97-E399-4AD5-95FD-4CC6906D0F1E}|Meta.API\\Meta.API.csproj|d:\\fpt\\capstone\\meta\\meta.api\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7962ED97-E399-4AD5-95FD-4CC6906D0F1E}|Meta.API\\Meta.API.csproj|solutionrelative:meta.api\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -41,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\utils\\passwordutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\utils\\passwordutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\utils\\timeutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\utils\\timeutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\utils\\vnpayhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -117,10 +117,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7962ED97-E399-4AD5-95FD-4CC6906D0F1E}|Meta.API\\Meta.API.csproj|d:\\fpt\\capstone\\meta\\meta.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7962ED97-E399-4AD5-95FD-4CC6906D0F1E}|Meta.API\\Meta.API.csproj|solutionrelative:meta.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\services\\implements\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|solutionrelative:meta.businesstier\\services\\implements\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6C8BD8C0-FB51-43C1-90B0-837C09ED7999}|Meta.BusinessTier\\Meta.BusinessTier.csproj|d:\\fpt\\capstone\\meta\\meta.businesstier\\payload\\task\\updatetaskrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -398,11 +394,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 74,
               "Title": "Pet.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\Pet.cs",
               "RelativeDocumentMoniker": "Meta.DataTier\\Models\\Pet.cs",
@@ -414,47 +410,25 @@
               "IsPinned": true
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PaymentController.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\PaymentController.cs",
               "RelativeDocumentMoniker": "Meta.API\\Controllers\\PaymentController.cs",
               "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\PaymentController.cs",
               "RelativeToolTip": "Meta.API\\Controllers\\PaymentController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAC0AAAAQAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAIwC0AAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-19T23:08:42.191Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "OrderStatus.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\Status\\OrderStatus.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Enums\\Status\\OrderStatus.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\Status\\OrderStatus.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Enums\\Status\\OrderStatus.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T23:07:38.624Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PasswordUtil.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Utils\\PasswordUtil.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Utils\\PasswordUtil.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Utils\\PasswordUtil.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Utils\\PasswordUtil.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-17T13:48:44.777Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "MailUtils.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Utils\\MailUtils.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Utils\\MailUtils.cs",
@@ -462,12 +436,11 @@
               "RelativeToolTip": "Meta.BusinessTier\\Utils\\MailUtils.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-17T13:49:30.652Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-17T13:49:30.652Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "JwtUtil.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Utils\\JwtUtil.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Utils\\JwtUtil.cs",
@@ -475,12 +448,11 @@
               "RelativeToolTip": "Meta.BusinessTier\\Utils\\JwtUtil.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-17T13:49:08.963Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-17T13:49:08.963Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "JsonUtil.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Utils\\JsonUtil.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Utils\\JsonUtil.cs",
@@ -488,12 +460,11 @@
               "RelativeToolTip": "Meta.BusinessTier\\Utils\\JsonUtil.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-17T13:49:05.414Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-17T13:49:05.414Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "EnumUtil.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Utils\\EnumUtil.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Utils\\EnumUtil.cs",
@@ -501,12 +472,11 @@
               "RelativeToolTip": "Meta.BusinessTier\\Utils\\EnumUtil.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-17T13:49:01.889Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-17T13:49:01.889Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "EnumerableUtil.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Utils\\EnumerableUtil.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Utils\\EnumerableUtil.cs",
@@ -514,12 +484,48 @@
               "RelativeToolTip": "Meta.BusinessTier\\Utils\\EnumerableUtil.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-17T13:48:58.893Z",
+              "WhenOpened": "2024-08-17T13:48:58.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderStatus.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\Status\\OrderStatus.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Enums\\Status\\OrderStatus.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\Status\\OrderStatus.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Enums\\Status\\OrderStatus.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T23:07:38.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TaskService.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\TaskService.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\TaskService.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\TaskService.cs*",
+              "RelativeToolTip": "Meta.BusinessTier\\Services\\Implements\\TaskService.cs*",
+              "ViewState": "AQIAAKoAAAAAAAAAAAAuwLkAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T11:44:30.7Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
+              "Title": "PasswordUtil.cs",
+              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Utils\\PasswordUtil.cs",
+              "RelativeDocumentMoniker": "Meta.BusinessTier\\Utils\\PasswordUtil.cs",
+              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Utils\\PasswordUtil.cs",
+              "RelativeToolTip": "Meta.BusinessTier\\Utils\\PasswordUtil.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T13:48:44.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "CustomListUtil.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Utils\\CustomListUtil.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Utils\\CustomListUtil.cs",
@@ -527,12 +533,11 @@
               "RelativeToolTip": "Meta.BusinessTier\\Utils\\CustomListUtil.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-17T13:48:55.11Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-17T13:48:55.11Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CallApiUtils.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Utils\\CallApiUtils.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Utils\\CallApiUtils.cs",
@@ -540,21 +545,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Utils\\CallApiUtils.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-17T13:48:50.047Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "TimeUtils.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Utils\\TimeUtils.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Utils\\TimeUtils.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Utils\\TimeUtils.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Utils\\TimeUtils.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-17T13:48:33.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-17T13:48:50.047Z"
             },
             {
               "$type": "Document",
@@ -566,8 +557,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Utils\\VnPayHelper.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-17T13:49:52.686Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-17T13:49:52.686Z"
             },
             {
               "$type": "Document",
@@ -579,8 +569,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Utils\\VnPayLibrary.cs",
               "ViewState": "AQIAACUAAAAAAAAAAAAQwAwAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-17T13:49:57.156Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-17T13:49:57.156Z"
             },
             {
               "$type": "Document",
@@ -592,8 +581,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Services\\Implements\\PaymentService.cs",
               "ViewState": "AQIAABwAAAAAAAAAAAA5wHEAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T22:58:17.953Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T22:58:17.953Z"
             },
             {
               "$type": "Document",
@@ -605,8 +593,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Services\\Interfaces\\IPaymentService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T22:57:53.806Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T22:57:53.806Z"
             },
             {
               "$type": "Document",
@@ -618,8 +605,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Payload\\Payment\\VnPaymentResponse.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T22:56:58.964Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T22:56:58.964Z"
             },
             {
               "$type": "Document",
@@ -631,8 +617,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Payload\\Payment\\VnPayConfiguration.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T22:56:50.918Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T22:56:50.918Z"
             },
             {
               "$type": "Document",
@@ -644,8 +629,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Payload\\Payment\\UpdateTransactionRequest.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T22:56:17.75Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T22:56:17.75Z"
             },
             {
               "$type": "Document",
@@ -657,8 +641,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Payload\\Payment\\UpdatePaymentRequest.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T22:56:10.78Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T22:56:10.78Z"
             },
             {
               "$type": "Document",
@@ -670,8 +653,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Payload\\Payment\\PaymentFilter.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T22:56:08.072Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T22:56:08.072Z"
             },
             {
               "$type": "Document",
@@ -683,8 +665,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Payload\\Payment\\GetPaymentResponse.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T22:56:01.361Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T22:56:01.361Z"
             },
             {
               "$type": "Document",
@@ -696,8 +677,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Payload\\Payment\\CreatePaymentResponse.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T22:55:20.022Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T22:55:20.022Z"
             },
             {
               "$type": "Document",
@@ -709,8 +689,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Enums\\Status\\PaymentStatus.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T22:54:20.038Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T22:54:20.038Z"
             },
             {
               "$type": "Document",
@@ -722,8 +701,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Payload\\Payment\\CreatePaymentRequest.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T22:53:29.146Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T22:53:29.146Z"
             },
             {
               "$type": "Document",
@@ -735,12 +713,7 @@
               "RelativeToolTip": "Meta.API\\Controllers\\OrderController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T16:24:52.71Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "WhenOpened": "2024-08-19T16:24:52.71Z"
             },
             {
               "$type": "Document",
@@ -752,21 +725,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Services\\Implements\\OrderService.cs",
               "ViewState": "AQIAAGEAAAAAAAAAAAAYwGwAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-17T12:30:36.884Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "TaskService.cs",
-              "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\TaskService.cs",
-              "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\TaskService.cs",
-              "ToolTip": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\TaskService.cs",
-              "RelativeToolTip": "Meta.BusinessTier\\Services\\Implements\\TaskService.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAuwDYAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-17T11:44:30.7Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-17T12:30:36.884Z"
             },
             {
               "$type": "Document",
@@ -778,8 +737,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Payload\\Login\\LoginRequest.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T06:11:38.809Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-14T06:11:38.809Z"
             },
             {
               "$type": "Document",
@@ -791,8 +749,7 @@
               "RelativeToolTip": "Meta.BusinessTier\\Payload\\Login\\LoginResponse.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAA4wCEAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T06:10:27.147Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-14T06:10:27.147Z"
             },
             {
               "$type": "Document",
@@ -804,12 +761,11 @@
               "RelativeToolTip": "Meta.BusinessTier\\Services\\Implements\\UserService.cs",
               "ViewState": "AQIAAMIAAAAAAAAAAAAuwD0BAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T14:35:49.484Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-08T14:35:49.484Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 29,
               "Title": "UpdateTaskRequest.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Task\\UpdateTaskRequest.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Task\\UpdateTaskRequest.cs",
@@ -817,12 +773,11 @@
               "RelativeToolTip": "Meta.BusinessTier\\Payload\\Task\\UpdateTaskRequest.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T09:40:56.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-08T09:40:56.528Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 30,
               "Title": "CreateNewTaskRequest.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Task\\CreateNewTaskRequest.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Task\\CreateNewTaskRequest.cs",
@@ -830,12 +785,11 @@
               "RelativeToolTip": "Meta.BusinessTier\\Payload\\Task\\CreateNewTaskRequest.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T16:15:14.34Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T16:15:14.34Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 31,
               "Title": "SupProductService.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\SupProductService.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\SupProductService.cs",
@@ -843,12 +797,11 @@
               "RelativeToolTip": "Meta.BusinessTier\\Services\\Implements\\SupProductService.cs",
               "ViewState": "AQIAAHkAAAAAAAAAAAAkwLUAAABbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T10:41:24.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-12T10:41:24.783Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 34,
               "Title": "UserStatus.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\Status\\UserStatus.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Enums\\Status\\UserStatus.cs",
@@ -860,7 +813,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 33,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Meta.DataTier\\Models\\Product.cs",
@@ -872,7 +825,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 32,
               "Title": "ProductService.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\ProductService.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\ProductService.cs",
@@ -884,7 +837,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 37,
               "Title": "PetController.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\PetController.cs",
               "RelativeDocumentMoniker": "Meta.API\\Controllers\\PetController.cs",
@@ -896,7 +849,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 38,
               "Title": "TypeService.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\TypeService.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\TypeService.cs",
@@ -908,7 +861,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 39,
               "Title": "RankService.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\RankService.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\RankService.cs",
@@ -920,7 +873,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 35,
               "Title": "RoleEnum.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\Status\\RoleEnum.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Enums\\Status\\RoleEnum.cs",
@@ -932,7 +885,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 36,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Meta.API\\Controllers\\AccountController.cs",
@@ -944,7 +897,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 41,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\CategoryService.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\CategoryService.cs",
@@ -956,7 +909,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 42,
               "Title": "CategoryStatus.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\Status\\CategoryStatus.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Enums\\Status\\CategoryStatus.cs",
@@ -968,7 +921,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 43,
               "Title": "NoteStatus.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\Status\\NoteStatus.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Enums\\Status\\NoteStatus.cs",
@@ -980,7 +933,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 40,
               "Title": "PetService.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Implements\\PetService.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Implements\\PetService.cs",
@@ -992,7 +945,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 44,
               "Title": "ProductStatus.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\Status\\ProductStatus.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Enums\\Status\\ProductStatus.cs",
@@ -1004,7 +957,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 45,
               "Title": "TypePetStatus.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\Status\\TypePetStatus.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Enums\\Status\\TypePetStatus.cs",
@@ -1016,7 +969,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 46,
               "Title": "AccountTypeGender.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\Type\\AccountTypeGender.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Enums\\Type\\AccountTypeGender.cs",
@@ -1028,7 +981,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 47,
               "Title": "OrderType.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\Type\\OrderType.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Enums\\Type\\OrderType.cs",
@@ -1040,7 +993,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 48,
               "Title": "CategoryType.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\Type\\CategoryType.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Enums\\Type\\CategoryType.cs",
@@ -1052,7 +1005,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 49,
               "Title": "TypePetType.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\Type\\TypePetType.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Enums\\Type\\TypePetType.cs",
@@ -1064,7 +1017,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 50,
               "Title": "TaskType.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Enums\\Type\\TaskType.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Enums\\Type\\TaskType.cs",
@@ -1076,7 +1029,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 51,
               "Title": "GetTaskResponse.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Task\\GetTaskResponse.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Task\\GetTaskResponse.cs",
@@ -1088,7 +1041,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 54,
               "Title": "ITaskService.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\ITaskService.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Interfaces\\ITaskService.cs",
@@ -1100,7 +1053,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 52,
               "Title": "OrderFilter.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Order\\OrderFilter.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Order\\OrderFilter.cs",
@@ -1112,7 +1065,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 55,
               "Title": "Note.txt",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Note.txt",
               "RelativeDocumentMoniker": "Meta.DataTier\\Note.txt",
@@ -1124,7 +1077,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 53,
               "Title": "TaskController.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\TaskController.cs",
               "RelativeDocumentMoniker": "Meta.API\\Controllers\\TaskController.cs",
@@ -1136,7 +1089,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 56,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Meta.API\\Controllers\\ProductController.cs",
@@ -1148,7 +1101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 57,
               "Title": "SupProduct.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\SupProduct.cs",
               "RelativeDocumentMoniker": "Meta.API\\Controllers\\SupProduct.cs",
@@ -1160,7 +1113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 58,
               "Title": "SupProduct.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\SupProduct.cs",
               "RelativeDocumentMoniker": "Meta.DataTier\\Models\\SupProduct.cs",
@@ -1172,7 +1125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 59,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\appsettings.json",
               "RelativeDocumentMoniker": "Meta.API\\appsettings.json",
@@ -1184,7 +1137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 61,
               "Title": "RankController.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\RankController.cs",
               "RelativeDocumentMoniker": "Meta.API\\Controllers\\RankController.cs",
@@ -1196,7 +1149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 60,
               "Title": "BaseController.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\BaseController.cs",
               "RelativeDocumentMoniker": "Meta.API\\Controllers\\BaseController.cs",
@@ -1208,7 +1161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 62,
               "Title": "TypePetController.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Controllers\\TypePetController.cs",
               "RelativeDocumentMoniker": "Meta.API\\Controllers\\TypePetController.cs",
@@ -1220,7 +1173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 63,
               "Title": "SpaPetContext.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\SpaPetContext.cs",
               "RelativeDocumentMoniker": "Meta.DataTier\\Models\\SpaPetContext.cs",
@@ -1232,7 +1185,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 64,
               "Title": "CreateNewRankRequest.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Rank\\CreateNewRankRequest.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Rank\\CreateNewRankRequest.cs",
@@ -1244,7 +1197,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 65,
               "Title": "TokenModel.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Login\\TokenModel.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Login\\TokenModel.cs",
@@ -1256,7 +1209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 69,
               "Title": "CreateNewCategoryRequest.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Category\\CreateNewCategoryRequest.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Category\\CreateNewCategoryRequest.cs",
@@ -1268,7 +1221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 68,
               "Title": "GetUsersResponse.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\User\\GetUsersResponse.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\User\\GetUsersResponse.cs",
@@ -1280,7 +1233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 67,
               "Title": "UpdateUserInforRequest.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\User\\UpdateUserInforRequest.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\User\\UpdateUserInforRequest.cs",
@@ -1292,7 +1245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 66,
               "Title": "UserFilter.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\User\\UserFilter.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\User\\UserFilter.cs",
@@ -1304,7 +1257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 70,
               "Title": "CreateNewTypeRequest.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\TypePet\\CreateNewTypeRequest.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\TypePet\\CreateNewTypeRequest.cs",
@@ -1316,7 +1269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 71,
               "Title": "MetaContext.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\MetaContext.cs",
               "RelativeDocumentMoniker": "Meta.DataTier\\Models\\MetaContext.cs",
@@ -1328,7 +1281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 72,
               "Title": "IPetService.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\IPetService.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Interfaces\\IPetService.cs",
@@ -1340,7 +1293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 73,
               "Title": "CreateNewPetRequest.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Pet\\CreateNewPetRequest.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Pet\\CreateNewPetRequest.cs",
@@ -1352,7 +1305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 75,
               "Title": "IRankService.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Services\\Interfaces\\IRankService.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Services\\Interfaces\\IRankService.cs",
@@ -1364,7 +1317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 77,
               "Title": "TypePetModule.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Mappers\\TypePetModule.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Mappers\\TypePetModule.cs",
@@ -1376,7 +1329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 76,
               "Title": "CategoryModule.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Mappers\\CategoryModule.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Mappers\\CategoryModule.cs",
@@ -1388,7 +1341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 78,
               "Title": "UpdateCategoryRequest.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Category\\UpdateCategoryRequest.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Category\\UpdateCategoryRequest.cs",
@@ -1400,7 +1353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 79,
               "Title": "GetCategoriesResponse.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Category\\GetCategoriesResponse.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Category\\GetCategoriesResponse.cs",
@@ -1412,7 +1365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 80,
               "Title": "CategoryFilter.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Category\\CategoryFilter.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Category\\CategoryFilter.cs",
@@ -1424,7 +1377,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 81,
               "Title": "Category.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Models\\Category.cs",
               "RelativeDocumentMoniker": "Meta.DataTier\\Models\\Category.cs",
@@ -1436,7 +1389,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 82,
               "Title": "Meta.BusinessTier.csproj",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Meta.BusinessTier.csproj",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Meta.BusinessTier.csproj",
@@ -1448,7 +1401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 83,
               "Title": "JwtConstant.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Constants\\JwtConstant.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Constants\\JwtConstant.cs",
@@ -1460,7 +1413,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 84,
               "Title": "CreateNewStaffRequest.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\User\\CreateNewStaffRequest.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\User\\CreateNewStaffRequest.cs",
@@ -1472,7 +1425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 85,
               "Title": "ChangePasswordRequest.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\User\\ChangePasswordRequest.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\User\\ChangePasswordRequest.cs",
@@ -1484,7 +1437,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 86,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.API\\Program.cs",
               "RelativeDocumentMoniker": "Meta.API\\Program.cs",
@@ -1496,7 +1449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 87,
               "Title": "UserModule.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Mappers\\UserModule.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Mappers\\UserModule.cs",
@@ -1508,7 +1461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 88,
               "Title": "OrderModule.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Mappers\\OrderModule.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Mappers\\OrderModule.cs",
@@ -1520,7 +1473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 90,
               "Title": "GetRankResponse.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Rank\\GetRankResponse.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Rank\\GetRankResponse.cs",
@@ -1532,7 +1485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 91,
               "Title": "RankFilter.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Rank\\RankFilter.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Rank\\RankFilter.cs",
@@ -1544,7 +1497,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 92,
               "Title": "UpdateRankRequest.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Rank\\UpdateRankRequest.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Rank\\UpdateRankRequest.cs",
@@ -1556,7 +1509,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 89,
               "Title": "GetAccountInforInRankResponse.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.BusinessTier\\Payload\\Rank\\GetAccountInforInRankResponse.cs",
               "RelativeDocumentMoniker": "Meta.BusinessTier\\Payload\\Rank\\GetAccountInforInRankResponse.cs",
@@ -1568,7 +1521,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 93,
               "Title": "Meta.DataTier.csproj",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Meta.DataTier.csproj",
               "RelativeDocumentMoniker": "Meta.DataTier\\Meta.DataTier.csproj",
@@ -1580,7 +1533,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 95,
               "Title": "QueryableExtensions.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Repository\\Implement\\QueryableExtensions.cs",
               "RelativeDocumentMoniker": "Meta.DataTier\\Repository\\Implement\\QueryableExtensions.cs",
@@ -1592,7 +1545,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 94,
               "Title": "GenericRepository.cs",
               "DocumentMoniker": "D:\\FPT\\Capstone\\Meta\\Meta.DataTier\\Repository\\Implement\\GenericRepository.cs",
               "RelativeDocumentMoniker": "Meta.DataTier\\Repository\\Implement\\GenericRepository.cs",

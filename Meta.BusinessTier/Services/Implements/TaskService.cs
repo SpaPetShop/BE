@@ -168,9 +168,36 @@ namespace Meta.BusinessTier.Services.Implements
         }
 
 
-        public Task<bool> UpdateTask(Guid id, UpdateTaskRequest updateTaskRequest)
+        public async Task<bool> UpdateTask(Guid id, UpdateTaskRequest updateTaskRequest)
         {
-            throw new NotImplementedException();
+            if (id == Guid.Empty)
+                throw new BadHttpRequestException(MessageConstant.TaskManager.EmptyTaskIdMessage);
+
+            TaskManager task = await _unitOfWork.GetRepository<TaskManager>().SingleOrDefaultAsync(
+                predicate: x => x.Id.Equals(id))
+                ?? throw new BadHttpRequestException(MessageConstant.TaskManager.TaskNameExisted);
+
+            Account account = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
+                predicate: x => x.Id.Equals(updateTaskRequest.AccountId))
+                ?? throw new BadHttpRequestException(MessageConstant.Account.NotFoundFailedMessage);
+
+
+            task.AccountId = updateTaskRequest.AccountId;
+            updateTaskRequest.ExcutionDate = updateTaskRequest.ExcutionDate.HasValue ? task.ExcutionDate : updateTaskRequest.ExcutionDate;
+
+
+
+
+            var order = await _unitOfWork.GetRepository<Order>().SingleOrDefaultAsync(
+                predicate: o => o.Id == task.OrderId);
+            order.ExcutionDate = updateTaskRequest.ExcutionDate.HasValue ? order.ExcutionDate : updateTaskRequest.ExcutionDate;
+
+
+
+            _unitOfWork.GetRepository<TaskManager>().UpdateAsync(task);
+            _unitOfWork.GetRepository<Order>().UpdateAsync(order);
+            bool isSuccess = await _unitOfWork.CommitAsync() > 0;
+            return isSuccess;
         }
     }
 }
