@@ -20,6 +20,13 @@ public static class ApiEndPointConstant
         public const string AuthenticationEndpoint = ApiEndpoint + "/auth";
         public const string Login = AuthenticationEndpoint + "/login";
     }
+    public static class DashBoard
+    {
+        public const string DashBoardEndpoint = ApiEndpoint + "/dashboard";
+        public const string DashBoardCountAccountEndpoint = DashBoardEndpoint + "/countAccount";
+        public const string DashBoardCountOrderInYearEndpoint = DashBoardEndpoint + "/countOrderInYeay";
+        public const string DashBoardCountOrderEndpoint = DashBoardEndpoint + "/countOrder";
+    }
 
     public static class Rank
     {

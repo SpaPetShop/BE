@@ -328,6 +328,42 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Meta.API.Controllers.DashBoardController",
+    "Method": "CountAllAccount",
+    "RelativePath": "api/v1/dashboard/countAccount",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Meta.API.Controllers.DashBoardController",
+    "Method": "CountAllOrde",
+    "RelativePath": "api/v1/dashboard/countOrder",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Meta.API.Controllers.DashBoardController",
+    "Method": "GetYearlyStatistics",
+    "RelativePath": "api/v1/dashboard/countOrderInYeay",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Meta.API.Controllers.OrderController",
     "Method": "CreateNewOrder",
     "RelativePath": "api/v1/orders",

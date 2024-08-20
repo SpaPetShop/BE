@@ -45,6 +45,7 @@ namespace Meta.API.Configs
             services.AddScoped<IPetService, PetService>();
             services.AddScoped<ITaskService, TaskService>();
             services.AddScoped<ICustomerRequestService, CustomerRequestService>();
+            services.AddScoped<IDashBoardService, DashBoardService>();
 
             return services;
         }
