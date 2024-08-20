@@ -204,8 +204,8 @@ namespace Meta.BusinessTier.Services.Implements
 
 
             task.AccountId = updateTaskRequest.AccountId;
-            updateTaskRequest.ExcutionDate = updateTaskRequest.ExcutionDate.HasValue ? task.ExcutionDate : updateTaskRequest.ExcutionDate;
-            updateTaskRequest.Status = updateTaskRequest.Status.GetDescriptionFromEnum();
+            task.ExcutionDate = updateTaskRequest.ExcutionDate.HasValue ? task.ExcutionDate : updateTaskRequest.ExcutionDate;
+            task.Status = updateTaskRequest.Status.GetDescriptionFromEnum();
 
 
 
