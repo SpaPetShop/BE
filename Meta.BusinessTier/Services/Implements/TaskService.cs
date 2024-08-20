@@ -40,7 +40,8 @@ namespace Meta.BusinessTier.Services.Implements
             var tasksForToday = await _unitOfWork.GetRepository<TaskManager>().GetListAsync(
                 predicate: t => t.AccountId == createNewTaskRequest.AccountId && t.ExcutionDate.HasValue && t.ExcutionDate.Value.Date.Day == DateTime.Now.Date.Day);
             int taskCountForToday = tasksForToday.Count();
-
+            var existTime= await _unitOfWork.GetRepository<TaskManager>().GetListAsync(
+                predicate: t => t.AccountId == createNewTaskRequest.AccountId && t.ExcutionDate.HasValue && t.ExcutionDate.Value.Date.Hour == DateTime.Now.Date.Hour);
             // Lấy danh sách tất cả task của nhân viên với trạng thái Process
             var processTasks = await _unitOfWork.GetRepository<TaskManager>().GetListAsync(
                 predicate: t => t.AccountId == createNewTaskRequest.AccountId && t.Status == TaskManagerStatus.PROCESS.GetDescriptionFromEnum());
@@ -48,6 +49,10 @@ namespace Meta.BusinessTier.Services.Implements
             if (taskCountForToday >= 4)
             {
                 throw new BadHttpRequestException(MessageConstant.TaskManager.FullTaskMessage);
+            }
+            if (existTime != null)
+            {
+                throw new BadHttpRequestException(MessageConstant.TaskManager.TimeTaskMessage);
             }
             var order = await _unitOfWork.GetRepository<Order>().SingleOrDefaultAsync(
                     predicate: o => o.Id == createNewTaskRequest.OrderId.Value && o.Type == OrderType.MANAGERREQUEST.GetDescriptionFromEnum())

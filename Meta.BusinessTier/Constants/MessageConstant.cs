@@ -276,6 +276,7 @@ public static class MessageConstant
         public const string UpdateStatusFailedMessage = "Cập nhật trạng thái thất bại";
         public const string ExceedQuantityMessage = "Số lượng vượt mức tồn kho";
         public const string FullTaskMessage = "Nhân viên đã đủ số lượng nhiệm vụ trong ngày. Không thể giao thêm nhiệm vụ.";
+        public const string TimeTaskMessage = "Nhân viên đã có nhiệm vụ ở khung giờ này. Không thể giao thêm nhiệm vụ.";
     }
     public static class MachineryComponents
     {

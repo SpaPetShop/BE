@@ -31,6 +31,8 @@ public partial class Order
 
     public Guid? PetId { get; set; }
 
+    public virtual ICollection<CustomerRequest> CustomerRequests { get; set; } = new List<CustomerRequest>();
+
     public virtual ICollection<Note> Notes { get; set; } = new List<Note>();
 
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();

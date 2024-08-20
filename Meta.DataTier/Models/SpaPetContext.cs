@@ -21,6 +21,8 @@ public partial class SpaPetContext : DbContext
 
     public virtual DbSet<Category> Categories { get; set; }
 
+    public virtual DbSet<CustomerRequest> CustomerRequests { get; set; }
+
     public virtual DbSet<Note> Notes { get; set; }
 
     public virtual DbSet<Order> Orders { get; set; }
@@ -98,6 +100,29 @@ public partial class SpaPetContext : DbContext
                 .HasMaxLength(10)
                 .IsUnicode(false);
             entity.Property(e => e.Type).HasMaxLength(50);
+        });
+
+        modelBuilder.Entity<CustomerRequest>(entity =>
+        {
+            entity.ToTable("CustomerRequest");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.CreateDate).HasColumnType("datetime");
+            entity.Property(e => e.ExctionDate).HasColumnType("datetime");
+            entity.Property(e => e.Note).HasMaxLength(4000);
+            entity.Property(e => e.Status).HasMaxLength(50);
+
+            entity.HasOne(d => d.Order).WithMany(p => p.CustomerRequests)
+                .HasForeignKey(d => d.OrderId)
+                .HasConstraintName("FK_CustomerRequest_Order");
+
+            entity.HasOne(d => d.Staff).WithMany(p => p.CustomerRequestStaffs)
+                .HasForeignKey(d => d.StaffId)
+                .HasConstraintName("FK_CustomerRequest_Account");
+
+            entity.HasOne(d => d.User).WithMany(p => p.CustomerRequestUsers)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_CustomerRequest_Account1");
         });
 
         modelBuilder.Entity<Note>(entity =>
