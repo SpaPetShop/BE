@@ -932,6 +932,105 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Meta.API.Controllers.CustomerRequestController",
+    "Method": "CreateNewCustomerRequest",
+    "RelativePath": "api/v1/request",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createNewCustomerRequest",
+        "Type": "Meta.BusinessTier.Payload.CustomerRequest.CreateNewCustomerRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Meta.API.Controllers.CustomerRequestController",
+    "Method": "GetCustomerRequestList",
+    "RelativePath": "api/v1/request",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Status",
+        "Type": "System.Nullable\u00601[[Meta.BusinessTier.Enums.Status.CustomerRequestStatus, Meta.BusinessTier, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ExctionDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "StaffId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Meta.API.Controllers.CustomerRequestController",
+    "Method": "GetCustomerRequestById",
+    "RelativePath": "api/v1/request/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Meta.API.Controllers.CustomerRequestController",
+    "Method": "UpdateCustomerRequest",
+    "RelativePath": "api/v1/request/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateCustomerRequest",
+        "Type": "Meta.BusinessTier.Payload.CustomerRequest.UpdateCustomerRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Meta.API.Controllers.AccountController",
     "Method": "CreateNewStaff",
     "RelativePath": "api/v1/staff",

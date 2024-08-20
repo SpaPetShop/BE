@@ -50,6 +50,12 @@ public static class ApiEndPointConstant
         public const string CategoryAddDiscountEndPoint = CategoryEndPoint + "/discount";
         public const string CategoriesNopagingNateEndPoint = CategoriesEndPoint + "/noPagingNate";
     }
+    public static class CustomerRequest
+    {
+        public const string CustomerRequestsEndPoint = ApiEndpoint + "/request";
+        public const string CustomerRequestEndPoint = CustomerRequestsEndPoint + "/{id}";
+        public const string CustomerRequestsNopagingNateEndPoint = CustomerRequestsEndPoint + "/noPagingNate";
+    }
     public static class TypePet
     {
         public const string TypePetsEndPoint = ApiEndpoint + "/typePet";
