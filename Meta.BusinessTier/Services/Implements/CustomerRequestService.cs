@@ -74,8 +74,9 @@ namespace Meta.BusinessTier.Services.Implements
                     OrderId = x.OrderId
                 },
                 include: x => x.Include(cr => cr.Order)
-                               .Include(cr => cr.User)
-            ) ?? throw new BadHttpRequestException(MessageConstant.Account.NotFoundFailedMessage);
+                               .Include(cr => cr.User)) 
+                ?? throw new BadHttpRequestException(MessageConstant.Account.NotFoundFailedMessage);
+
             if (customerRequest.StaffId != null)
             {
                 var staff = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
