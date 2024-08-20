@@ -36,7 +36,8 @@ namespace Meta.BusinessTier.Services.Implements
             var user = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
                 predicate: x => x.Username.Equals(currentUser))
                 ?? throw new BadHttpRequestException(MessageConstant.Account.NotFoundFailedMessage);
-
+            var order = await _unitOfWork.GetRepository<Order>().SingleOrDefaultAsync(
+                predicate: x => x.Id.Equals(createNewCustomerRequest.OrderId));
             var newRequest = new CustomerRequest
             {
                 Id = Guid.NewGuid(),

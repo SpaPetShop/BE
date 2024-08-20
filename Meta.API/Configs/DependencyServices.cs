@@ -46,6 +46,7 @@ namespace Meta.API.Configs
             services.AddScoped<ITaskService, TaskService>();
             services.AddScoped<ICustomerRequestService, CustomerRequestService>();
             services.AddScoped<IDashBoardService, DashBoardService>();
+            services.AddScoped<IPaymentService, PaymentService>();
 
             return services;
         }
