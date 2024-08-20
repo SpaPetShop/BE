@@ -55,6 +55,7 @@ namespace Meta.BusinessTier.Services.Implements
 
         public async Task<GetCustomerRequestResponse> GetCustomerRequestById(Guid id)
         {
+
             var customerRequest = await _unitOfWork.GetRepository<CustomerRequest>().SingleOrDefaultAsync(
                 predicate: x => x.Id.Equals(id),
                 selector: x => new GetCustomerRequestResponse
@@ -64,26 +65,34 @@ namespace Meta.BusinessTier.Services.Implements
                     Status = x.Status,
                     CreateDate = x.CreateDate,
                     ExctionDate = x.ExctionDate,
-                    //StaffId = new AccountResponse
-                    //{
-                    //    Id = x.Staff.Id,
-                    //    FullName = x.Staff.FullName,
-                    //    Role = EnumUtil.ParseEnum<RoleEnum>(x.Staff.Role)
-                    //},
-                    //UserId = new AccountResponse
-                    //{
-                    //    Id = x.User.Id,
-                    //    FullName = x.User.FullName,
-                    //    Role = EnumUtil.ParseEnum<RoleEnum>(x.User.Role)
-                    //},
+                    UserId = new AccountResponse
+                    {
+                        Id = x.User.Id,
+                        FullName = x.User.FullName,
+                        Role = EnumUtil.ParseEnum<RoleEnum>(x.User.Role)
+                    },
                     OrderId = x.OrderId
                 },
-                include: x => x.Include(cr => cr.Order)) 
-            ?? throw new BadHttpRequestException("Customer request not found.");
+                include: x => x.Include(cr => cr.Order)
+                               .Include(cr => cr.User)
+            ) ?? throw new BadHttpRequestException(MessageConstant.Account.NotFoundFailedMessage);
+            if (customerRequest.StaffId != null)
+            {
+                var staff = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
+                    predicate: a => a.Id == customerRequest.StaffId.Id,
+                    selector: a => new AccountResponse
+                    {
+                        Id = a.Id,
+                        FullName = a.FullName,
+                        Role = EnumUtil.ParseEnum<RoleEnum>(a.Role)
+                    });
 
+                customerRequest.StaffId = staff;  
+            }
 
-            return customerRequest;
+            return customerRequest; 
         }
+
 
 
         public async Task<IPaginate<GetCustomerRequestResponse>> GetCustomerRequestList(CustomerRequestFilter filter, PagingModel pagingModel)
@@ -97,25 +106,36 @@ namespace Meta.BusinessTier.Services.Implements
                     CreateDate = x.CreateDate,
                     ExctionDate = x.ExctionDate,
                     OrderId = x.OrderId,
-                    //StaffId = new AccountResponse
-                    //{
-                    //    Id = x.Staff.Id,
-                    //    FullName = x.Staff.FullName,
-                    //    Role = EnumUtil.ParseEnum<RoleEnum>(x.Staff.Role)
-                    //},
-                    //UserId = new AccountResponse
-                    //{
-                    //    Id = x.User.Id,
-                    //    FullName = x.User.FullName,
-                    //    Role = EnumUtil.ParseEnum<RoleEnum>(x.User.Role)
-                    //}
+                     UserId = new AccountResponse
+                    {
+                        Id = x.User.Id,
+                        FullName = x.User.FullName,
+                        Role = EnumUtil.ParseEnum<RoleEnum>(x.User.Role)
+                    }
                 },
                 filter: filter,
                 orderBy: x => x.OrderByDescending(x => x.CreateDate),
-                include: x => x.Include(cr => cr.Order),
+                include: x => x.Include(cr => cr.Order)
+                               .Include(x => x.User),
                 page: pagingModel.page,
                 size: pagingModel.size
             );
+            foreach (var request in customerRequestList.Items)
+            {
+                if (request.StaffId != null)
+                {
+                    var staff = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
+                        predicate: a => a.Id == request.StaffId.Id,
+                        selector: a => new AccountResponse
+                        {
+                            Id = a.Id,
+                            FullName = a.FullName,
+                            Role = EnumUtil.ParseEnum<RoleEnum>(a.Role)
+                        });
+
+                    request.StaffId = staff;  // Gán thông tin Staff vào request
+                }
+            }
 
             return customerRequestList;
         }

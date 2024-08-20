@@ -22,4 +22,6 @@ public partial class CustomerRequest
     public Guid? UserId { get; set; }
 
     public virtual Order? Order { get; set; }
+
+    public virtual Account? User { get; set; }
 }

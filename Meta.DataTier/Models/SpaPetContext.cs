@@ -115,6 +115,10 @@ public partial class SpaPetContext : DbContext
             entity.HasOne(d => d.Order).WithMany(p => p.CustomerRequests)
                 .HasForeignKey(d => d.OrderId)
                 .HasConstraintName("FK_CustomerRequest_Order");
+
+            entity.HasOne(d => d.User).WithMany(p => p.CustomerRequests)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_CustomerRequest_Account");
         });
 
         modelBuilder.Entity<Note>(entity =>
