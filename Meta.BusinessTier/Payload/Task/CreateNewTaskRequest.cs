@@ -12,7 +12,6 @@ namespace Meta.BusinessTier.Payload.Task
 
         public Guid? OrderId { get; set; }
         public Guid? AccountId { get; set; }
-        public DateTime ExcutionDate { get; set; }
 
     }
 }

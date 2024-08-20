@@ -38,7 +38,7 @@ namespace Meta.BusinessTier.Services.Implements
 
             // Lấy danh sách task trong ngày của nhân viên
             var tasksForToday = await _unitOfWork.GetRepository<TaskManager>().GetListAsync(
-                predicate: t => t.AccountId == createNewTaskRequest.AccountId && t.ExcutionDate.HasValue && t.ExcutionDate.Value.Date.Day == createNewTaskRequest.ExcutionDate.Date.Day);
+                predicate: t => t.AccountId == createNewTaskRequest.AccountId && t.ExcutionDate.HasValue && t.ExcutionDate.Value.Date.Day == DateTime.Now.Date.Day);
             int taskCountForToday = tasksForToday.Count();
 
             // Lấy danh sách tất cả task của nhân viên với trạng thái Process
@@ -58,7 +58,7 @@ namespace Meta.BusinessTier.Services.Implements
                 Type = TaskType.MANAGERREQUEST.GetDescriptionFromEnum(),
                 Status = TaskManagerStatus.PROCESS.GetDescriptionFromEnum(),
                 CreateDate = currentTime,
-                ExcutionDate = createNewTaskRequest.ExcutionDate,
+                ExcutionDate = order.ExcutionDate,
                 AccountId = createNewTaskRequest.AccountId,
                 OrderId = createNewTaskRequest.OrderId,
             };
