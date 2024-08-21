@@ -1073,6 +1073,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Meta.API.Controllers.AccountController",
+    "Method": "GetStaffTaskStatusesByRole",
+    "RelativePath": "api/v1/staff/task",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "targetDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Meta.API.Controllers.SupProduct",
     "Method": "CreateNewPSupProduct",
     "RelativePath": "api/v1/supProducts",

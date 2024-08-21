@@ -112,5 +112,11 @@ namespace Meta.API.Controllers
             return Ok(new { Message = MessageConstant.User.ChangePasswordToSuccess });
 
         }
+        [HttpGet(ApiEndPointConstant.Account.GetTaskOfStaff)]
+        public async Task<IActionResult> GetStaffTaskStatusesByRole(DateTime targetDate)
+        {
+            var response = await _userService.GetStaffTaskStatusesByRole(targetDate);
+            return Ok(response);
+        }
     }
 }

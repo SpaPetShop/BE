@@ -22,5 +22,6 @@ namespace Meta.BusinessTier.Services.Interfaces
         Task<Guid> AddrankForAccount(Guid accountId, Guid rankId);
 
         //Task<ICollection<StaffTaskStatusResponse>> GetStaffTaskStatusesByRole();
+        Task<ICollection<StaffTaskStatusResponse>> GetStaffTaskStatusesByRole(DateTime targetDate);
     }
 }

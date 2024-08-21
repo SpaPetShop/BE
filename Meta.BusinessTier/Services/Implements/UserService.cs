@@ -12,6 +12,7 @@ using Meta.DataTier.Paginate;
 using Meta.DataTier.Repository.Interfaces;
 using Meta.DataTier.Models;
 using Meta.BusinessTier.Enums.Status;
+using Meta.BusinessTier.Extensions;
 
 namespace Meta.BusinessTier.Services.Implements
 {
@@ -370,6 +371,36 @@ namespace Meta.BusinessTier.Services.Implements
             _unitOfWork.GetRepository<Account>().UpdateAsync(user);
             bool isSuccessful = await _unitOfWork.CommitAsync() > 0;
             return isSuccessful;
+        }
+        public async Task<ICollection<StaffTaskStatusResponse>> GetStaffTaskStatusesByRole(DateTime targetDate)
+        {
+            // Lấy danh sách tất cả nhân viên theo vai trò
+            var staffList = await _unitOfWork.GetRepository<Account>()
+                .GetListAsync(predicate: a => a.Role.Equals(RoleEnum.STAFF.GetDescriptionFromEnum()));
+
+            var staffTaskStatuses = new List<StaffTaskStatusResponse>();
+
+            foreach (var staff in staffList)
+            {
+                var tasks = await _unitOfWork.GetRepository<TaskManager>()
+                    .GetListAsync(predicate: t => t.AccountId == staff.Id);
+
+                var taskCountByStatus = tasks.CountTaskEachStatus();
+
+                var specifiedDateTasks = tasks.Where(t => t.ExcutionDate.HasValue && t.ExcutionDate.Value.Date == targetDate.Date).ToList();
+
+                var specifiedDateTaskCountByStatus = specifiedDateTasks.CountTaskEachStatus();
+
+                staffTaskStatuses.Add(new StaffTaskStatusResponse
+                {
+                    StaffId = staff.Id,
+                    StaffName = staff.FullName,
+                    TaskStatusCount = taskCountByStatus,
+                    TodayTaskStatusCount = specifiedDateTaskCountByStatus
+                });
+            }
+
+            return staffTaskStatuses;
         }
     }
 }
