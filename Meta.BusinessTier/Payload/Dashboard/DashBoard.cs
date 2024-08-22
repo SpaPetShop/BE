@@ -24,10 +24,30 @@ namespace Meta.BusinessTier.Payload.Dashboard
         public double TotalRevenue { get; set; }
         public double TotalProfit { get; set; }
         public List<MonthlyStatistics> MonthlyStatistics { get; set; }
+        public List<WeeklyStatistics> WeeklyStatistics { get; set; }
+        public List<DailyStatistics> DailyStatistics { get; set; }
     }
+
     public class MonthlyStatistics
     {
         public int Month { get; set; }
+        public int TotalOrders { get; set; }
+        public double TotalRevenue { get; set; }
+        public double TotalProfit { get; set; }
+    }
+
+    public class WeeklyStatistics
+    {
+        public int Week { get; set; }
+        public int Year { get; set; } // Để phân biệt giữa các tuần của các năm khác nhau
+        public int TotalOrders { get; set; }
+        public double TotalRevenue { get; set; }
+        public double TotalProfit { get; set; }
+    }
+
+    public class DailyStatistics
+    {
+        public DateTime Date { get; set; }
         public int TotalOrders { get; set; }
         public double TotalRevenue { get; set; }
         public double TotalProfit { get; set; }

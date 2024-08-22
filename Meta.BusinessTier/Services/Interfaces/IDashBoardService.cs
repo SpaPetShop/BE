@@ -12,6 +12,7 @@ namespace Meta.BusinessTier.Services.Interfaces
         Task<CountAccount> CountAllAccount();
 
         Task<AdminDashboardStatistics> GetYearlyStatistics(int year);
+        Task<AdminDashboardStatistics> GetMonthlyStatistics(int year, int month);
         Task<CountOrders> CountAllOrde();
     }
 }

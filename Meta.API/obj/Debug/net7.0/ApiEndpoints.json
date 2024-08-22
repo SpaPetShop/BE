@@ -349,6 +349,27 @@
   },
   {
     "ContainingType": "Meta.API.Controllers.DashBoardController",
+    "Method": "GetMonthlyStatistics",
+    "RelativePath": "api/v1/dashboard/countOrderInMonth",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "month",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Meta.API.Controllers.DashBoardController",
     "Method": "GetYearlyStatistics",
     "RelativePath": "api/v1/dashboard/countOrderInYeay",
     "HttpMethod": "GET",

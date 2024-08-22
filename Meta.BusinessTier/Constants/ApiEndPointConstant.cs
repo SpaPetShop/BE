@@ -25,6 +25,7 @@ public static class ApiEndPointConstant
         public const string DashBoardEndpoint = ApiEndpoint + "/dashboard";
         public const string DashBoardCountAccountEndpoint = DashBoardEndpoint + "/countAccount";
         public const string DashBoardCountOrderInYearEndpoint = DashBoardEndpoint + "/countOrderInYeay";
+        public const string DashBoardCountOrderInMonthEndpoint = DashBoardEndpoint + "/countOrderInMonth";
         public const string DashBoardCountOrderEndpoint = DashBoardEndpoint + "/countOrder";
     }
 

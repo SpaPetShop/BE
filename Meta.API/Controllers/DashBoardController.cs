@@ -39,6 +39,13 @@ namespace Meta.API.Controllers
 
             return Ok(response);
         }
+        [HttpGet(ApiEndPointConstant.DashBoard.DashBoardCountOrderInMonthEndpoint)]
+        public async Task<IActionResult> GetMonthlyStatistics(int year, int month)
+        {
+            var response = await _dashBoardService.GetMonthlyStatistics(year, month);
+
+            return Ok(response);
+        }
 
     }
 }
