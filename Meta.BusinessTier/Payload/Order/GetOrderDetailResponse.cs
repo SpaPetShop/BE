@@ -15,6 +15,7 @@ namespace Meta.BusinessTier.Payload.Order
         public string? InvoiceCode { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? CompletedDate { get; set; }
+        public DateTime? ExcutionDate { get; set; }
         public string? Description { get; set; }
         public double? TotalAmount { get; set; }
         public double? FinalAmount { get; set; }
