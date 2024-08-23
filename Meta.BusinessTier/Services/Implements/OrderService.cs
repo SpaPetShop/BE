@@ -424,11 +424,12 @@ namespace Meta.BusinessTier.Services.Implements
                     {
                         await _unitOfWork.GetRepository<Note>().InsertAsync(note);
                     }
-                    _unitOfWork.GetRepository<Order>().UpdateAsync(updateOrder);
+                    
                     break;
                 default:
                     return false;
             }
+            _unitOfWork.GetRepository<Order>().UpdateAsync(updateOrder);
             bool isSuccessful = await _unitOfWork.CommitAsync() > 0;
             return isSuccessful;
         }
