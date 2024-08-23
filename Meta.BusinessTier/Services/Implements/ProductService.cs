@@ -75,10 +75,14 @@ namespace Meta.BusinessTier.Services.Implements
             Account account = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
                 predicate: x => x.Username.Equals(currentUser));
             DateTime currentTime = TimeUtils.GetCurrentSEATime();
-
             Product existingProduct = await _unitOfWork.GetRepository<Product>().SingleOrDefaultAsync(
-                predicate: x => x.Name.Equals(createNewProductRequest.Name))
-                ?? throw new BadHttpRequestException(MessageConstant.Product.ProductNameExisted);
+                predicate: x => x.Name.Equals(createNewProductRequest.Name));
+
+            if (existingProduct != null)
+            {
+                throw new BadHttpRequestException(MessageConstant.Product.ProductNameExisted);
+            }
+
             Category category = await _unitOfWork.GetRepository<Category>().SingleOrDefaultAsync(
                 predicate: x => x.Id.Equals(createNewProductRequest.CategoryId))
                 ?? throw new BadHttpRequestException(MessageConstant.Category.NotFoundFailedMessage);
