@@ -15,6 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Meta.BusinessTier.Constants;
+using Meta.BusinessTier.Payload.User;
 
 namespace Meta.BusinessTier.Services.Implements
 {
