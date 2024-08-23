@@ -29,6 +29,8 @@ public partial class Account
 
     public Guid? RankId { get; set; }
 
+    public string? Address { get; set; }
+
     public virtual ICollection<CustomerRequest> CustomerRequests { get; set; } = new List<CustomerRequest>();
 
     public virtual ICollection<Pet> Pets { get; set; } = new List<Pet>();

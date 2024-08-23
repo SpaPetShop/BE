@@ -133,6 +133,7 @@ namespace Meta.BusinessTier.Services.Implements
                     Role = RoleEnum.USER.GetDescriptionFromEnum(),
                     FullName = request.FullName,
                     Gender = request.Gender,
+                    Address = request.Address,
                     PhoneNumber = request.PhoneNumber,
                     Status = UserStatus.ACTIVE.GetDescriptionFromEnum(),
                     Email = request.Email,
@@ -328,6 +329,7 @@ namespace Meta.BusinessTier.Services.Implements
             user.FullName = string.IsNullOrEmpty(updateRequest.FullName) ? user.FullName : updateRequest.FullName;
             user.PhoneNumber = string.IsNullOrEmpty(updateRequest.PhoneNumber) ? user.PhoneNumber : updateRequest.PhoneNumber;
             user.Email = string.IsNullOrEmpty(updateRequest.Email) ? user.Email : updateRequest.Email;
+            user.Address = string.IsNullOrEmpty(updateRequest.Address) ? user.Address : updateRequest.Address;
             user.Image = string.IsNullOrEmpty(updateRequest.Image) ? user.Image : updateRequest.Image;
             if (!updateRequest.Status.HasValue && !updateRequest.Role.HasValue && !updateRequest.Gender.HasValue)
             {

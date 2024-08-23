@@ -60,6 +60,7 @@ public partial class SpaPetContext : DbContext
             entity.ToTable("Account");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Address).HasMaxLength(250);
             entity.Property(e => e.Email).HasMaxLength(50);
             entity.Property(e => e.FullName).HasMaxLength(250);
             entity.Property(e => e.Gender).HasMaxLength(50);
