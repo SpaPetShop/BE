@@ -202,7 +202,6 @@ namespace Meta.BusinessTier.Services.Implements
                     {
                         await _unitOfWork.GetRepository<Note>().InsertAsync(note);
                     }
-                     _unitOfWork.GetRepository<CustomerRequest>().UpdateAsync(request);
                     break;
                 case CustomerRequestStatus.REJECT:
                     updateCustomerRequest.Status = CustomerRequestStatus.REJECT;
@@ -219,11 +218,12 @@ namespace Meta.BusinessTier.Services.Implements
                     {
                         await _unitOfWork.GetRepository<Note>().InsertAsync(note);
                     }
-                    _unitOfWork.GetRepository<CustomerRequest>().UpdateAsync(request);
+                    
                     break;
                 default:
                     return false;
             }
+            _unitOfWork.GetRepository<CustomerRequest>().UpdateAsync(request);
             return true;
         }
     }
