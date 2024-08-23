@@ -9,6 +9,7 @@ namespace Meta.BusinessTier.Enums.EnumStatus
     public enum TaskManagerStatus
     {
         PENDING,
+        ACCEPT,
         PROCESS,
         COMPLETED
     }

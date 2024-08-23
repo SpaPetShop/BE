@@ -45,7 +45,7 @@ namespace Meta.BusinessTier.Services.Implements
 
             var processTasks = await _unitOfWork.GetRepository<TaskManager>().GetListAsync(
                 predicate: t => t.AccountId == createNewTaskRequest.AccountId
-                                && t.Status == TaskManagerStatus.PROCESS.GetDescriptionFromEnum() && t.ExcutionDate.HasValue && t.ExcutionDate.Value.Day == currentTime.Day);
+                                && t.Status == TaskManagerStatus.PENDING.GetDescriptionFromEnum() && t.ExcutionDate.HasValue && t.ExcutionDate.Value.Day == currentTime.Day);
 
             int processTaskCount = processTasks.Count();
 
