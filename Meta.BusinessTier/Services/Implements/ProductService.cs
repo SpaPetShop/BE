@@ -84,8 +84,11 @@ namespace Meta.BusinessTier.Services.Implements
             }
 
             Category category = await _unitOfWork.GetRepository<Category>().SingleOrDefaultAsync(
-                predicate: x => x.Id.Equals(createNewProductRequest.CategoryId))
-                ?? throw new BadHttpRequestException(MessageConstant.Category.NotFoundFailedMessage);
+                predicate: x => x.Id.Equals(createNewProductRequest.CategoryId));
+            if (category != null)
+            {
+                throw new BadHttpRequestException(MessageConstant.Category.CategoryExistedMessage);
+            }
             var newProduct = new Product
             {
                 Id = Guid.NewGuid(),
