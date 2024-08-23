@@ -34,7 +34,7 @@ namespace Meta.BusinessTier.Services.Implements
     {
         private readonly IUserService _accountService;
         private readonly ITaskService _taskService;
-        public OrderService(IUnitOfWork<MetaContext> unitOfWork, ILogger<OrderService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor, IUserService accountService, ITaskService taskService) : base(unitOfWork, logger, mapper, httpContextAccessor)
+        public OrderService(IUnitOfWork<SpaPetContext> unitOfWork, ILogger<OrderService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor, IUserService accountService, ITaskService taskService) : base(unitOfWork, logger, mapper, httpContextAccessor)
         {
             _accountService = accountService;
             _taskService = taskService;
@@ -109,15 +109,13 @@ namespace Meta.BusinessTier.Services.Implements
                 totalAmount += orderDetail.TotalAmount ?? 0;
             }
 
-            var accountRank = await _unitOfWork.GetRepository<AccountRank>()
-                .SingleOrDefaultAsync(predicate: ar => ar.AccountId == account.Id);
+            var accountRank = await _unitOfWork.GetRepository<Rank>()
+                .SingleOrDefaultAsync(predicate: ar => ar.Id == account.RankId);
 
             if (accountRank != null)
             {
-                var rank = await _unitOfWork.GetRepository<Rank>()
-                    .SingleOrDefaultAsync(predicate: r => r.Id == accountRank.RankId);
 
-                double rankDiscount = (rank.Value.Value / 100.0) * totalAmount;
+                double rankDiscount = (accountRank.Value.Value / 100.0) * totalAmount;
                 newOrder.FinalAmount = totalAmount - rankDiscount;
             }
             else
@@ -332,13 +330,12 @@ namespace Meta.BusinessTier.Services.Implements
                     updateOrder.CompletedDate = currentTime;
 
                     // tính điểm và cập nhật điểm cho người dùng
-                    int points = (int)(updateOrder.FinalAmount / 10000);
+                    int points = 1;
                     var account = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
                         predicate: x => x.Id.Equals(updateOrder.AccountId))
                         ?? throw new BadHttpRequestException(MessageConstant.Account.NotFoundFailedMessage);
 
-                    // cập nhật điểm cho người dùng
-                    account.Point += points;
+                    // Update points and save account
                     if (account.Point != null)
                     {
                         account.Point += points;
@@ -351,7 +348,7 @@ namespace Meta.BusinessTier.Services.Implements
 
                     // Lấy danh sách các rank
                     var ranks = await _unitOfWork.GetRepository<Rank>().GetListAsync(
-                        predicate: x => points >= x.Range,
+                        predicate: x => account.Point >= x.Range,
                         orderBy: x => x.OrderByDescending(x => x.Range)
                         );
 
@@ -359,7 +356,8 @@ namespace Meta.BusinessTier.Services.Implements
                     // Kiểm tra kết quả và thêm rank cho account nếu có
                     if (rankCheck != null)
                     {
-                        var addRankResult = await _accountService.AddrankForAccount(account.Id, rankCheck.Id);
+                        account.RankId = rankCheck.Id;
+                        _unitOfWork.GetRepository<Account>().UpdateAsync(account);
                     }
 
 

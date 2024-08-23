@@ -96,12 +96,12 @@ namespace Meta.API.Controllers
             if (!isSuccessful) return Ok(MessageConstant.User.UpdateStatusFailedMessage);
             return Ok(MessageConstant.User.UpdateStatusSuccessMessage);
         }
-        [HttpPost(ApiEndPointConstant.Account.AccountToRankEndPoint)]
-        public async Task<IActionResult> AddrankForAccount(Guid id, [FromBody] Guid rankId)
-        {
-            var response = await _userService.AddrankForAccount(id, rankId);
-            return Ok(response);
-        }
+        //[HttpPost(ApiEndPointConstant.Account.AccountToRankEndPoint)]
+        //public async Task<IActionResult> AddrankForAccount(Guid id, [FromBody] Guid rankId)
+        //{
+        //    var response = await _userService.AddrankForAccount(id, rankId);
+        //    return Ok(response);
+        //}
 
         [HttpPost(ApiEndPointConstant.Account.AccountEndPointChangePassword)]
         public async Task<IActionResult> ChangePassword(Guid id, [FromBody] ChangePasswordRequest changePasswordRequest)

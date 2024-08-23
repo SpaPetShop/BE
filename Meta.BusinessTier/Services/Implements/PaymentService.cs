@@ -26,7 +26,7 @@ namespace Meta.BusinessTier.Services.Implements
         private readonly IConfiguration _configuration;
         private readonly IOrderService _orderService;
 
-        public PaymentService(IUnitOfWork<MetaContext> unitOfWork, ILogger<PaymentService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor, IConfiguration configuration, IOrderService orderService) : base(unitOfWork, logger, mapper, httpContextAccessor)
+        public PaymentService(IUnitOfWork<SpaPetContext> unitOfWork, ILogger<PaymentService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor, IConfiguration configuration, IOrderService orderService) : base(unitOfWork, logger, mapper, httpContextAccessor)
         {
             _configuration = configuration;
             _orderService = orderService;

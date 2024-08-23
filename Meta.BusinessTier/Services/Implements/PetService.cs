@@ -23,7 +23,7 @@ namespace Meta.BusinessTier.Services.Implements
 {
     public class PetService : BaseService<PetService>, IPetService
     {
-        public PetService(IUnitOfWork<MetaContext> unitOfWork, ILogger<PetService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
+        public PetService(IUnitOfWork<SpaPetContext> unitOfWork, ILogger<PetService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
         {
         }
 

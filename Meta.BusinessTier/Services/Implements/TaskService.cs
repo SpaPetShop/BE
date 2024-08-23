@@ -24,7 +24,7 @@ namespace Meta.BusinessTier.Services.Implements
 {
     public class TaskService : BaseService<TaskService>, ITaskService
     {
-        public TaskService(IUnitOfWork<MetaContext> unitOfWork, ILogger<TaskService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
+        public TaskService(IUnitOfWork<SpaPetContext> unitOfWork, ILogger<TaskService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
         {
         }
         public async Task<Guid> CreateNewTask(CreateNewTaskRequest createNewTaskRequest)

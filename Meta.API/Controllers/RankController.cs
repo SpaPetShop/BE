@@ -54,11 +54,11 @@ namespace Meta.API.Controllers
             return Ok(MessageConstant.Rank.UpdateRankSuccessMessage);
         }
 
-        [HttpGet(ApiEndPointConstant.Rank.RanksEndPointRankToAccount)]
-        public async Task<IActionResult> GetAccountInforInRank(Guid id, [FromQuery] PagingModel pagingModel)
-        {
-            var response = await _rankService.GetAccountInforInRank(id, pagingModel);
-            return Ok(response);
-        }
+        //[HttpGet(ApiEndPointConstant.Rank.RanksEndPointRankToAccount)]
+        //public async Task<IActionResult> GetAccountInforInRank(Guid id, [FromQuery] PagingModel pagingModel)
+        //{
+        //    var response = await _rankService.GetAccountInforInRank(id, pagingModel);
+        //    return Ok(response);
+        //}
     }
 }

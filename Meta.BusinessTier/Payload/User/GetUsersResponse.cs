@@ -29,8 +29,6 @@ namespace Meta.BusinessTier.Payload.User
 
         public int? Point { get; set; }
 
-        public int? YearsOfExperience { get; set; }
-
         public string? Image { get; set; }
 
         public RankResponse? Rank { get; set; }
@@ -43,7 +41,7 @@ namespace Meta.BusinessTier.Payload.User
     public class RankResponse
     {
         public string? Name { get; set; }
-
         public int? Range { get; set; }
+        public int? Value { get; set; }
     }
 }

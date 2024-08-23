@@ -18,7 +18,7 @@ namespace Meta.BusinessTier.Services.Implements
 {
     public class DashBoardService : BaseService<DashBoardService>, IDashBoardService
     {
-        public DashBoardService(IUnitOfWork<MetaContext> unitOfWork, ILogger<DashBoardService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
+        public DashBoardService(IUnitOfWork<SpaPetContext> unitOfWork, ILogger<DashBoardService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
         {
         }
 

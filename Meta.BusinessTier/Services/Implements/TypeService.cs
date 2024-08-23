@@ -21,7 +21,7 @@ namespace Meta.BusinessTier.Services.Implements
 {
     public class TypeService : BaseService<TypeService>, ITypeService
     {
-        public TypeService(IUnitOfWork<MetaContext> unitOfWork, ILogger<TypeService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
+        public TypeService(IUnitOfWork<SpaPetContext> unitOfWork, ILogger<TypeService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
         {
         }
 

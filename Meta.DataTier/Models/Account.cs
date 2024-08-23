@@ -27,9 +27,13 @@ public partial class Account
 
     public int? Point { get; set; }
 
+    public Guid? RankId { get; set; }
+
     public virtual ICollection<CustomerRequest> CustomerRequests { get; set; } = new List<CustomerRequest>();
 
     public virtual ICollection<Pet> Pets { get; set; } = new List<Pet>();
+
+    public virtual Rank? Rank { get; set; }
 
     public virtual ICollection<TaskManager> TaskManagers { get; set; } = new List<TaskManager>();
 }

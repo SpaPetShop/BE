@@ -20,7 +20,7 @@ namespace Meta.BusinessTier.Services.Implements
 {
     public class RankService : BaseService<RankService>, IRankService
     {
-        public RankService(IUnitOfWork<MetaContext> unitOfWork, ILogger<RankService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
+        public RankService(IUnitOfWork<SpaPetContext> unitOfWork, ILogger<RankService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
         {
         }
 
@@ -39,34 +39,34 @@ namespace Meta.BusinessTier.Services.Implements
             return rank.Id;
         }
 
-        public async Task<IPaginate<GetAccountInforInRankResponse>> GetAccountInforInRank(Guid id, PagingModel pagingModel)
-        {
+        //public async Task<IPaginate<GetAccountInforInRankResponse>> GetAccountInforInRank(Guid id, PagingModel pagingModel)
+        //{
 
-            // Retrieve the rank or throw an exception if not found
-            Rank rank = await _unitOfWork.GetRepository<Rank>().SingleOrDefaultAsync(
-                predicate: x => x.Id.Equals(id))
-            ?? throw new BadHttpRequestException(MessageConstant.Rank.RankNotFoundMessage);
+        //    // Retrieve the rank or throw an exception if not found
+        //    Rank rank = await _unitOfWork.GetRepository<Rank>().SingleOrDefaultAsync(
+        //        predicate: x => x.Id.Equals(id))
+        //    ?? throw new BadHttpRequestException(MessageConstant.Rank.RankNotFoundMessage);
 
-            // Retrieve the account IDs associated with the rank
-            List<Guid> accountIds = (List<Guid>)await _unitOfWork.GetRepository<AccountRank>().GetListAsync(
-                selector: x => x.AccountId,
-                predicate: x => x.RankId.Equals(id));
+        //    // Retrieve the account IDs associated with the rank
+        //    List<Guid> accountIds = (List<Guid>)await _unitOfWork.GetRepository<AccountRank>().GetListAsync(
+        //        selector: x => x.AccountId,
+        //        predicate: x => x.RankId.Equals(id));
 
-            if (accountIds == null || accountIds.Count == 0)
-            {
-                throw new BadHttpRequestException(MessageConstant.Account.NotFoundFailedMessage);
-            }
+        //    if (accountIds == null || accountIds.Count == 0)
+        //    {
+        //        throw new BadHttpRequestException(MessageConstant.Account.NotFoundFailedMessage);
+        //    }
 
-            // Retrieve the account information and map them to GetAccountInforInRankResponse with pagination
-            IPaginate<GetAccountInforInRankResponse> response = await _unitOfWork.GetRepository<Account>().GetPagingListAsync(
-                selector: x => _mapper.Map<GetAccountInforInRankResponse>(x),
-                predicate: x => accountIds.Contains(x.Id),
-                page: pagingModel.page,
-                size: pagingModel.size,
-                orderBy: x => x.OrderBy(x => x.Point));
+        //    // Retrieve the account information and map them to GetAccountInforInRankResponse with pagination
+        //    IPaginate<GetAccountInforInRankResponse> response = await _unitOfWork.GetRepository<Account>().GetPagingListAsync(
+        //        selector: x => _mapper.Map<GetAccountInforInRankResponse>(x),
+        //        predicate: x => accountIds.Contains(x.Id),
+        //        page: pagingModel.page,
+        //        size: pagingModel.size,
+        //        orderBy: x => x.OrderBy(x => x.Point));
 
-            return response;
-        }
+        //    return response;
+        //}
 
         public async Task<GetRankResponse> GetRankById(Guid id)
         {

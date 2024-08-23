@@ -25,7 +25,7 @@ namespace Meta.BusinessTier.Services.Implements
 {
     public class CustomerRequestService : BaseService<CustomerRequestService>, ICustomerRequestService
     {
-        public CustomerRequestService(IUnitOfWork<MetaContext> unitOfWork, ILogger<CustomerRequestService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
+        public CustomerRequestService(IUnitOfWork<SpaPetContext> unitOfWork, ILogger<CustomerRequestService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
         {
         }
 

@@ -120,27 +120,6 @@
   },
   {
     "ContainingType": "Meta.API.Controllers.AccountController",
-    "Method": "AddrankForAccount",
-    "RelativePath": "api/v1/accounts/{id}/addRank",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "rankId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Meta.API.Controllers.AccountController",
     "Method": "ChangePassword",
     "RelativePath": "api/v1/accounts/{id}/password",
     "HttpMethod": "POST",
@@ -932,32 +911,6 @@
         "Name": "id",
         "Type": "System.Guid",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Meta.API.Controllers.RankController",
-    "Method": "GetAccountInforInRank",
-    "RelativePath": "api/v1/rank/{id}/account",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "page",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "size",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []

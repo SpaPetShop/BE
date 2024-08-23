@@ -17,8 +17,6 @@ public partial class SpaPetContext : DbContext
 
     public virtual DbSet<Account> Accounts { get; set; }
 
-    public virtual DbSet<AccountRank> AccountRanks { get; set; }
-
     public virtual DbSet<Category> Categories { get; set; }
 
     public virtual DbSet<CustomerRequest> CustomerRequests { get; set; }
@@ -71,22 +69,10 @@ public partial class SpaPetContext : DbContext
             entity.Property(e => e.Role).HasMaxLength(50);
             entity.Property(e => e.Status).HasMaxLength(50);
             entity.Property(e => e.Username).HasMaxLength(50);
-        });
 
-        modelBuilder.Entity<AccountRank>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToTable("AccountRank");
-
-            entity.HasOne(d => d.Account).WithMany()
-                .HasForeignKey(d => d.AccountId)
-                .HasConstraintName("FK_AccountRank_Account");
-
-            entity.HasOne(d => d.Rank).WithMany()
+            entity.HasOne(d => d.Rank).WithMany(p => p.Accounts)
                 .HasForeignKey(d => d.RankId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_AccountRank_Rank");
+                .HasConstraintName("FK_Account_Rank");
         });
 
         modelBuilder.Entity<Category>(entity =>

@@ -19,7 +19,7 @@ namespace Meta.BusinessTier.Services.Implements
 {
     public class ProductService : BaseService<ProductService>, IProductService
     {
-        public ProductService(IUnitOfWork<MetaContext> unitOfWork, ILogger<ProductService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
+        public ProductService(IUnitOfWork<SpaPetContext> unitOfWork, ILogger<ProductService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
         {
         }
 

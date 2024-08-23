@@ -17,13 +17,13 @@ namespace Meta.API.Configs
     {
         public static IServiceCollection AddUnitOfWork(this IServiceCollection services)
         {
-            services.AddScoped<IUnitOfWork<MetaContext>, UnitOfWork<MetaContext>>();
+            services.AddScoped<IUnitOfWork<SpaPetContext>, UnitOfWork<SpaPetContext>>();
             return services;
         }
 
         public static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<MetaContext>(options =>
+            services.AddDbContext<SpaPetContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("SQLServerDatabase"));
             });

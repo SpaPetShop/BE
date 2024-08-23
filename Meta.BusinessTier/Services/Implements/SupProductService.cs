@@ -23,7 +23,7 @@ namespace Meta.BusinessTier.Services.Implements
 {
     public class SupProductService : BaseService<SupProductService>, ISupProductService
     {
-        public SupProductService(IUnitOfWork<MetaContext> unitOfWork, ILogger<SupProductService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
+        public SupProductService(IUnitOfWork<SpaPetContext> unitOfWork, ILogger<SupProductService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
         {
         }
 

@@ -24,7 +24,7 @@ namespace Meta.BusinessTier.Services.Implements
 {
     public class CategoryService : BaseService<CategoryService>, ICategoryService
     {
-        public CategoryService(IUnitOfWork<MetaContext> unitOfWork, ILogger<CategoryService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
+        public CategoryService(IUnitOfWork<SpaPetContext> unitOfWork, ILogger<CategoryService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
         {
         }
 

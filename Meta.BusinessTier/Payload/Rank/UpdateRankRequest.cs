@@ -11,5 +11,6 @@ namespace Meta.BusinessTier.Payload.Rank
         public string? Name { get; set; }
 
         public int? Range { get; set; }
+        public int? Value { get; set; }
     }
 }

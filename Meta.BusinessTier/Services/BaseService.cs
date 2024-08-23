@@ -9,12 +9,12 @@ namespace Meta.BusinessTier.Services
 {
     public abstract class BaseService<T> where T : class
     {
-        protected IUnitOfWork<MetaContext> _unitOfWork;
+        protected IUnitOfWork<SpaPetContext> _unitOfWork;
         protected ILogger<T> _logger;
         protected IMapper _mapper;
         protected IHttpContextAccessor _httpContextAccessor;
 
-        protected BaseService(IUnitOfWork<MetaContext> unitOfWork, ILogger<T> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor)
+        protected BaseService(IUnitOfWork<SpaPetContext> unitOfWork, ILogger<T> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor)
         {
             _unitOfWork = unitOfWork;
             _logger = logger;
