@@ -173,8 +173,14 @@ namespace Meta.BusinessTier.Services.Implements
                     updateCustomerRequest.Status = CustomerRequestStatus.ACCEPT;
                     if(request.ExctionDate != null)
                     {
+
                         order.ExcutionDate = request.ExctionDate;
                         task.ExcutionDate = request.ExctionDate;
+                        if (order.TimeWork.HasValue)
+                        {
+                            order.EstimatedCompletionDate = order.ExcutionDate?.AddHours(order.TimeWork.Value);
+                            task.EstimatedCompletionDate = order.EstimatedCompletionDate;
+                        }
                         _unitOfWork.GetRepository<TaskManager>().UpdateAsync(task);
                         _unitOfWork.GetRepository<Order>().UpdateAsync(order);
                     }

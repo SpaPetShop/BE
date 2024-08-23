@@ -209,6 +209,7 @@ namespace Meta.BusinessTier.Services.Implements
             task.ExcutionDate = updateTaskRequest.ExcutionDate.HasValue ? updateTaskRequest.ExcutionDate : task.ExcutionDate;
             task.Status = updateTaskRequest.Status.GetDescriptionFromEnum();
 
+            // Cập nhật Order
             var order = await _unitOfWork.GetRepository<Order>().SingleOrDefaultAsync(
                 predicate: o => o.Id == task.OrderId);
 
@@ -217,16 +218,13 @@ namespace Meta.BusinessTier.Services.Implements
 
             order.ExcutionDate = updateTaskRequest.ExcutionDate.HasValue ? updateTaskRequest.ExcutionDate : order.ExcutionDate;
 
-            var orderDetails = await _unitOfWork.GetRepository<OrderDetail>().GetListAsync(
-                predicate: od => od.OrderId == order.Id);
-
-            double totalTimeWork = orderDetails.Sum(od => od.TimeWork ?? 0);
-
-            if (totalTimeWork > 0)
+            // Tính toán lại EstimatedCompletionDate dựa trên TimeWork trong Order
+            if (order.TimeWork.HasValue)
             {
-                order.EstimatedCompletionDate = order.ExcutionDate?.AddHours(totalTimeWork);
+                order.EstimatedCompletionDate = order.ExcutionDate?.AddHours(order.TimeWork.Value);
+                task.EstimatedCompletionDate = order.EstimatedCompletionDate;
             }
-            task.EstimatedCompletionDate = order.EstimatedCompletionDate.HasValue ? order.EstimatedCompletionDate : order.EstimatedCompletionDate;
+
             _unitOfWork.GetRepository<TaskManager>().UpdateAsync(task);
             _unitOfWork.GetRepository<Order>().UpdateAsync(order);
             bool isSuccess = await _unitOfWork.CommitAsync() > 0;
