@@ -14,6 +14,7 @@ namespace Meta.BusinessTier.Mappers
     {
         public RankModule() {
             CreateMap<CreateNewRankRequest, Rank>();
+            CreateMap<Rank, GetRankResponse>();
         }
     }
 }
