@@ -27,12 +27,14 @@ namespace Meta.BusinessTier.Payload.Order
     {
         public Guid ProductId { get; set; }
         public int Quantity { get; set; }
+        public double TimeWork { get; set; }
         public float SellingPrice { get; set; }
     }
     public class OrderSupProduct
     {
         public Guid SupProductId { get; set; }
         public int Quantity { get; set; }
+        public double TimeWork { get; set; }
         public float SellingPrice { get; set; }
     }
 }

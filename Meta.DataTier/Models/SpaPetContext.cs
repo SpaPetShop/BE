@@ -130,6 +130,7 @@ public partial class SpaPetContext : DbContext
             entity.Property(e => e.CompletedDate).HasColumnType("datetime");
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
             entity.Property(e => e.Description).HasMaxLength(4000);
+            entity.Property(e => e.EstimatedCompletionDate).HasColumnType("datetime");
             entity.Property(e => e.ExcutionDate).HasColumnType("datetime");
             entity.Property(e => e.InvoiceCode)
                 .HasMaxLength(50)
@@ -287,6 +288,7 @@ public partial class SpaPetContext : DbContext
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.CompletedDate).HasColumnType("datetime");
             entity.Property(e => e.CreateDate).HasColumnType("datetime");
+            entity.Property(e => e.EstimatedCompletionDate).HasColumnType("datetime");
             entity.Property(e => e.ExcutionDate).HasColumnType("datetime");
             entity.Property(e => e.Status).HasMaxLength(50);
             entity.Property(e => e.Type).HasMaxLength(50);

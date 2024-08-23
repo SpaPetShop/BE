@@ -34,13 +34,6 @@ namespace Meta.BusinessTier.Services.Implements
                 predicate: x => x.Username.Equals(currentUser));
             DateTime currentTime = TimeUtils.GetCurrentSEATime();
 
-            Pet existingPet = await _unitOfWork.GetRepository<Pet>().SingleOrDefaultAsync(
-                predicate: x => x.Name.Equals(createNewPetRequest.Name));
-            if (existingPet != null)
-            {
-                throw new BadHttpRequestException(MessageConstant.Pet.NameExisted);
-            }
-
             var petType = await _unitOfWork.GetRepository<TypePet>().SingleOrDefaultAsync(
                 predicate: x => x.Id.Equals(createNewPetRequest.TypePetId));
             if (petType == null)

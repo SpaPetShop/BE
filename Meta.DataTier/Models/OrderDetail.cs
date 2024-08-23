@@ -19,6 +19,8 @@ public partial class OrderDetail
 
     public Guid? SupProductId { get; set; }
 
+    public double? TimeWork { get; set; }
+
     public virtual Order? Order { get; set; }
 
     public virtual Product? Product { get; set; }

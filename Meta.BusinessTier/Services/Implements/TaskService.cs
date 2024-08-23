@@ -76,6 +76,7 @@ namespace Meta.BusinessTier.Services.Implements
                 Status = TaskManagerStatus.PROCESS.GetDescriptionFromEnum(),
                 CreateDate = currentTime,
                 ExcutionDate = order.ExcutionDate,
+                EstimatedCompletionDate = order.EstimatedCompletionDate,
                 AccountId = createNewTaskRequest.AccountId,
                 OrderId = createNewTaskRequest.OrderId,
             };
@@ -105,6 +106,7 @@ namespace Meta.BusinessTier.Services.Implements
                         Status = EnumUtil.ParseEnum<TaskManagerStatus>(task.Status),
                         CompletedDate = task.CompletedDate,
                         ExcutionDate = task.ExcutionDate,
+                        EstimatedCompletionDate = task.EstimatedCompletionDate,
                         Order = new OrderResponse
                         {
                             Id = task.Order.Id,
@@ -144,6 +146,7 @@ namespace Meta.BusinessTier.Services.Implements
                         Status = EnumUtil.ParseEnum<TaskManagerStatus>(task.Status),
                         CompletedDate = task.CompletedDate,
                         ExcutionDate = task.ExcutionDate,
+                        EstimatedCompletionDate = task.EstimatedCompletionDate,
                         Order = new OrderResponse
                         {
                             Id = task.Order.Id,
@@ -202,23 +205,33 @@ namespace Meta.BusinessTier.Services.Implements
                 predicate: x => x.Id.Equals(updateTaskRequest.AccountId))
                 ?? throw new BadHttpRequestException(MessageConstant.Account.NotFoundFailedMessage);
 
-
             task.AccountId = updateTaskRequest.AccountId;
-            task.ExcutionDate = updateTaskRequest.ExcutionDate.HasValue ? task.ExcutionDate : updateTaskRequest.ExcutionDate;
+            task.ExcutionDate = updateTaskRequest.ExcutionDate.HasValue ? updateTaskRequest.ExcutionDate : task.ExcutionDate;
             task.Status = updateTaskRequest.Status.GetDescriptionFromEnum();
-
-
 
             var order = await _unitOfWork.GetRepository<Order>().SingleOrDefaultAsync(
                 predicate: o => o.Id == task.OrderId);
-            order.ExcutionDate = updateTaskRequest.ExcutionDate.HasValue ? order.ExcutionDate : updateTaskRequest.ExcutionDate;
 
+            if (order == null)
+                throw new BadHttpRequestException(MessageConstant.Order.OrderNotFoundMessage);
 
+            order.ExcutionDate = updateTaskRequest.ExcutionDate.HasValue ? updateTaskRequest.ExcutionDate : order.ExcutionDate;
 
+            var orderDetails = await _unitOfWork.GetRepository<OrderDetail>().GetListAsync(
+                predicate: od => od.OrderId == order.Id);
+
+            double totalTimeWork = orderDetails.Sum(od => od.TimeWork ?? 0);
+
+            if (totalTimeWork > 0)
+            {
+                order.EstimatedCompletionDate = order.ExcutionDate?.AddHours(totalTimeWork);
+            }
+            task.EstimatedCompletionDate = order.EstimatedCompletionDate.HasValue ? order.EstimatedCompletionDate : order.EstimatedCompletionDate;
             _unitOfWork.GetRepository<TaskManager>().UpdateAsync(task);
             _unitOfWork.GetRepository<Order>().UpdateAsync(order);
             bool isSuccess = await _unitOfWork.CommitAsync() > 0;
             return isSuccess;
         }
+
     }
 }

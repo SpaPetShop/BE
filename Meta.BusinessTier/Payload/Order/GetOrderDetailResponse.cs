@@ -16,6 +16,8 @@ namespace Meta.BusinessTier.Payload.Order
         public DateTime? CreatedDate { get; set; }
         public DateTime? CompletedDate { get; set; }
         public DateTime? ExcutionDate { get; set; }
+        public DateTime? EstimatedCompletionDate { get; set; }
+        public double? TimeWork { get; set; }
         public string? Description { get; set; }
         public double? TotalAmount { get; set; }
         public double? FinalAmount { get; set; }
@@ -43,6 +45,7 @@ namespace Meta.BusinessTier.Payload.Order
         public string? ProductName { get; set; }
         public Guid? SupProductId { get; set; }
         public string? SupProductName { get; set; }
+        public double? TimeWork { get; set; }
         public int? Quantity { get; set; }
         public double? SellingPrice { get; set; }
         public double? TotalAmount { get; set; }

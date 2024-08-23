@@ -21,6 +21,8 @@ public partial class TaskManager
 
     public Guid? AccountId { get; set; }
 
+    public DateTime? EstimatedCompletionDate { get; set; }
+
     public virtual Account? Account { get; set; }
 
     public virtual Order? Order { get; set; }

@@ -58,16 +58,18 @@ namespace Meta.BusinessTier.Services.Implements
                 InvoiceCode = TimeUtils.GetTimestamp(currentTime),
                 CreatedDate = currentTime,
                 CompletedDate = null,
-                ExcutionDate = request.ExcutionDate, // Set execution date
+                ExcutionDate = request.ExcutionDate,
                 TotalAmount = 0,
                 Description = request.Description,
                 Status = OrderStatus.UNPAID.GetDescriptionFromEnum(),
                 AccountId = account.Id,
                 PetId = request.PetId,
-                Type = request.Type.GetDescriptionFromEnum()           };
+                Type = request.Type.GetDescriptionFromEnum()
+            };
 
             var orderDetails = new List<OrderDetail>();
             double totalAmount = 0;
+            double totalTimeWork = 0; 
 
             foreach (var product in request.ProductList)
             {
@@ -81,6 +83,7 @@ namespace Meta.BusinessTier.Services.Implements
                         Id = Guid.NewGuid(),
                         OrderId = newOrder.Id,
                         SupProductId = product.ProductId,
+                        TimeWork = product.TimeWork,
                         Quantity = 1,
                         SellingPrice = product.SellingPrice,
                         TotalAmount = product.SellingPrice * product.Quantity
@@ -99,6 +102,7 @@ namespace Meta.BusinessTier.Services.Implements
                         Id = Guid.NewGuid(),
                         OrderId = newOrder.Id,
                         ProductId = product.ProductId,
+                        TimeWork = product.TimeWork,
                         Quantity = 1,
                         SellingPrice = product.SellingPrice,
                         TotalAmount = product.SellingPrice * product.Quantity
@@ -107,6 +111,14 @@ namespace Meta.BusinessTier.Services.Implements
 
                 orderDetails.Add(orderDetail);
                 totalAmount += orderDetail.TotalAmount ?? 0;
+                totalTimeWork += orderDetail.TimeWork ?? 0; 
+            }
+
+            // Tính toán EstimatedCompletionDate
+            if (totalTimeWork > 0)
+            {
+                newOrder.TimeWork = totalTimeWork;
+                newOrder.EstimatedCompletionDate = newOrder.ExcutionDate?.AddHours(totalTimeWork);
             }
 
             var accountRank = await _unitOfWork.GetRepository<Rank>()
@@ -114,7 +126,6 @@ namespace Meta.BusinessTier.Services.Implements
 
             if (accountRank != null)
             {
-
                 double rankDiscount = (accountRank.Value.Value / 100.0) * totalAmount;
                 newOrder.FinalAmount = totalAmount - rankDiscount;
             }
@@ -132,12 +143,14 @@ namespace Meta.BusinessTier.Services.Implements
                     Status = TaskManagerStatus.PENDING.GetDescriptionFromEnum(),
                     CreateDate = currentTime,
                     ExcutionDate = newOrder.ExcutionDate,
+                    EstimatedCompletionDate = newOrder.EstimatedCompletionDate, 
                     OrderId = newOrder.Id,
                     AccountId = request.StaffId
                 };
 
                 await _unitOfWork.GetRepository<TaskManager>().InsertAsync(newTask);
             }
+
             await _unitOfWork.GetRepository<Order>().InsertAsync(newOrder);
             await _unitOfWork.GetRepository<OrderDetail>().InsertRangeAsync(orderDetails);
             await _unitOfWork.CommitAsync();
@@ -158,6 +171,8 @@ namespace Meta.BusinessTier.Services.Implements
                     CreatedDate = x.CreatedDate,
                     CompletedDate = x.CompletedDate,
                     ExcutionDate = x.ExcutionDate,
+                    EstimatedCompletionDate = x.EstimatedCompletionDate,
+                    TimeWork = x.TimeWork,
                     Description = x.Description,
                     TotalAmount = x.TotalAmount,
                     FinalAmount = x.FinalAmount,
@@ -204,6 +219,7 @@ namespace Meta.BusinessTier.Services.Implements
                         ProductName = detail.Product.Name,
                         SupProductId = detail.SupProductId,
                         SupProductName = detail.SupProduct.Name,
+                        TimeWork = detail.TimeWork,
                         Quantity = detail.Quantity,
                         SellingPrice = detail.SellingPrice,
                         TotalAmount = detail.TotalAmount,
@@ -235,6 +251,8 @@ namespace Meta.BusinessTier.Services.Implements
                     CreatedDate = x.CreatedDate,
                     CompletedDate = x.CompletedDate,
                     ExcutionDate = x.ExcutionDate,
+                    EstimatedCompletionDate = x.EstimatedCompletionDate,
+                    TimeWork = x.TimeWork,
                     TotalAmount = x.TotalAmount,
                     FinalAmount = x.FinalAmount,
                     Description = x.Description,
@@ -281,6 +299,7 @@ namespace Meta.BusinessTier.Services.Implements
                         ProductName = detail.Product.Name,
                         SupProductId = detail.SupProductId,
                         SupProductName = detail.SupProduct.Name,
+                        TimeWork = detail.TimeWork,
                         Quantity = detail.Quantity,
                         SellingPrice = detail.SellingPrice,
                         TotalAmount = detail.TotalAmount,

@@ -23,6 +23,7 @@ namespace Meta.BusinessTier.Payload.Task
         public DateTime? ExcutionDate { get; set; }
 
         public TaskManagerStatus? Status { get; set; }
+        public DateTime? EstimatedCompletionDate { get; set; }
 
         public DateTime? CompletedDate { get; set; }
 
