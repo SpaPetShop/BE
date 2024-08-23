@@ -163,17 +163,17 @@ namespace Meta.BusinessTier.Services.Implements
                 predicate: x => x.Id.Equals(task.AccountId))
                 ?? throw new BadHttpRequestException(MessageConstant.Account.NotFoundFailedMessage);
 
-            if (updateCustomerRequest.Status == CustomerRequestStatus.ACCEPT && updateCustomerRequest.Status == CustomerRequestStatus.REJECT)
+            if (request.Status == CustomerRequestStatus.ACCEPT.GetDescriptionFromEnum() && request.Status == CustomerRequestStatus.REJECT.GetDescriptionFromEnum())
             {
                 throw new BadHttpRequestException(MessageConstant.CustomerRequest.UpdateStatusCompletedFailedMessage);
             }
+
             switch (updateCustomerRequest.Status)
             {
                 case CustomerRequestStatus.ACCEPT:
-                    updateCustomerRequest.Status = CustomerRequestStatus.ACCEPT;
-                    if(request.ExctionDate != null)
+                    request.Status = CustomerRequestStatus.ACCEPT.GetDescriptionFromEnum();
+                    if (request.ExctionDate != null)
                     {
-
                         order.ExcutionDate = request.ExctionDate;
                         task.ExcutionDate = request.ExctionDate;
                         if (order.TimeWork.HasValue)
@@ -181,13 +181,13 @@ namespace Meta.BusinessTier.Services.Implements
                             order.EstimatedCompletionDate = order.ExcutionDate?.AddHours(order.TimeWork.Value);
                             task.EstimatedCompletionDate = order.EstimatedCompletionDate;
                         }
-                        _unitOfWork.GetRepository<TaskManager>().UpdateAsync(task);
-                        _unitOfWork.GetRepository<Order>().UpdateAsync(order);
+                         _unitOfWork.GetRepository<TaskManager>().UpdateAsync(task);
+                         _unitOfWork.GetRepository<Order>().UpdateAsync(order);
                     }
-                    if(request.StaffId != null)
+                    if (request.StaffId != null)
                     {
                         task.AccountId = request.StaffId;
-                        _unitOfWork.GetRepository<TaskManager>().UpdateAsync(task);
+                         _unitOfWork.GetRepository<TaskManager>().UpdateAsync(task);
                     }
                     var note = new Note()
                     {
@@ -196,35 +196,31 @@ namespace Meta.BusinessTier.Services.Implements
                         CreateDate = currentTime,
                         Description = updateCustomerRequest.Note,
                         OrderId = order.Id
-
                     };
-                    if (note != null)
-                    {
-                        await _unitOfWork.GetRepository<Note>().InsertAsync(note);
-                    }
+                    await _unitOfWork.GetRepository<Note>().InsertAsync(note);
                     break;
+
                 case CustomerRequestStatus.REJECT:
-                    updateCustomerRequest.Status = CustomerRequestStatus.REJECT;
-                    note = new Note()
+                    request.Status = CustomerRequestStatus.REJECT.GetDescriptionFromEnum();
+                    var rejectNote = new Note()
                     {
                         Id = Guid.NewGuid(),
                         Status = NoteStatus.FAILED.GetDescriptionFromEnum(),
                         CreateDate = currentTime,
                         Description = updateCustomerRequest.Note,
                         OrderId = order.Id
-
                     };
-                    if (note != null)
-                    {
-                        await _unitOfWork.GetRepository<Note>().InsertAsync(note);
-                    }
-                    
+                    await _unitOfWork.GetRepository<Note>().InsertAsync(rejectNote);
                     break;
+
                 default:
                     return false;
             }
+
             _unitOfWork.GetRepository<CustomerRequest>().UpdateAsync(request);
-            return true;
+            bool isSuccess = await _unitOfWork.CommitAsync() > 0;
+            return isSuccess;
         }
+
     }
 }
