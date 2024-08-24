@@ -106,6 +106,7 @@ namespace Meta.BusinessTier.Services.Implements
             switch (updateCategoryRequest.Status)
             {
                 case CategoryStatus.ACTIVE:
+                    category.Status = CategoryStatus.ACTIVE.GetDescriptionFromEnum();
                     foreach (var item in category.Products)
                     {
                         item.Status = ProductStatus.AVAILABLE.GetDescriptionFromEnum();
@@ -116,6 +117,7 @@ namespace Meta.BusinessTier.Services.Implements
                     //}
                     break;
                 case CategoryStatus.INACTIVE:
+                    category.Status = CategoryStatus.INACTIVE.GetDescriptionFromEnum();
                     foreach (var item in category.Products)
                     {
                         item.Status = ProductStatus.UNAVAILABLE.GetDescriptionFromEnum();
