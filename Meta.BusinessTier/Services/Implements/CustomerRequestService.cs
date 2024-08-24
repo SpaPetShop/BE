@@ -38,10 +38,10 @@ namespace Meta.BusinessTier.Services.Implements
                 ?? throw new BadHttpRequestException(MessageConstant.Account.NotFoundFailedMessage);
             var order = await _unitOfWork.GetRepository<Order>().SingleOrDefaultAsync(
                 predicate: x => x.Id.Equals(createNewCustomerRequest.OrderId));
-            if(order.ExcutionDate.HasValue && createNewCustomerRequest.ExctionDate.Value.AddHours(23) >  order.ExcutionDate.Value && createNewCustomerRequest.StaffId != null )
-            {
-                throw new BadHttpRequestException(MessageConstant.CustomerRequest.Check24hFailedMessage);
-            }
+            //if(order.ExcutionDate.HasValue && createNewCustomerRequest.ExctionDate.Value.AddHours(23) >  order.ExcutionDate.Value && createNewCustomerRequest.StaffId != null )
+            //{
+            //    throw new BadHttpRequestException(MessageConstant.CustomerRequest.Check24hFailedMessage);
+            //}
             var newRequest = new CustomerRequest
             {
                 Id = Guid.NewGuid(),
