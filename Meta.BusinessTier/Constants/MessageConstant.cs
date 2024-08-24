@@ -241,6 +241,7 @@ public static class MessageConstant
     public static class CustomerRequest
     {
         public const string CreateNewFailedMessage = "Tạo mới yêu cầu thất bại";
+        public const string Check24hFailedMessage = "Không thể yêu câu đổi nhân viên khi còn chưa tới 24h trước thời gian thực hiện đơn hàng";
         public const string UpdateFailedMessage = "Cập nhật yêu cầu thất bại";
         public const string UpdateSuccessMessage = "Cập nhật yêu cầu thành công";
         public const string EmptyIdMessage = "Mã yêu cầu không hợp lệ";
