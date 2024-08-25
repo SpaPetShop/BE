@@ -73,7 +73,7 @@ namespace Meta.BusinessTier.Services.Implements
             {
                 Id = Guid.NewGuid(),
                 Type = TaskType.MANAGERREQUEST.GetDescriptionFromEnum(),
-                Status = TaskManagerStatus.PROCESS.GetDescriptionFromEnum(),
+                Status = TaskManagerStatus.ACCEPT.GetDescriptionFromEnum(),
                 CreateDate = currentTime,
                 ExcutionDate = order.ExcutionDate,
                 EstimatedCompletionDate = order.EstimatedCompletionDate,
