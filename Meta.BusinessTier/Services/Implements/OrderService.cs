@@ -402,11 +402,11 @@ namespace Meta.BusinessTier.Services.Implements
                     break;
                 case OrderStatus.PAID:
                     updateOrder.Status = OrderStatus.PAID.GetDescriptionFromEnum();
-                    if(taskManagers != null)
-                    {
-                        taskManagers.Status = TaskManagerStatus.PROCESS.GetDescriptionFromEnum();
-                        _unitOfWork.GetRepository<TaskManager>().UpdateAsync(taskManagers);
-                    }
+                    //if(taskManagers != null)
+                    //{
+                    //    taskManagers.Status = TaskManagerStatus.PROCESS.GetDescriptionFromEnum();
+                    //    _unitOfWork.GetRepository<TaskManager>().UpdateAsync(taskManagers);
+                    //}
                     note = new Note()
                     {
                         Id = Guid.NewGuid(),
