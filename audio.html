@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <titlasase>Audio Replay</titlasase>
+</head>
+<body>
+    <h1>Audio Player with Replay Delay</h1>
+    <audio muted autoplay id="audioPlayer" controls>
+        <source src="aaa.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Lấy phần tử audio
+        const audio = document.getElementById('audioPlayer');
+
+        // Thêm sự kiện khi audio kết thúc
+        audio.addEventListener('ended', () => {
+            console.log('Audio ended, will replay in 5 seconds...');
+            setTimeout(() => {
+                audio.play();
+                console.log('Audio replaying now!');
+            }, 5000); // Delay 5 giây
+        });
+    </script>
+</body>
+</html>
