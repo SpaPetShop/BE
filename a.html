@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload and Display Audio</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .upload-container {
+            text-align: center;
+            padding: 20px;
+            background: #ffffff;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            width: 320px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease;
+        }
+        .upload-container:hover {
+            border-color: #888;
+        }
+        .upload-icon {
+            font-size: 48px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .file-info {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .file-info .file-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+        .file-info .file-size {
+            font-size: 14px;
+            color: #555;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        label {
+            display: inline-block;
+            background-color: #007BFF;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        label:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <div class="upload-icon">🎵</div>
+        <h1>Upload Your Audio</h1>
+        <input type="file" id="audio-upload" accept="audio/*">
+        <label for="audio-upload">Choose File</label>
+        <div class="file-info" id="file-info">
+            <div class="file-name" id="file-name">No file chosen</div>
+            <div class="file-size" id="file-size"></div>
+        </div>
+    </div>
+
+    <script>
+        const audioUpload = document.getElementById('audio-upload');
+        const fileNameDisplay = document.getElementById('file-name');
+        const fileSizeDisplay = document.getElementById('file-size');
+        const fileInfoContainer = document.getElementById('file-info');
+
+        audioUpload.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                fileNameDisplay.textContent = `File Name: ${file.name}`;
+                fileSizeDisplay.textContent = `File Size: ${(file.size / 1024).toFixed(2)} KB`;
+                fileInfoContainer.style.display = 'block';
+            } else {
+                fileNameDisplay.textContent = 'No file chosen';
+                fileSizeDisplay.textContent = '';
+                fileInfoContainer.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
